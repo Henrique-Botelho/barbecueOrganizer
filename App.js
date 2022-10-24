@@ -38,18 +38,6 @@ export default function App() {
             headerTitleAlign: "center",
             headerTintColor: "#fff"
           }} />
-
-        <Stack.Screen 
-          name="carnes"
-          component={Carnes}
-          options={{
-            title: 'Selecione os alimentos para o churrasco',
-            headerStyle:{
-              backgroundColor: '#b43434'
-            },
-            headerTitleAlign: "center",
-            headerTintColor: "#fff"
-          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
