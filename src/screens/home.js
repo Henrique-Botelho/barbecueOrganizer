@@ -1,12 +1,14 @@
 import React from "react";
-import {View, Text, StyleSheet, ImageBackground, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image} from "react-native";
 
 export default function Home(props) {
     return(
-        <View>
-            <ImageBackground opacity={0.48} source={require('../../assets/fundo.png')} style={styles.image}>
+        <View style={styles.view}>
+            <ImageBackground opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <TouchableOpacity style={styles.btn} onPress={() => {props.navigation.navigate("pessoas")}}>
-                    <Text style={styles.text}>Organizar um churrasco</Text>
+                    <Text style={styles.text}>
+                        Criar churrasco
+                    </Text>
                 </TouchableOpacity>
             </ImageBackground>
         </View>
@@ -14,21 +16,25 @@ export default function Home(props) {
 }
 
 const styles = StyleSheet.create({
+    view: {
+        flex: 1
+    },
     image:{
-      height: "100%",
       backgroundColor: "#000",
       alignItems: 'center',
+      flex: 1
     },
     btn:{
         backgroundColor: "#FFCE51",
-        width: "70%",
-        alignItems: 'center',
-        justifyContent: 'center',
         borderRadius: 10,
-        marginTop: "80%",
-        paddingVertical: 30
+        flexDirection: "row",
+        alignSelf: "center",
+        padding: 10,
+        marginVertical: "70%"
     },
     text:{
-        fontSize: 20
+        fontSize: 25,
+        alignSelf: "center",
+        height: 35
     }
   })
