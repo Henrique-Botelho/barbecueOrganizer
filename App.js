@@ -23,7 +23,7 @@ export default function App() {
               backgroundColor: '#b43434',
             },
             headerTitleAlign: "center",
-            headerTintColor: "#fff",
+            headerTintColor: "#000",
             headerTitleStyle: {
               fontSize: 25
             }
@@ -34,12 +34,15 @@ export default function App() {
           name="pessoas"
           component={Pessoas}
           options={{
-            title: 'Quantidade de Pessoas',
+            title: 'Barbecue Organizer',
             headerStyle: {
               backgroundColor: '#b43434',
             },
             headerTitleAlign: "center",
-            headerTintColor: "#fff"
+            headerTintColor: "#000",
+            headerTitleStyle: {
+              fontSize: 25
+            }
           }} />
       </Stack.Navigator>
     </NavigationContainer>

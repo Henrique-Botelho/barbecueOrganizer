@@ -4,8 +4,13 @@ import {View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image} from "
 export default function Home(props) {
     return(
         <View style={styles.view}>
-            <ImageBackground opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                <TouchableOpacity style={styles.btn} onPress={() => {props.navigation.navigate("pessoas")}}>
+            <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
+                <Image style={styles.meat} source={require('../../assets/img/meat.png')} />
+                <TouchableOpacity 
+                    style={styles.btn}
+                    onPress={() => {props.navigation.navigate("pessoas")}}
+                    activeOpacity={0.7}>
+
                     <Text style={styles.text}>
                         Criar churrasco
                     </Text>
@@ -22,15 +27,19 @@ const styles = StyleSheet.create({
     image:{
       backgroundColor: "#000",
       alignItems: 'center',
-      flex: 1
+      flex: 1,
+      justifyContent: "space-evenly"
+    },
+    meat:{
+        width: 200,
+        height: 200
     },
     btn:{
         backgroundColor: "#FFCE51",
         borderRadius: 10,
         flexDirection: "row",
         alignSelf: "center",
-        padding: 10,
-        marginVertical: "70%"
+        padding: 10
     },
     text:{
         fontSize: 25,
