@@ -1,9 +1,10 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
+
 import Home from "./src/screens/home";
 import Pessoas from "./src/screens/pessoas";
-import { ImageBackground, StyleSheet, View, Text } from "react-native";
+import Carnes from "./src/screens/carnes";
 
 const Stack = createStackNavigator();
 
@@ -11,6 +12,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="home">
+
+        {/* Tela Home */}
         <Stack.Screen 
           name="home" 
           component={Home} 
@@ -20,8 +23,10 @@ export default function App() {
               backgroundColor: '#b43434',
             },
             headerTitleAlign: "center",
-            headerTintColor: "#FFF"
+            headerTintColor: "#fff"
           }} />
+
+        {/* Tela Seleção de Pessoas */}
         <Stack.Screen 
           name="pessoas"
           component={Pessoas}
@@ -31,7 +36,19 @@ export default function App() {
               backgroundColor: '#b43434',
             },
             headerTitleAlign: "center",
-            headerTintColor: "#FFF"
+            headerTintColor: "#fff"
+          }} />
+
+        <Stack.Screen 
+          name="carnes"
+          component={Carnes}
+          options={{
+            title: 'Selecione os alimentos para o churrasco',
+            headerStyle:{
+              backgroundColor: '#b43434'
+            },
+            headerTitleAlign: "center",
+            headerTintColor: "#fff"
           }} />
       </Stack.Navigator>
     </NavigationContainer>
