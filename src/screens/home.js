@@ -5,7 +5,6 @@ export default function Home(props) {
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                <Image style={styles.meat} source={require('../../assets/img/meat.png')} />
                 <TouchableOpacity 
                     style={styles.btn}
                     onPress={() => {props.navigation.navigate("pessoas")}}
