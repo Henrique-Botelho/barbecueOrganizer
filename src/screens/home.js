@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image} from "react-native";
+import {View, Text, StyleSheet, ImageBackground, TouchableOpacity} from "react-native";
 
 export default function Home(props) {
     return(
