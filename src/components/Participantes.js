@@ -2,20 +2,26 @@ import React from "react";
 import { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 
-export default function Participantes() {
+
+export default function Participantes(props) {
     const [man, setMan] = useState(0);
     const [woman, setWoman] = useState(0);
     const [child, setChild] = useState(0);
+    const [control, setControl] = useState(true);
 
     return(
         <View style={styles.view}>
             <View style={styles.item}>
-                <Text style={styles.text}>Homens</Text>
+                <Text style={styles.text}>{props.tipoComida[0]}</Text>
                 <View style={styles.numbers}>
                     <TouchableOpacity
+                        disabled={control}
                         style={styles.controls}
                         onPress={() => {
-                            setMan(man - 1)
+                            setMan(man - 1);
+                            if (man == 1){
+                                setControl(true);
+                            }
                         }}
                     >-</TouchableOpacity>
 
@@ -24,18 +30,25 @@ export default function Participantes() {
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setMan(man + 1)
+                            setMan(man + 1);
+                            if (man > 0){
+                                setControl(false);
+                            }
                         }}
                     >+</TouchableOpacity>
                 </View>
             </View>
             <View style={styles.item}>
-                <Text style={styles.text}>Mulheres</Text>
+                <Text style={styles.text}>{props.tipoComida[1]}</Text>
                 <View style={styles.numbers}>
                     <TouchableOpacity
+                        disabled={control}
                         style={styles.controls}
                         onPress={() => {
                             setWoman(woman - 1)
+                            if (woman == 1){
+                                setControl(true);
+                            }
                         }}
                     >-</TouchableOpacity>
 
@@ -44,18 +57,25 @@ export default function Participantes() {
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setWoman(woman + 1)
+                            setWoman(woman + 1);
+                            if (woman > 0){
+                                setControl(false);
+                            }
                         }}
                     >+</TouchableOpacity>
                 </View>
             </View>
             <View style={styles.item}>
-                <Text style={styles.text}>Crianças</Text>
+                <Text style={styles.text}>{props.tipoComida[2]}</Text>
                 <View style={styles.numbers}>
                     <TouchableOpacity
+                        disabled={control}
                         style={styles.controls}
                         onPress={() =>{
                             setChild(child - 1);
+                            if (child == 1){
+                                setControl(true);
+                            }
                         }}
                     >-</TouchableOpacity>
 
@@ -64,7 +84,10 @@ export default function Participantes() {
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setChild(child + 1)
+                            setChild(child + 1);
+                            if (child > 0){
+                                setControl(false);
+                            }
                         }}
                     >+</TouchableOpacity>
                 </View>
@@ -108,6 +131,6 @@ const styles = StyleSheet.create({
         borderWidth: 5,
         borderColor: "red",
         alignSelf: "center",
-        fontSize: 20
+        fontSize: 12
     }
 });
