@@ -1,12 +1,14 @@
 import React from "react";
 import {View, Text, StyleSheet, ImageBackground} from "react-native";
 import SwitchButton from "../components/switch";
+import Participantes from "../components/Participantes";
 
 export default function Pessoas() {
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Quantas pessoas?</Text>
+                <Participantes />
                 <View style={styles.opcoes}>
                     <View style={styles.abrir}>
                         <Text>Há pessoas vegetarianas?</Text>
@@ -37,8 +39,7 @@ const styles = StyleSheet.create({
         color: '#b43434',
         borderRadius: 10,
         padding: 10,
-        fontSize: 20,
-
+        fontSize: 25,
     },
     opcoes: {
 

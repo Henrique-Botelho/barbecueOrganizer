@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
         flex: 1
     },
     image:{
-      backgroundColor: "#000",
-      alignItems: 'center',
-      flex: 1,
-      justifyContent: "space-evenly"
+        backgroundColor: "#000",
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: "space-evenly"
     },
     meat:{
         width: 200,
