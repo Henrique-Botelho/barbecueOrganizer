@@ -15,6 +15,17 @@ export default function Pessoas() {
                 <View style={styles.abrir}>
                     <Text>Há pessoas vegetarianas?</Text>
                     <SwitchButton />
+                <Participantes />
+                </View> 
+                <View style={styles.opcoes}>
+                    <View style={styles.abrir}>
+                        <Text>Há pessoas vegetarianas?</Text>
+                        <SwitchButton id={1}/>
+                    </View>
+                    <View style={styles.abrir}>
+                        <Text>Há pessoas veganas?</Text>
+                        <SwitchButton id={2}/>
+                    </View>
                 </View>
                 <Participantes state={false} tipoComida={["Homens Vegetarianos", "Mulheres Vegetarianas", "Crianças Vegetarianas"]} />
                 <View style={styles.abrir}>
