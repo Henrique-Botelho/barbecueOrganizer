@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: "row",
         alignSelf: "center",
-        padding: 10
+        padding: 20
     },
     text:{
         fontSize: 25,

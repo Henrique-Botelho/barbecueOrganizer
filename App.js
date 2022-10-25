@@ -39,7 +39,7 @@ export default function App() {
               backgroundColor: '#b43434',
             },
             headerTitleAlign: "center",
-            headerTintColor: "#000",
+            headerTintColor: "#fff",
             headerTitleStyle: {
               fontSize: 25
             }
