@@ -12,11 +12,11 @@ export default function Pessoas() {
                 <View style={styles.opcoes}>
                     <View style={styles.abrir}>
                         <Text>Há pessoas vegetarianas?</Text>
-                        <SwitchButton />
+                        <SwitchButton id={1}/>
                     </View>
                     <View style={styles.abrir}>
                         <Text>Há pessoas veganas?</Text>
-                        <SwitchButton />
+                        <SwitchButton id={2}/>
                     </View>
                 </View>
             </ImageBackground>
