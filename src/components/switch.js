@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { View, Text, Switch, StyleSheet } from "react-native";
+import { View, Text, Switch, StyleSheet, SafeAreaView } from "react-native";
+import Participantes from "./Participantes";
 
 export default function SwitchButton(props){
     const id = props.id;
@@ -15,10 +16,17 @@ export default function SwitchButton(props){
                 trackColor = {{false: "#767577", true: "#81b0ff"}}
                 thumbColor = {ativo ? "#00BFFF": "#FFF0F5"}
             /> 
-            { ativo && id == 1 ? <View> <Text> 6 opções vegetarianas</Text> </View> : ""}
-            { ativo && id == 2 ? <View> <Text> 6 opções veganas</Text> </View> : ""}
+            { ativo && id == 2 ? <View style={styles.opcoes}> <Participantes tipoComida={["Homens Vegetarianos", "Mulheres Vegetarianas", "Crianças Vegetarianas"]} /> 
+            </View> : ""}
+            { ativo && id == 3 ? <View style={styles.opcoes}> <Participantes tipoComida={["Homens Veganos", "Mulheres Veganas", "Crianças Veganas"]} /> </View> : ""}
         </View>
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    opcoes: {
+        paddingVertical: 20,
+        display: "flex",
+        flexDirection: "column",
+    }
+});

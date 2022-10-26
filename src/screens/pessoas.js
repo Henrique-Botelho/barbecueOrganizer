@@ -11,14 +11,12 @@ export default function Pessoas() {
                 <Participantes tipoComida={["Homens", "Mulheres", "Crianças"]} />
                 <View style={styles.abrir}>
                     <Text>Há pessoas vegetarianas?</Text>
-                    <SwitchButton />
+                    <SwitchButton id="2"/>
                 </View> 
-                <Participantes tipoComida={["Homens Vegetarianos", "Mulheres Vegetarianas", "Crianças Vegetarianas"]} />
                 <View style={styles.abrir}>
                     <Text>Há pessoas veganas?</Text>
-                    <SwitchButton />
+                    <SwitchButton id="3"/>
                 </View>
-                <Participantes tipoComida={["Homens Veganos", "Mulheres Veganas", "Crianças Veganas"]} />
             </ImageBackground>
         </View>
     );
