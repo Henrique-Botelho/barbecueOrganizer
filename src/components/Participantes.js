@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React,  { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 
 
@@ -8,7 +7,7 @@ export default function Participantes(props) {
     const [woman, setWoman] = useState(0);
     const [child, setChild] = useState(0);
     const [control, setControl] = useState(true);
-
+    
     return(
         <View style={styles.view}>
             <View style={styles.item}>
