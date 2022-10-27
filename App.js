@@ -18,13 +18,12 @@ export default function App() {
           <Stack.Screen name="home" component={Home} options={configHeader} />
           <Stack.Screen name="pessoas"component={Pessoas} options={configHeader} />
           <Stack.Screen name="carnes"component={Carnes} options={configHeader} />
-          
+
         </Stack.Navigator>
       </AuthProvider>
     </NavigationContainer>
   );
 }
-
 
 const configHeader = {
   title: 'Barbecue Organizer',
