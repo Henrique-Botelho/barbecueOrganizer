@@ -7,25 +7,27 @@ import { MainContext } from "../context/mainContext";
 
 
 export default function Pessoas() {
-    const {dados} = useContext(MainContext);
+    const {data} = useContext(MainContext);
 
-    console.log(dados);
+    let padrao = data.pessoas.padrao;
+    let veget = data.pessoas.vegetarianos;
+    let vega = data.pessoas.veganos;
 
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Quantas pessoas?</Text>
-                <Participantes tipoComida={["Homens", "Mulheres", "Crianças"]} />
+                <Participantes quantidade={[padrao.homens, padrao.mulheres, padrao.criancas]} tipoComida={["Homens", "Mulheres", "Crianças"]} />
                 <View style={styles.abrir}>
                     <Text>Há pessoas vegetarianas?</Text>
                     <SwitchButton />
                 </View> 
-                <Participantes tipoComida={["Homens Vegetarianos", "Mulheres Vegetarianas", "Crianças Vegetarianas"]} />
+                <Participantes quantidade={[veget.homens, veget.mulheres, veget.criancas]} tipoComida={["Homens Vegetarianos", "Mulheres Vegetarianas", "Crianças Vegetarianas"]} />
                 <View style={styles.abrir}>
                     <Text>Há pessoas veganas?</Text>
                     <SwitchButton />
                 </View>
-                <Participantes tipoComida={["Homens Veganos", "Mulheres Veganas", "Crianças Veganas"]} />
+                <Participantes quantidade={[vega.homens, vega.mulheres, vega.criancas]} tipoComida={["Homens Veganos", "Mulheres Veganas", "Crianças Veganas"]} />
             </ImageBackground>
         </View>
     );
