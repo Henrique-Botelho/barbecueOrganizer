@@ -1,11 +1,12 @@
-import React,  { useState } from "react";
+import React,  { useState, useContext } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
+import { MainContext } from "../context/mainContext";
 
 
 export default function Participantes(props) {
-    const [man, setMan] = useState(0);
-    const [woman, setWoman] = useState(0);
-    const [child, setChild] = useState(0);
+    const [man, setMan] = useState(props.quantidade[0]);
+    const [woman, setWoman] = useState(props.quantidade[1]);
+    const [child, setChild] = useState(props.quantidade[2]);
     const [control, setControl] = useState(true);
     
     return(
