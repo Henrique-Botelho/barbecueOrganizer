@@ -1,6 +1,5 @@
 import React from "react";
 import { useContext } from "react";
-import SwitchButton from "../components/switch";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import Participantes from "../components/Participantes";
 import { MainContext } from "../context/mainContext";

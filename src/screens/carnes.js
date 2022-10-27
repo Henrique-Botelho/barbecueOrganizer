@@ -4,26 +4,16 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, ScrollView, 
 import { MainContext } from "../context/mainContext";
 
 export default function Carnes(){
-    const {data} = useContext(MainContext);
+    const {pessoas} = useContext(MainContext);
+
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <View>
-                    <Text style={styles.textEstimativa}>Estimativa de Carne</Text>
-                    <Text style={styles.textTitulo}>Quantas pessoas? {data.pessoas.padrao.homens}</Text>
-                </View>
-                {/* <View>
-                    <ScrollView>
-                        <FlatList>
-                        </FlatList>
-                    </ScrollView> 
-                </View>
-                <View>
-                    <TouchableOpacity>
-                        Prosseguir
-                    </TouchableOpacity>
-                </View> */}
-                
+                    <Text style={styles.textEstimativa}>Quantidade de homens: {pessoas.homens}</Text>
+                    <Text style={styles.textEstimativa}>Quantidade de mulheres: {pessoas.mulheres}</Text>
+                    <Text style={styles.textEstimativa}>Quantidade de crianças: {pessoas.criancas}</Text>
+                </View>   
             </ImageBackground>
         </View>
     );

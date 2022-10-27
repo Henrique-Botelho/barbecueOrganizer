@@ -4,12 +4,13 @@ import { MainContext } from "../context/mainContext";
 
 
 export default function Participantes(props) {
-    const [man, setMan] = useState(props.quantidade[0]);
-    const [woman, setWoman] = useState(props.quantidade[1]);
-    const [child, setChild] = useState(props.quantidade[2]);
+    const {pessoas} = useContext(MainContext);
+
+    const [man, setMan] = useState(pessoas.homens);
+    const [woman, setWoman] = useState(pessoas.mulheres);
+    const [child, setChild] = useState(pessoas.criancas);
     const [control, setControl] = useState(true);
 
-    const {pessoas} = useContext(MainContext);
 
     pessoas.homens = man;
     pessoas.mulheres = woman;
