@@ -140,7 +140,7 @@
     "pessoas":{
         "total": 0,
         "padrao": {
-            "homens": 20,
+            "homens": 0,
             "mulheres": 0,
             "criancas": 0
         },
