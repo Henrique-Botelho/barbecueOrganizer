@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext } from "react";
 
 export const MainContext = createContext();
 
@@ -145,21 +145,9 @@ export default function AuthProvider({children}){
         },
         pessoas:{
             total: 0,
-            padrao: {
-                homens: 0,
-                mulheres: 0,
-                criancas: 0
-            },
-            vegetarianos: {
-                homens: 0,
-                mulheres: 0,
-                criancas: 0
-            },
-            veganos: {
-                homens: 0,
-                mulheres: 0,
-                criancas: 0
-            }
+            homens: 0,
+            mulheres: 0,
+            criancas: 0
         },
         totais: {
             carnes: 0,
@@ -177,11 +165,12 @@ export default function AuthProvider({children}){
                 custo: 0
             }
         } 
-
     }
 
+    let pessoas = data.pessoas;
+
     return(
-        <MainContext.Provider value={{data}}>
+        <MainContext.Provider value={{data, pessoas}}>
             {children}
         </MainContext.Provider>
     );

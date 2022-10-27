@@ -139,21 +139,9 @@
     },
     "pessoas":{
         "total": 0,
-        "padrao": {
-            "homens": 0,
-            "mulheres": 0,
-            "criancas": 0
-        },
-        "vegetarianos": {
-            "homens": 0,
-            "mulheres": 0,
-            "criancas": 0
-        },
-        "veganos": {
-            "homens": 0,
-            "mulheres": 0,
-            "criancas": 0
-        }
+        "homens": 0,
+        "mulheres": 0,
+        "criancas": 0
     },
     "totais": {
         "carnes": 0,

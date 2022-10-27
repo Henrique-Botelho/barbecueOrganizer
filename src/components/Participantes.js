@@ -8,11 +8,18 @@ export default function Participantes(props) {
     const [woman, setWoman] = useState(props.quantidade[1]);
     const [child, setChild] = useState(props.quantidade[2]);
     const [control, setControl] = useState(true);
+
+    const {pessoas} = useContext(MainContext);
+
+    pessoas.homens = man;
+    pessoas.mulheres = woman;
+    pessoas.criancas = child;
+    
     
     return(
         <View style={styles.view}>
             <View style={styles.item}>
-                <Text style={styles.text}>{props.tipoComida[0]}</Text>
+                <Text style={styles.text}>Homens</Text>
                 <View style={styles.numbers}>
                     <TouchableOpacity
                         disabled={control}
@@ -39,7 +46,7 @@ export default function Participantes(props) {
                 </View>
             </View>
             <View style={styles.item}>
-                <Text style={styles.text}>{props.tipoComida[1]}</Text>
+                <Text style={styles.text}>Mulheres</Text>
                 <View style={styles.numbers}>
                     <TouchableOpacity
                         disabled={control}
@@ -66,7 +73,7 @@ export default function Participantes(props) {
                 </View>
             </View>
             <View style={styles.item}>
-                <Text style={styles.text}>{props.tipoComida[2]}</Text>
+                <Text style={styles.text}>Crianças</Text>
                 <View style={styles.numbers}>
                     <TouchableOpacity
                         disabled={control}

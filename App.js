@@ -5,7 +5,6 @@ import AuthProvider from "./src/context/mainContext";
 
 import Home from "./src/screens/home";
 import Pessoas from "./src/screens/pessoas";
-import CalculaCarne from "./src/screens/CalculaCarnes";
 
 const Stack = createStackNavigator();
 
@@ -46,20 +45,6 @@ export default function App() {
                 fontSize: 25
               }
             }} />
-            <Stack.Screen
-            name="calculaCarnes"
-            component={CalculaCarne}
-            options={{
-              title: 'Barbecue Organizer',
-              headerStyle: {
-                backgroundColor: '#b43434',
-              },
-              headerTitleAlign: "center",
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontSize: 25
-              }
-            }}/>
         </Stack.Navigator>
       </AuthProvider>
     </NavigationContainer>
