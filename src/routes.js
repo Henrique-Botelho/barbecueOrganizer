@@ -5,12 +5,12 @@ import AuthProvider from "./context/mainContext";
 
 import Home from "./pages/Home";
 import Pessoas from "./pages/pessoas";
-import Carnes from "./pages/carnes";
+import Carnes from "./pages/CarneBovina";
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
-  return (
+  return ( 
     <NavigationContainer>
       <AuthProvider>
         <Stack.Navigator initialRouteName="home">

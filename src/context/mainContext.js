@@ -4,9 +4,7 @@ export const MainContext = createContext();
 
 export default function AuthProvider({children}){
 
-    let [man, setMan] = useState(0);
-    let [woman, setWoman] = useState(0);
-    let [child, setChild] = useState(0);
+    // Dados
 
     let data = {
         total: 0,
@@ -122,9 +120,9 @@ export default function AuthProvider({children}){
         },
         pessoas:{
             total: 0,
-            homens: man,
-            mulheres: woman,
-            criancas: child
+            homens: 0,
+            mulheres: 0,
+            criancas: 0
         },
         evento: {
             organizador: {
@@ -139,15 +137,19 @@ export default function AuthProvider({children}){
         } 
     }
 
+    let pessoas = data.pessoas;
+
+    // Funções
+
     const contaPessoas = () => {
         data.pessoas.total = pessoas.homens + pessoas.mulheres + pessoas.criancas;
         data.total = (pessoas.homens * 0.6) + (pessoas.mulheres * 0.4) + (pessoas.criancas * 0.25);
     }
 
-    let pessoas = data.pessoas;
+    // Response
 
-    let response = {data, pessoas, man, setMan, woman, setWoman, child, setChild, contaPessoas}
-
+    let response = {data, pessoas, contaPessoas}
+    
     return(
         <MainContext.Provider value={response}>
             {children}
