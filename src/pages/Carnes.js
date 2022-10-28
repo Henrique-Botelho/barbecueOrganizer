@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, ScrollView, FlatList, TextInput} from "react-native-web";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function Carnes(){
