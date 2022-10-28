@@ -5,18 +5,21 @@ import { MainContext } from "../context/mainContext";
 
 export default function Participantes(props) {
 
-    const { pessoas } = useContext(MainContext);
+    const { pessoas, data } = useContext(MainContext);
 
     const [man, setMan] = useState(pessoas.homens);
-    const [woman, setWoman] = useState(props.pessoas[1]);
-    const [child, setChild] = useState(props.pessoas[2]);
+    const [woman, setWoman] = useState(pessoas.mulheres);
+    const [child, setChild] = useState(pessoas.criancas);
     const [control, setControl] = useState(true);
 
+    
     pessoas.homens = man;
     pessoas.mulheres = woman;
     pessoas.criancas = child;
     pessoas.total = pessoas.homens + pessoas.mulheres + pessoas.criancas;
     data.total = (pessoas.homens * 0.6) + (pessoas.mulheres * 0.4) + (pessoas.criancas * 0.25);
+    
+    props.getData(pessoas.total);
     
     return(
         <View style={styles.view}>
@@ -41,7 +44,7 @@ export default function Participantes(props) {
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setValores(man + 1);
+                            setMan(man + 1);
                             if (man > 0){
                                 setControl(false);
                             }
@@ -58,7 +61,7 @@ export default function Participantes(props) {
                         disabled={control}
                         style={styles.controls}
                         onPress={() => {
-                            setValores(woman - 1)
+                            setWoman(woman - 1);
                             if (woman == 1){
                                 setControl(true);
                             }
@@ -72,7 +75,7 @@ export default function Participantes(props) {
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setValores(woman + 1);
+                            setWoman(woman + 1);
                             if (woman > 0){
                                 setControl(false);
                             }

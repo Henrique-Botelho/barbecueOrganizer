@@ -7,119 +7,139 @@ export default function AuthProvider({children}){
     let data = {
         total: 0,
         comidas: {
-            carneBovina: [
+            "Carne Bovina": [
                 {
-                    nome: "fraldinha",
+                    nome: "Fraldinha",
                     quantidade: 0,
                     preco: 0
                 },
                 {
-                    nome: "contraFile",
+                    nome: "Contra Filé",
                     quantidade: 0,
                     preco: 0
                 },
                 {
-                    nome: "maminha",
+                    nome: "Maminha",
                     quantidade: 0,
                     preco: 0
                 }
             ],
             carneSuina: [
                 {
-                    nome: "picanha",
+                    nome: "Picanha",
                     quantidade: 0,
                     preco: 0
                 },
-                linguica: {
+                {
+                    nome: "Linguiça",
                     quantidade: 0,
                     preco: 0
                 },
-                paleta: {
+                {
+                    nome: "Paleta",
                     quantidade: 0,
                     preco: 0
                 }
             ],
-            frango: {
-                coxa: {
+            frango: [
+                {
+                    nome: "Coxa",
                     quantidade: 0,
                     preco: 0
                 },
-                coracao: {
+                {
+                    nome: "Coração",
                     quantidade: 0,
                     preco: 0
                 },
-                asa: {
+                {
+                    nome: "Asa",
                     quantidade: 0,
                     preco: 0
                 }
-            },
-            bebidas: {
-                refrigerante: {
+            ],
+            bebidas: [
+                {
+                    nome: "Refrigerante",
                     quantidade: 0,
                     preco: 0
                 },
-                suco: {
+                {
+                    nome: "Suco",
                     quantidade: 0,
                     preco: 0
                 },
-                agua: {
+                {
+                    nome: "Água",
                     quantidade: 0,
                     preco: 0
                 },
-                chaGelado: {
+                {
+                    nome: "Chá Gelado",
                     quantidade: 0,
                     preco: 0
                 },
-                cerveja: {
+                {
+                    nome: "Cerveja",
                     quantidade: 0,
                     preco: 0
                 }
-            },
-            acompanhamentos: {
-                paoAlho: {
+            ],
+            acompanhamentos: [
+                {
+                    nome: "Pão de Alho",
                     quantidade: 0,
                     preco: 0
                 },
-                queijo: {
+                {
+                    nome: "Queijo",
                     quantidade: 0,
                     preco: 0
                 },
-                farofa: {
+                {
+                    nome: "Farofa",
                     quantidade: 0,
                     preco: 0
                 },
-                pao: {
+                {
+                    nome: "Pão",
                     quantidade: 0,
                     preco: 0
                 },
-                arroz: {
+                {
+                    nome: "Arroz",
                     quantidade: 0,
                     preco: 0
                 },
-                maionese: {
+                {
+                    nome: "Maionese",
                     quantidade: 0,
                     preco: 0
                 }
-            }
+            ]
         },
-        extras: {
-            sal: {
+        extras: [
+            {
+                nome: "Sal",
                 quantidade: 0,
                 preco: 0
             },
-            carvao: {
+            {
+                nome: "Carvão",
                 quantidade: 0,
                 preco: 0
             },
-            descartaveis: {
+            {
+                nome: "Descartáveis",
                 quantidade: 0,
                 preco: 0
             },
-            fosforoAcendedor: {
+            {
+                nome: "Fósforo/Acendedor",
                 quantidade: 0,
                 preco: 0
             }
-        },
+        ],
         pessoas:{
             total: 0,
             homens: 0,

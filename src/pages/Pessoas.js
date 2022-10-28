@@ -1,20 +1,25 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import Participantes from "../components/Participantes";
-import { MainContext } from "../context/mainContext";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { MainContext } from "../context/mainContext";
 
 
 export default function Pessoas(props) {
+    const getdata = (value) => {
+        return value;
+    }
+    const {pessoas} = useContext(MainContext);
+
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Quantas pessoas?</Text>
-                <Participantes />
+                <Participantes total={getdata} />
                 <TouchableOpacity
                     onPress={() => props.navigation.navigate("carnes")}>
-                    Prosseguir
+                    <Text>{pessoas.total}</Text>
+                    <Text>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>
         </View>
