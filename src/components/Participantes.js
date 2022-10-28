@@ -5,9 +5,9 @@ import { MainContext } from "../context/mainContext";
 
 export default function Participantes(props) {
 
-    const {pessoas, data} = useContext(MainContext);
+    const { pessoas } = useContext(MainContext);
 
-    const [man, setMan] = useState(props.pessoas[0]);
+    const [man, setMan] = useState(pessoas.homens);
     const [woman, setWoman] = useState(props.pessoas[1]);
     const [child, setChild] = useState(props.pessoas[2]);
     const [control, setControl] = useState(true);

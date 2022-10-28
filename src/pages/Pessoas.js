@@ -7,13 +7,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 export default function Pessoas(props) {
-    const {pessoas, data} = useContext(MainContext);
-
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Quantas pessoas?</Text>
-                <Participantes pessoas={[pessoas.homens,pessoas.mulheres, pessoas.criancas]} />
+                <Participantes />
                 <TouchableOpacity
                     onPress={() => props.navigation.navigate("carnes")}>
                     Prosseguir

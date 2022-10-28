@@ -7,22 +7,26 @@ export default function AuthProvider({children}){
     let data = {
         total: 0,
         comidas: {
-            carneBovina: {
-                fraldinha: {
+            carneBovina: [
+                {
+                    nome: "fraldinha",
                     quantidade: 0,
                     preco: 0
                 },
-                contraFile: {
+                {
+                    nome: "contraFile",
                     quantidade: 0,
                     preco: 0
                 },
-                maminha: {
+                {
+                    nome: "maminha",
                     quantidade: 0,
                     preco: 0
                 }
-            },
-            carneSuina: {
-                picanha: {
+            ],
+            carneSuina: [
+                {
+                    nome: "picanha",
                     quantidade: 0,
                     preco: 0
                 },
@@ -34,7 +38,7 @@ export default function AuthProvider({children}){
                     quantidade: 0,
                     preco: 0
                 }
-            },
+            ],
             frango: {
                 coxa: {
                     quantidade: 0,
