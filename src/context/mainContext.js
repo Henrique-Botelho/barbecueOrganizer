@@ -1,150 +1,130 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const MainContext = createContext();
 
 export default function AuthProvider({children}){
 
+    let [man, setMan] = useState(0);
+    let [woman, setWoman] = useState(0);
+    let [child, setChild] = useState(0);
+
     let data = {
         total: 0,
         comidas: {
-            "Carne Bovina": [
-                {
-                    nome: "Fraldinha",
+            carneBovina: {
+                fraldinha: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Contra Filé",
+                contraFile: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Maminha",
+                maminha: {
                     quantidade: 0,
                     preco: 0
                 }
-            ],
-            carneSuina: [
-                {
-                    nome: "Picanha",
+            },
+            carneSuina: {
+                picanha: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Linguiça",
+                linguica: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Paleta",
+                paleta: {
                     quantidade: 0,
                     preco: 0
                 }
-            ],
-            frango: [
-                {
-                    nome: "Coxa",
+            },
+            frango: {
+                coxa: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Coração",
+                coracao: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Asa",
+                asa: {
                     quantidade: 0,
                     preco: 0
                 }
-            ],
-            bebidas: [
-                {
-                    nome: "Refrigerante",
+            },
+            bebidas: {
+                refrigerante: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Suco",
+                suco: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Água",
+                agua: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Chá Gelado",
+                chaGelado: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Cerveja",
+                cerveja: {
                     quantidade: 0,
                     preco: 0
                 }
-            ],
-            acompanhamentos: [
-                {
-                    nome: "Pão de Alho",
+            },
+            acompanhamentos: {
+                paoDeAlho: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Queijo",
+                queijo: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Farofa",
+                farofa: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Pão",
+                pao: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Arroz",
+                arroz: {
                     quantidade: 0,
                     preco: 0
                 },
-                {
-                    nome: "Maionese",
+                maionese: {
                     quantidade: 0,
                     preco: 0
                 }
-            ]
+            }
         },
-        extras: [
-            {
-                nome: "Sal",
+        extras: {
+            sal: {
                 quantidade: 0,
                 preco: 0
             },
-            {
-                nome: "Carvão",
+            carvao: {
                 quantidade: 0,
                 preco: 0
             },
-            {
-                nome: "Descartáveis",
+            descartaveis: {
                 quantidade: 0,
                 preco: 0
             },
-            {
-                nome: "Fósforo/Acendedor",
+            fosforoAcendedor: {
                 quantidade: 0,
                 preco: 0
             }
-        ],
+        },
         pessoas:{
             total: 0,
-            homens: 0,
-            mulheres: 0,
-            criancas: 0
+            homens: man,
+            mulheres: woman,
+            criancas: child
         },
         evento: {
             organizador: {
@@ -159,10 +139,17 @@ export default function AuthProvider({children}){
         } 
     }
 
+    const contaPessoas = () => {
+        data.pessoas.total = pessoas.homens + pessoas.mulheres + pessoas.criancas;
+        data.total = (pessoas.homens * 0.6) + (pessoas.mulheres * 0.4) + (pessoas.criancas * 0.25);
+    }
+
     let pessoas = data.pessoas;
 
+    let response = {data, pessoas, man, setMan, woman, setWoman, child, setChild, contaPessoas}
+
     return(
-        <MainContext.Provider value={{data, pessoas}}>
+        <MainContext.Provider value={response}>
             {children}
         </MainContext.Provider>
     );
