@@ -5,6 +5,7 @@ export const MainContext = createContext();
 export default function AuthProvider({children}){
 
     let data = {
+        total: 0,
         comidas: {
             carneBovina: {
                 fraldinha: {
@@ -44,34 +45,6 @@ export default function AuthProvider({children}){
                     preco: 0
                 },
                 asa: {
-                    quantidade: 0,
-                    preco: 0
-                }
-            },
-            vegetariano: {
-                vegetaisEmEspeto: {
-                    quantidade: 0,
-                    preco: 0
-                },
-                hamburguerVegetariano: {
-                    quantidade: 0,
-                    preco: 0
-                },
-                cogumelosTemperados: {
-                    quantidade: 0,
-                    preco: 0
-                }
-            },
-            vegano: {
-                espetinhoVegano: {
-                    quantidade: 0,
-                    preco: 0
-                },
-                hamburguerGrelhado: {
-                    quantidade: 0,
-                    preco: 0
-                },
-                polentaBrasa: {
                     quantidade: 0,
                     preco: 0
                 }
@@ -148,11 +121,6 @@ export default function AuthProvider({children}){
             homens: 0,
             mulheres: 0,
             criancas: 0
-        },
-        totais: {
-            carnes: 0,
-            vegetariano: 0,
-            vegano: 0
         },
         evento: {
             organizador: {

@@ -4,18 +4,19 @@ import { MainContext } from "../context/mainContext";
 
 
 export default function Participantes(props) {
-    const {pessoas} = useContext(MainContext);
 
-    const [man, setMan] = useState(pessoas.homens);
-    const [woman, setWoman] = useState(pessoas.mulheres);
-    const [child, setChild] = useState(pessoas.criancas);
+    const {pessoas, data} = useContext(MainContext);
+
+    const [man, setMan] = useState(props.pessoas[0]);
+    const [woman, setWoman] = useState(props.pessoas[1]);
+    const [child, setChild] = useState(props.pessoas[2]);
     const [control, setControl] = useState(true);
-
 
     pessoas.homens = man;
     pessoas.mulheres = woman;
     pessoas.criancas = child;
-    
+    pessoas.total = pessoas.homens + pessoas.mulheres + pessoas.criancas;
+    data.total = (pessoas.homens * 0.6) + (pessoas.mulheres * 0.4) + (pessoas.criancas * 0.25);
     
     return(
         <View style={styles.view}>
@@ -31,19 +32,23 @@ export default function Participantes(props) {
                                 setControl(true);
                             }
                         }}
-                    >-</TouchableOpacity>
+                    >
+                        <Text style={styles.controls}>-</Text>
+                    </TouchableOpacity>
 
                     <Text style={styles.value}>{man}</Text>
 
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setMan(man + 1);
+                            setValores(man + 1);
                             if (man > 0){
                                 setControl(false);
                             }
                         }}
-                    >+</TouchableOpacity>
+                    >
+                        <Text style={styles.controls}>+</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.item}>
@@ -53,24 +58,28 @@ export default function Participantes(props) {
                         disabled={control}
                         style={styles.controls}
                         onPress={() => {
-                            setWoman(woman - 1)
+                            setValores(woman - 1)
                             if (woman == 1){
                                 setControl(true);
                             }
                         }}
-                    >-</TouchableOpacity>
+                    >
+                        <Text style={styles.controls}>-</Text>
+                    </TouchableOpacity>
 
                     <Text style={styles.value}>{woman}</Text>
 
                     <TouchableOpacity
                         style={styles.controls}
                         onPress={() => {
-                            setWoman(woman + 1);
+                            setValores(woman + 1);
                             if (woman > 0){
                                 setControl(false);
                             }
                         }}
-                    >+</TouchableOpacity>
+                    >
+                        <Text style={styles.controls}>+</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.item}>
@@ -85,19 +94,22 @@ export default function Participantes(props) {
                                 setControl(true);
                             }
                         }}
-                    >-</TouchableOpacity>
+                    >
+                        <Text style={styles.controls}>-</Text>
+                    </TouchableOpacity>
 
                     <Text style={styles.value}>{child}</Text>
 
                     <TouchableOpacity
-                        style={styles.controls}
                         onPress={() => {
                             setChild(child + 1);
                             if (child > 0){
                                 setControl(false);
                             }
                         }}
-                    >+</TouchableOpacity>
+                    >
+                        <Text style={styles.controls}>+</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
