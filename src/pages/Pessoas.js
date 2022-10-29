@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function Pessoas(props) {
-    const { contaPessoas } = useContext(MainContext);
+    const { data, contaPessoas } = useContext(MainContext);
 
-    let [man, setMan] = useState(0);
-    let [woman, setWoman] = useState(0);
-    let [child, setChild] = useState(0);
+    const [man, setMan] = useState(0);
+    const [woman, setWoman] = useState(0);
+    const [child, setChild] = useState(0);
     const [control ,setControl] = useState(false);
+
+    data.pessoas.homens = man;
+    data.pessoas.mulheres = woman;
+    data.pessoas.mulheres = child;
 
     return(
         <View style={styles.view}>
