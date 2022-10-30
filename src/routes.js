@@ -5,7 +5,7 @@ import AuthProvider from "./context/mainContext";
 
 import Home from "./pages/Home";
 import Pessoas from "./pages/pessoas";
-import Carnes from "./pages/CarneBovina";
+import Assados from "./pages/Assados";
 
 const Stack = createStackNavigator();
 
@@ -17,7 +17,7 @@ export default function Routes() {
 
           <Stack.Screen name="home" component={Home} options={configHeader} />
           <Stack.Screen name="pessoas"component={Pessoas} options={configHeader} />
-          <Stack.Screen name="carnes"component={Carnes} options={configHeader} />
+          <Stack.Screen name="assados"component={Assados} options={configHeader} />
 
         </Stack.Navigator>
       </AuthProvider>

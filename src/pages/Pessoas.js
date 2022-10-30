@@ -1,18 +1,12 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
-import { MainContext } from "../context/mainContext";
 
 export default function Pessoas(props) {
-    const { data, contaPessoas } = useContext(MainContext);
 
     const [man, setMan] = useState(0);
     const [woman, setWoman] = useState(0);
     const [child, setChild] = useState(0);
-    const [control ,setControl] = useState(false);
-
-    data.pessoas.homens = man;
-    data.pessoas.mulheres = woman;
-    data.pessoas.mulheres = child;
+    const [control ,setControl] = useState(true   );
 
     return(
         <View style={styles.view}>
@@ -63,7 +57,7 @@ export default function Pessoas(props) {
                 </View>
 
                 <TouchableOpacity
-                    onPress={() => {contaPessoas(); props.navigation.navigate("carnes")}} style={styles.next}>
+                    onPress={() => {props.navigation.navigate("assados")}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>
@@ -124,4 +118,4 @@ const styles = StyleSheet.create({
     textNext: {
         fontSize: 20        
     }
-  })
+})
