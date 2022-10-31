@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
+import { MainContext } from "../context/mainContext";
 
 export default function Assados() {
+
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Escolha seus Assados</Text>
-
+                
                 <TouchableOpacity
-                    onPress={() => {contaPessoas(); props.navigation.navigate("carnes")}} style={styles.next}>
+                    onPress={() => {}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>
@@ -68,5 +70,9 @@ const styles = StyleSheet.create({
     },
     textNext: {
         fontSize: 20        
+    },
+    texto: {
+        backgroundColor: "#fff",
+        fontSize: 20
     }
 })
