@@ -3,18 +3,18 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react
 import { MainContext } from "../context/mainContext";
 import Section from "../components/Section";
 
-export default function Assados(props) {
+export default function Acompanhamentos(props) {
+    const {data} = useContext(MainContext);
+
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                <Text style={styles.textTitulo}>Escolha seus Assados</Text>
+                <Text style={styles.textTitulo}>Acompanhamentos</Text>
                 
-                <Section tipo="Carne Bovina" />
-                <Section tipo="Carne Suina" />
-                <Section tipo="Frango" />
-
+                <Section tipo="Acompanhamentos" />
+                
                 <TouchableOpacity
-                    onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>
+                    onPress={() => {}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>

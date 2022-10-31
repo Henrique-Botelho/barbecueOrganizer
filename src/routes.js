@@ -6,6 +6,8 @@ import AuthProvider from "./context/mainContext";
 import Home from "./pages/Home";
 import Pessoas from "./pages/pessoas";
 import Assados from "./pages/Assados";
+import Bebidas from "./pages/Bebidas";
+import Acompanhamentos from "./pages/Acompanhamentos";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +20,8 @@ export default function Routes() {
           <Stack.Screen name="home" component={Home} options={configHeader} />
           <Stack.Screen name="pessoas"component={Pessoas} options={configHeader} />
           <Stack.Screen name="assados"component={Assados} options={configHeader} />
+          <Stack.Screen name="bebidas"component={Bebidas} options={configHeader} />
+          <Stack.Screen name="acompanhamentos"component={Acompanhamentos} options={configHeader} />
 
         </Stack.Navigator>
       </AuthProvider>
