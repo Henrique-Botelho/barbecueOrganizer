@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import Participantes from "../components/Participantes";
 import { MainContext } from "../context/mainContext";
 
 export default function Pessoas(props) {
     const {data} = useContext(MainContext);
+    const [ninguem, setNinguem] = useState(false);
 
     return(
         <View style={styles.view}>
@@ -13,8 +14,9 @@ export default function Pessoas(props) {
                 <Participantes pessoa="Homens" />
                 <Participantes pessoa="Mulheres" />
                 <Participantes pessoa="Crianças" />
+                {ninguem ? <Text>Adicione uma pessoa</Text> : null}
                 <TouchableOpacity
-                    onPress={() => { if(data.pessoas.total == 0) {console.log("Nenhuma pessoa")} else{props.navigation.navigate("assados")}}} style={styles.next}>
+                    onPress={() => { if(data.pessoas.total == 0) {setNinguem(true)} else{setNinguem(false); props.navigation.navigate("assados")}}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>

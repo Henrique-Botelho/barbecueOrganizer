@@ -186,7 +186,6 @@ export default function AuthProvider({children}){
             "Sem Falta": [
                 {
                     nome: "Carvão",
-                    status: false,
                     preco: 25.00,
                     unidade: "Pacote 2kg",
                     quantidade: 0,
@@ -194,7 +193,6 @@ export default function AuthProvider({children}){
                 },
                 {
                     nome: "Acendedor/Fósforo",
-                    status: false,
                     preco: 10.00,
                     unidade: "Pacote",
                     quantidade: 0,
@@ -202,7 +200,6 @@ export default function AuthProvider({children}){
                 },
                 {
                     nome: "Sal",
-                    status: false,
                     preco: 5.00,
                     unidade: "kg",
                     quantidade: 0,
@@ -210,7 +207,6 @@ export default function AuthProvider({children}){
                 },
                 {
                     nome: "Descartáveis",
-                    status: false,
                     preco: 20.00,
                     unidade: "Kit com 10 unidades",
                     quantidade: 0,
