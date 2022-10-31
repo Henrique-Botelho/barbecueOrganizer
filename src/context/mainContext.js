@@ -43,13 +43,20 @@ export default function AuthProvider({children}){
         }
     }
 
+
     const somaPessoas = () => {
         data.pessoas.total = data.pessoas.homens + data.pessoas.mulheres + data.pessoas.criancas;
     }
 
+
+    const response = {
+        data, 
+        adicionaPessoas, 
+        somaPessoas
+    };
     
     return(
-        <MainContext.Provider value={{data, adicionaPessoas, somaPessoas}}>
+        <MainContext.Provider value={response}>
             {children}
         </MainContext.Provider>
     );
