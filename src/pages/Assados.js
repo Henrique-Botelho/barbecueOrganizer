@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
+import Section from "../components/Section";
+import Item from "../components/Item";
 
 export default function Assados() {
 
@@ -9,6 +11,8 @@ export default function Assados() {
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Escolha seus Assados</Text>
                 
+                <Item />
+
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
