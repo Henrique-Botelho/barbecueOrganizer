@@ -1,11 +1,6 @@
 import React, { useContext, useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { MainContext } from "../context/mainContext";
-<<<<<<< HEAD
-import { processFontFamily } from "expo-font";
-import { transform } from "@babel/core";
-=======
->>>>>>> parent of 23ebfeb (Estilização)
 
 export default function Participantes (props) {
     const {adicionaPessoas, somaPessoas} = useContext(MainContext);
