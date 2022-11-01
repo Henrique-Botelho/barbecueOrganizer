@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AuthProvider from "./context/mainContext";
 
 import Home from "./pages/Home";
-import Pessoas from "./pages/pessoas";
+import Pessoas from "./pages/Pessoas";
 import Assados from "./pages/Assados";
 import Bebidas from "./pages/Bebidas";
 import Acompanhamentos from "./pages/Acompanhamentos";
