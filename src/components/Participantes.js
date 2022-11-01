@@ -13,7 +13,7 @@ export default function Participantes (props) {
         <View>
             <Text>{props.pessoa}</Text>
             <View>
-                <TouchableOpacity onPress={() => {if (quantidade == 0) {setQuantidade(quantidade)} else {setQuantidade(quantidade - 1)};}}>
+                <TouchableOpacity onPress={() => {if (quantidade == 0) {setQuantidade(quantidade)} else {setQuantidade(quantidade - 1)}}}>
                     <Text>-</Text>
                 </TouchableOpacity>
                 <Text>{quantidade}</Text>

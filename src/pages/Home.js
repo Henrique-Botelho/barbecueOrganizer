@@ -29,10 +29,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-evenly"
     },
-    meat:{
-        width: 200,
-        height: 200
-    },
     btn:{
         backgroundColor: "#FFCE51",
         borderRadius: 10,
