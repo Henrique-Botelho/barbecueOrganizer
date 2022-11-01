@@ -256,7 +256,7 @@ export default function AuthProvider({children}){
 
 
     const response = {
-        data, 
+        data,
         adicionaPessoas, 
         somaPessoas,
         setItem,

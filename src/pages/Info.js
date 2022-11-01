@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function Info(props) {
@@ -17,7 +17,11 @@ export default function Info(props) {
                 <Text style={styles.textTitulo}>Informações</Text>
                 <Text>Evento</Text>
                 <View>
-                    <Text>Nome do Organizador:{}</Text>
+                    <Text>Nome do Organizador:
+                        <TextInput
+                            
+                        />
+                    </Text>
                     <Text>Telefone de Contato:{}</Text>
                     
                 </View>
