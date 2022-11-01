@@ -15,7 +15,7 @@ export default function Info(props) {
                     <Text>Telefone de Contato:</Text>
                     
                 </View>
-                <Text>Local                 </Text>
+                <Text>Local</Text>
                 <View>
                     
                 </View>
