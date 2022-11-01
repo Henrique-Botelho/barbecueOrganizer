@@ -11,11 +11,9 @@ export default function Pessoas(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Quantas pessoas?</Text>
-
                 <Participantes pessoa="Homens" />
                 <Participantes pessoa="Mulheres" />
                 <Participantes pessoa="Crianças" />
-                
                 {ninguem ? <Text>Adicione uma pessoa</Text> : null}
                 <TouchableOpacity
                     onPress={() => { if(data.pessoas.total == 0) {setNinguem(true)} else{setNinguem(false); props.navigation.navigate("assados")}}} style={styles.next}>
