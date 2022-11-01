@@ -4,6 +4,7 @@ import { MainContext } from "../context/mainContext";
 
 export default function Info(props) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const {data, setInfo} = useContext(MainContext);
 
     const [name, setName] = useState(data.info.evento.nomeOrganizador);
@@ -14,10 +15,13 @@ export default function Info(props) {
 
 =======
 >>>>>>> parent of c0cad2a (Update Fluxos)
+=======
+>>>>>>> parent of c0cad2a (Update Fluxos)
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Informações</Text>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <Text>Evento</Text>
                 <View>
@@ -31,6 +35,8 @@ export default function Info(props) {
                     <Text>CEP: {}</Text>
                     <Text>Custo: {}</Text>
                 </View>
+=======
+>>>>>>> parent of c0cad2a (Update Fluxos)
 =======
 >>>>>>> parent of c0cad2a (Update Fluxos)
                                 
