@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { MainContext } from "../context/mainContext";
-import { StyleSheet } from "react-native";
 import { processFontFamily } from "expo-font";
 import { transform } from "@babel/core";
+
 export default function Participantes (props) {
     const {adicionaPessoas, somaPessoas} = useContext(MainContext);
     const [quantidade, setQuantidade] = useState(0);
