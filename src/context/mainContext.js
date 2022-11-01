@@ -225,7 +225,7 @@ export default function AuthProvider({children}){
             data.pessoas.criancas = quantidade
         }
     }
-
+                                   
     const somaPessoas = () => {
         data.pessoas.total = data.pessoas.homens + data.pessoas.mulheres + data.pessoas.criancas;
     }

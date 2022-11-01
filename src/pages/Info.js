@@ -3,10 +3,22 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react
 import { MainContext } from "../context/mainContext";
 
 export default function Info(props) {
+    const {} = useContext(MainContext);
+
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Informações</Text>
+                <Text>Evento</Text>
+                <View>
+                    <Text>Nome do Organizador:</Text>
+                    <Text>Telefone de Contato:</Text>
+                    
+                </View>
+                <Text>Local                 </Text>
+                <View>
+                    
+                </View>
                                 
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
