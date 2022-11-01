@@ -3,7 +3,13 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react
 import { MainContext } from "../context/mainContext";
 
 export default function Info(props) {
-    const {} = useContext(MainContext);
+    const {data, setInfo} = useContext(MainContext);
+
+    const [name, setName] = useState(data.info.evento.nomeOrganizador);
+    const [tel, setTel] = useState(data.info.evento.telefone);
+    const [ender, setEnder] = useState(data.info.local.endereco);
+    const [CEP, setCEP] = useState(data.info.local.cep);
+    const [price, setPrice] = useState(data.info.local.custo);
 
     return(
         <View style={styles.view}>
@@ -11,13 +17,15 @@ export default function Info(props) {
                 <Text style={styles.textTitulo}>Informações</Text>
                 <Text>Evento</Text>
                 <View>
-                    <Text>Nome do Organizador:</Text>
-                    <Text>Telefone de Contato:</Text>
+                    <Text>Nome do Organizador:{}</Text>
+                    <Text>Telefone de Contato:{}</Text>
                     
                 </View>
                 <Text>Local</Text>
                 <View>
-                    
+                    <Text>Endereço: {}</Text>
+                    <Text>CEP: {}</Text>
+                    <Text>Custo: {}</Text>
                 </View>
                                 
                 <TouchableOpacity

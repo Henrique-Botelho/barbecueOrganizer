@@ -213,6 +213,17 @@ export default function AuthProvider({children}){
                     precoTotal: 0
                 }
             ]
+        },
+        info: {
+            evento: {
+                nomeOrganizador: "",
+                telefone: ""
+            },
+            local: {
+                endereco: "",
+                cep: "",
+                custo: 0,
+            }
         }
     }
 
@@ -235,12 +246,21 @@ export default function AuthProvider({children}){
     }
 
 
+    const setInfo = (nome, tel, endereco, cep, custo) => {
+        data.info.evento.nomeOrganizador = nome;
+        data.info.evento.telefone = tel;
+        data.info.local.endereco = endereco;
+        data.info.local.cep = cep;
+        data.info.local.custo = custo;
+    }
+
 
     const response = {
         data, 
         adicionaPessoas, 
         somaPessoas,
-        setItem
+        setItem,
+        setInfo
     };
     
     return(
