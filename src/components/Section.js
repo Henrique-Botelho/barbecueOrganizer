@@ -8,7 +8,7 @@ export default function Section(props) {
     let typeFood = data.comidas[props.tipo]
 
     return (
-        <View>
+        <View style={styles.view}>
             <Text style={styles.titulo}>{props.tipo}</Text>
             {typeFood.map((element, index) => {return <Item class={props.tipo} name={element.nome} position={index} />})}
         </View>
@@ -16,8 +16,15 @@ export default function Section(props) {
 }
 
 const styles = StyleSheet.create({
-    titulo: {
-        backgroundColor: "#fff",
-        fontSize: 20
-    }
+  titulo: {
+    fontSize: 20,
+    borderColor: "black",
+    borderWidth: 1,
+    letterSpacing: 2,
+    backgroundColor: "#FFCE51",
+    padding: 5,
+    borderRadius: 5,
+    textAlign: "center",
+    
+  },
 });

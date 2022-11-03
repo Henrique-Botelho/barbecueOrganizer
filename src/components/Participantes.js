@@ -25,7 +25,7 @@ export default function Participantes(props) {
         >
           <Text style={styles.botoes}>-</Text>
         </TouchableOpacity>
-        <Text style={styles.numero}>{quantidade}</Text>
+          <Text style={styles.numero}>{quantidade}</Text>
         <TouchableOpacity
           onPress={() => {
             setQuantidade(quantidade + 1);
@@ -39,33 +39,32 @@ export default function Participantes(props) {
 }
 
 const styles = StyleSheet.create({
-    botoes: {
-        fontSize: 25,
-    },
-    numero: {
-        fontSize: 22,
-    },
-    quantidade: {
-    borderWidth: 0.1,
-    borderColor: "black",
+  botoes: {
+    fontSize: 25,
+  },
+  numero: {
+    fontSize: 22,
+  },
+  quantidade: {
     flexDirection: "row",
     letterSpacing: 20,
     justifyContent: "center",
     backgroundColor: "#FFCE51",
-    borderRadius: 5,
     marginTop: 5,
     padding: 5,
     width: 120,
     marginLeft: "auto",
     marginRight: "auto",
     paddingLeft: 25,
+    borderWidth: 0.1,
+    borderColor: "black",
+    borderRadius: 5,
   },
   textgenero: {
     letterSpacing: 2,
     fontSize: 17,
   },
   genero: {
-
     justifyContent: "center",
     backgroundColor: "#FFCE51",
     borderRadius: 5,

@@ -9,9 +9,12 @@ export default function Assados(props) {
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Escolha seus Assados</Text>
                 
-                <Section tipo="Carne Bovina" />
-                <Section tipo="Carne Suina" />
-                <Section tipo="Frango" />
+
+                
+                    <Section tipo="Carne Bovina" />
+                    <Section tipo="Carne Suina" />
+                    <Section tipo="Frango" />
+                
 
                 <TouchableOpacity
                     onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>
@@ -23,28 +26,29 @@ export default function Assados(props) {
 }
 
 const styles = StyleSheet.create({
-    view: {
-        flex: 1
-    },
-    image:{
-      backgroundColor: "#000",
-      alignItems: 'center',
-      flex: 1,
-      justifyContent: "space-evenly"
-    },
-    textTitulo: {
-        backgroundColor: '#FFCE51',
-        color: '#b43434',
-        borderRadius: 10,
-        padding: 10,
-        fontSize: 25,
-    },
-    next: {
-        backgroundColor: "#FFCE51",
-        padding: 10,
-        borderRadius: 20
-    },
-    textNext: {
-        fontSize: 20        
-    }
-})
+  view: {
+    flex: 1,
+  },
+  image: {
+    backgroundColor: "#000",
+    alignItems: "center",
+    flex: 1,
+    justifyContent: "space-evenly",
+  },
+  textTitulo: {
+    backgroundColor: "#FFCE51",
+    color: "#b43434",
+    borderRadius: 10,
+    padding: 10,
+    fontSize: 25,
+  },
+  next: {
+    backgroundColor: "#FFCE51",
+    padding: 10,
+    borderRadius: 20,
+  },
+  textNext: {
+    fontSize: 20,
+  },
+
+});
