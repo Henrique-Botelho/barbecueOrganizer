@@ -54,7 +54,9 @@ export default function Info(props) {
                     />
                 </View>
                 <TouchableOpacity
-                    onPress={() => {}} style={styles.next}>
+                    onPress={() => {
+                        props.navigation.navigate("resultados")
+                    }} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>

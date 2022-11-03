@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import { MainContext } from "../context/mainContext";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import CheckBox from "@react-native-community/checkbox";
 
 export default function Item(props) {
     const {setItem, data} = useContext(MainContext);
@@ -49,7 +48,6 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     padding: 5,
     paddingRight: 20,
-    // flexDirection: "row",
   },
   check: {
     margin: 5,
