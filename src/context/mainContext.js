@@ -221,8 +221,7 @@ export default function AuthProvider({children}){
             },
             local: {
                 endereco: "",
-                cep: "",
-                custo: 0,
+                custo: 0
             }
         }
     }
@@ -246,11 +245,13 @@ export default function AuthProvider({children}){
     }
 
 
-    const setInfo = (nome, tel, endereco, cep, custo) => {
+    const setInfo = (nome, tel, endereco, custo) => {
         data.info.evento.nomeOrganizador = nome;
         data.info.evento.telefone = tel;
         data.info.local.endereco = endereco;
-        data.info.local.cep = cep;
+
+        if (custo)
+
         data.info.local.custo = custo;
     }
 

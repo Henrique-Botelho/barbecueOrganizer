@@ -8,8 +8,9 @@ export default function Info(props) {
     const [name, setName] = useState(data.info.evento.nomeOrganizador);
     const [tel, setTel] = useState(data.info.evento.telefone);
     const [ender, setEnder] = useState(data.info.local.endereco);
-    const [CEP, setCEP] = useState(data.info.local.cep);
     const [price, setPrice] = useState(data.info.local.custo);
+
+    setInfo(name, tel, ender, price);
 
     return(
         <View style={styles.view}>
@@ -19,17 +20,38 @@ export default function Info(props) {
                 <View>
                     <Text>Nome do Organizador:
                         <TextInput
-                            
+                            style={styles.inputs}
+                            onChangeText={setName}
+                            value={name}
                         />
                     </Text>
-                    <Text>Telefone de Contato:{}</Text>
+                    <Text>Telefone de Contato:
+                        <TextInput
+                            style={styles.inputs}
+                            onChangeText={setTel}
+                            value={tel}
+                            keyboardType="numeric"
+                        />                        
+                    </Text>
                     
                 </View>
                 <Text>Local</Text>
                 <View>
-                    <Text>Endereço: {}</Text>
-                    <Text>CEP: {}</Text>
-                    <Text>Custo: {}</Text>
+                    <Text>Endereço: 
+                        <TextInput
+                            style={styles.inputs}
+                            onChangeText={setEnder}
+                            value={ender}
+                        />
+                    </Text>
+                    <Text>Custo:
+                        <TextInput
+                            style={styles.inputs}
+                            onChangeText={setPrice}
+                            value={price}
+                            keyboardType="numeric"
+                        />
+                    </Text>
                 </View>
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
@@ -45,10 +67,10 @@ const styles = StyleSheet.create({
         flex: 1
     },
     image:{
-      backgroundColor: "#000",
-      alignItems: 'center',
-      flex: 1,
-      justifyContent: "space-evenly"
+        backgroundColor: "#000",
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: "space-evenly"
     },
     textTitulo: {
         backgroundColor: '#FFCE51',
@@ -64,5 +86,9 @@ const styles = StyleSheet.create({
     },
     textNext: {
         fontSize: 20        
+    },
+    inputs: {
+        borderColor: "#fff",
+        borderWidth: 3
     }
 })
