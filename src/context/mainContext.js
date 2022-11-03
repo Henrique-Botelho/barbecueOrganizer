@@ -238,7 +238,7 @@ export default function AuthProvider({children}){
     }
 
     const somaPessoas = () => {
-        data.pessoas.total = data.pessoas.homens + data.pessoas.mulheres + data.pessoas.criancas;
+        data.pessoas.total = data.pessoas["Homens"] + data.pessoas["Mulheres"] + data.pessoas["Crianças"];
     }
 
     const setItem = (classe, item, estado) => {
@@ -253,12 +253,16 @@ export default function AuthProvider({children}){
         data.info.local.custo = custo
     }
 
-    const adicionaItem = () => {
-        data.comidas.totalItensAssados += 1
+    const adicionaItem = (tipoAssado) => {
+        if (tipoAssado == "Carne Bovina" || tipoAssado == "Carne Suina" || tipoAssado == "Frango") {
+            data.comidas.totalItensAssados += 1
+        }
     }
     
-    const retiraItem = () => {
-        data.comidas.totalItensAssados -= 1
+    const retiraItem = (tipoAssado) => {
+        if (tipoAssado == "Carne Bovina" || tipoAssado == "Carne Suina" || tipoAssado == "Frango") {
+            data.comidas.totalItensAssados -= 1
+        }
     }
 
 

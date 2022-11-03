@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
-import { Directions } from "react-native-gesture-handler";
 import { MainContext } from "../context/mainContext";
 
 export default function Participantes(props) {

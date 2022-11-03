@@ -16,7 +16,16 @@ export default function Pessoas(props) {
                 <Participantes pessoa="Crianças" />
                 {ninguem ? <Text style={styles.alert}>Adicione uma pessoa</Text> : null}
                 <TouchableOpacity
-                    onPress={() => { if(data.pessoas.total == 0) {setNinguem(true)} else{setNinguem(false); props.navigation.navigate("assados")}}} style={styles.next}>
+                    onPress={() => { 
+                        if(data.pessoas.total == 0) {
+                            setNinguem(true)
+                        } else {
+                            setNinguem(false); 
+                            props.navigation.navigate("assados");
+                        }
+                    }}
+                    style={styles.next}
+                >
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>

@@ -30,9 +30,9 @@ export default function Item(props) {
           isChecked={checkBoxState}
           onPress={() => {
             if (checkBoxState == false) {
-                adicionaItem()
+                adicionaItem(props.class)
             } else if (checkBoxState == true) {
-                retiraItem()
+                retiraItem(props.class)
             };
             setCheckBoxState(!checkBoxState);
           }}

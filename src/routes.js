@@ -43,4 +43,4 @@ const configHeader = {
     headerTitleStyle: {
       fontSize: 25
     }
-  }
+}
