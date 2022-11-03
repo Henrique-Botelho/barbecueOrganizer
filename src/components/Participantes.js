@@ -4,8 +4,8 @@ import { Directions } from "react-native-gesture-handler";
 import { MainContext } from "../context/mainContext";
 
 export default function Participantes(props) {
-  const { adicionaPessoas, somaPessoas } = useContext(MainContext);
-  const [quantidade, setQuantidade] = useState(0);
+  const { data, adicionaPessoas, somaPessoas } = useContext(MainContext);
+  const [quantidade, setQuantidade] = useState(data.pessoas[props.pessoa]);
 
   adicionaPessoas(props.pessoa, quantidade);
   somaPessoas();

@@ -7,9 +7,9 @@ export default function AuthProvider({children}){
     let data = {
         pessoas: {
             total: 0,
-            homens: 0,
-            mulheres: 0,
-            criancas: 0
+            "Homens": 0,
+            "Mulheres": 0,
+            "Crianças": 0
         },
         comidas: {
             totalCarne: 0,
@@ -229,11 +229,11 @@ export default function AuthProvider({children}){
 
     const adicionaPessoas = (pessoa, quantidade) => {
         if (pessoa == "Homens") {
-            data.pessoas.homens = quantidade
+            data.pessoas[pessoa] = quantidade
         } else if (pessoa == "Mulheres") {
-            data.pessoas.mulheres = quantidade
+            data.pessoas[pessoa] = quantidade
         } else if (pessoa == "Crianças") {
-            data.pessoas.criancas = quantidade
+            data.pessoas[pessoa] = quantidade
         }
     }
 
