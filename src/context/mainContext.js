@@ -13,6 +13,7 @@ export default function AuthProvider({children}){
         },
         comidas: {
             totalCarne: 0,
+            totalItensAssados: 0,
             "Carne Bovina": [
                 {
                     nome: "Fraldinha",
@@ -242,6 +243,10 @@ export default function AuthProvider({children}){
 
     const setItem = (classe, item, estado) => {
         data.comidas[classe][item].status = estado;
+
+        if (classe == "Carne Bovina" || classe == "Carne Suina" || classe == "Frango") {
+            data.comidas.totalItensAssados += 1;
+        }
     }
 
 
