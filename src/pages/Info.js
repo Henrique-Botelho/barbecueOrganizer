@@ -19,39 +19,39 @@ export default function Info(props) {
                 <Text>Evento</Text>
                 <View>
                     <Text>Nome do Organizador:
-                        <TextInput
-                            style={styles.inputs}
-                            onChangeText={setName}
-                            value={name}
-                        />
                     </Text>
+                    <TextInput
+                        style={styles.inputs}
+                        onChangeText={setName}
+                        value={name}
+                    />
                     <Text>Telefone de Contato:
-                        <TextInput
-                            style={styles.inputs}
-                            onChangeText={setTel}
-                            value={tel}
-                            keyboardType="numeric"
-                        />                        
                     </Text>
+                    <TextInput
+                        style={styles.inputs}
+                        onChangeText={setTel}
+                        value={tel}
+                        keyboardType="numeric"
+                    />                        
                     
                 </View>
                 <Text>Local</Text>
                 <View>
                     <Text>Endereço: 
-                        <TextInput
-                            style={styles.inputs}
-                            onChangeText={setEnder}
-                            value={ender}
-                        />
                     </Text>
+                    <TextInput
+                        style={styles.inputs}
+                        onChangeText={setEnder}
+                        value={ender}
+                    />
                     <Text>Custo:
-                        <TextInput
-                            style={styles.inputs}
-                            onChangeText={setPrice}
-                            value={price}
-                            keyboardType="numeric"
-                        />
                     </Text>
+                    <TextInput
+                        style={styles.inputs}
+                        onChangeText={setPrice}
+                        value={price}
+                        keyboardType="numeric"
+                    />
                 </View>
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
