@@ -243,10 +243,6 @@ export default function AuthProvider({children}){
 
     const setItem = (classe, item, estado) => {
         data.comidas[classe][item].status = estado;
-
-        if (classe == "Carne Bovina" || classe == "Carne Suina" || classe == "Frango") {
-            data.comidas.totalItensAssados += 1;
-        }
     }
 
 
@@ -254,10 +250,15 @@ export default function AuthProvider({children}){
         data.info.evento.nomeOrganizador = nome;
         data.info.evento.telefone = tel;
         data.info.local.endereco = endereco;
+        data.info.local.custo = custo
+    }
 
-        if (custo)
-
-        data.info.local.custo = custo;
+    const adicionaItem = () => {
+        data.comidas.totalItensAssados += 1
+    }
+    
+    const retiraItem = () => {
+        data.comidas.totalItensAssados -= 1
     }
 
 
@@ -266,7 +267,9 @@ export default function AuthProvider({children}){
         adicionaPessoas, 
         somaPessoas,
         setItem,
-        setInfo
+        setInfo,
+        adicionaItem,
+        retiraItem
     };
     
     return(

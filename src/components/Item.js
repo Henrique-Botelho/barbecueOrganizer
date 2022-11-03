@@ -4,12 +4,12 @@ import { MainContext } from "../context/mainContext";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function Item(props) {
-    const {setItem, data} = useContext(MainContext);
+    const {setItem, data, adicionaItem, retiraItem} = useContext(MainContext);
     const [checkBoxState, setCheckBoxState] = useState(data.comidas[props.class][props.position].status);
     
     setItem(props.class, props.position, checkBoxState);
 
-    console.log(`${props.name}:`,data.comidas[props.class][props.position].status);
+    // console.log(`${props.name}:`,data.comidas[props.class][props.position].status);
 
     return (
       <TouchableOpacity
