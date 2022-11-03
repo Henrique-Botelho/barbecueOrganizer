@@ -16,7 +16,12 @@ export default function Item(props) {
       <TouchableOpacity
         style={styles.tudo}
         onPress={() => {
-          setCheckBoxState(!checkBoxState);
+            if (checkBoxState == false) {
+                adicionaItem()
+            } else if (checkBoxState == true) {
+                retiraItem()
+            };
+            setCheckBoxState(!checkBoxState)
         }}
       >
         <BouncyCheckbox
@@ -25,6 +30,11 @@ export default function Item(props) {
           disableBuiltInState={true}
           isChecked={checkBoxState}
           onPress={() => {
+            if (checkBoxState == false) {
+                adicionaItem()
+            } else if (checkBoxState == true) {
+                retiraItem()
+            };
             setCheckBoxState(!checkBoxState);
           }}
         />
