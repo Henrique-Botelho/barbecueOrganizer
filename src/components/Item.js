@@ -16,11 +16,11 @@ export default function Item(props) {
         style={styles.tudo}
         onPress={() => {
             if (checkBoxState == false) {
-                adicionaItem()
+                adicionaItem(props.class);
             } else if (checkBoxState == true) {
-                retiraItem()
+                retiraItem(props.class);
             };
-            setCheckBoxState(!checkBoxState)
+            setCheckBoxState(!checkBoxState);
         }}
       >
         <BouncyCheckbox

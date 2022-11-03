@@ -4,7 +4,7 @@ import { MainContext } from "../context/mainContext";
 // import MapView from "react-native-maps";
 
 export default function Info(props) {
-    const {data, setInfo} = useContext(MainContext);
+    const {data, setInfo, calculaChurrasco} = useContext(MainContext);
 
     const [name, setName] = useState(data.info.evento.nomeOrganizador);
     const [tel, setTel] = useState(data.info.evento.telefone);
@@ -59,7 +59,8 @@ export default function Info(props) {
                 </View>
                 <TouchableOpacity
                     onPress={() => {
-                        props.navigation.navigate("resultados")
+                        calculaChurrasco();
+                        props.navigation.navigate("resultados");
                     }} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>

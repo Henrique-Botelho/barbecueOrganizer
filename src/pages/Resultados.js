@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
 
+
 export default function Resultados(props) {
     const {data} = useContext(MainContext);
 
@@ -10,8 +11,13 @@ export default function Resultados(props) {
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Resultados</Text>
 
-                <Text style={styles.resultados}>{data.comidas.totalItensAssados}</Text>
+                <Text style={styles.resultados}>Total de Assados: {data.comidas.totalItensAssados}</Text>
+                <Text style={styles.resultados}>Total de quilos de carne: {data.comidas.totalCarne} kg</Text>
                 
+                {data.comidas["Carne Bovina"].forEach(element => {
+                    element.status ? <Text>Nome do item: {element.nome}</Text> : null
+                })}
+
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
