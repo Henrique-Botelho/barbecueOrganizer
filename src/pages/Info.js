@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { View, Text, TextInput, StyleSheet, ImageBackground, TouchableOpacity, Dimensions } from "react-native";
 import { MainContext } from "../context/mainContext";
+// import MapView from "react-native-maps";
 
 export default function Info(props) {
     const {data, setInfo} = useContext(MainContext);
@@ -36,6 +37,9 @@ export default function Info(props) {
                     
                 </View>
                 <Text>Local</Text>
+                {/* <MapView 
+                    style={styles.map}
+                /> */}
                 <View>
                     <Text>Endereço: 
                     </Text>
