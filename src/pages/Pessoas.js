@@ -14,7 +14,7 @@ export default function Pessoas(props) {
                 <Participantes pessoa="Homens" />
                 <Participantes pessoa="Mulheres" />
                 <Participantes pessoa="Crianças" />
-                {ninguem ? <Text>Adicione uma pessoa</Text> : null}
+                {ninguem ? <Text style={styles.alert}>Adicione uma pessoa</Text> : null}
                 <TouchableOpacity
                     onPress={() => { if(data.pessoas.total == 0) {setNinguem(true)} else{setNinguem(false); props.navigation.navigate("assados")}}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
@@ -25,6 +25,14 @@ export default function Pessoas(props) {
 }
 
 const styles = StyleSheet.create({
+    alert: {
+        backgroundColor: "#B43434",
+        color: "#fff",
+        borderRadius: 5,
+        letterSpacing: 2,
+        fontSize: 15,
+        padding: 5,
+    },
     view: {
         flex: 1
     },
