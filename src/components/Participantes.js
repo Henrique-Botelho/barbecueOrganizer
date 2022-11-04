@@ -40,13 +40,16 @@ export default function Participantes(props) {
 const styles = StyleSheet.create({
   btnMinus: {
     marginTop: 5,
-    width: 25,
-    height: 25
+    width: 35,
+    height: 30,
+    borderRadius: 5,
+    
   },
   btnPlus: {
     marginTop: 3,
-    width: 30,
-    height: 30
+    width: 40,
+    height: 35,
+    borderRadius: 5,
   },
   numero: {
     fontSize: 22,
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCE51",
     marginTop: 5,
     padding: 5,
-    width: 120,
+    width: 150,
     marginLeft: "auto",
     marginRight: "auto",
     // paddingLeft: 25,
@@ -80,6 +83,6 @@ const styles = StyleSheet.create({
     padding: 5,
     margim: 80,
     textAlign: "center",
-    width: 200,
+    width: 220,
   },
 });
