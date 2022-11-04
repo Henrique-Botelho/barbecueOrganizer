@@ -40,13 +40,15 @@ export default function Participantes(props) {
 const styles = StyleSheet.create({
   botoes: {
     fontSize: 25,
+    marginRight: 10,
   },
   numero: {
     fontSize: 22,
+    marginRight: 15,
+    marginLeft: 10,
   },
   quantidade: {
     flexDirection: "row",
-    letterSpacing: 20,
     justifyContent: "center",
     backgroundColor: "#FFCE51",
     marginTop: 5,
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.1,
     borderColor: "black",
     borderRadius: 5,
+    letterSpacing: 1,
   },
   textgenero: {
     letterSpacing: 2,
