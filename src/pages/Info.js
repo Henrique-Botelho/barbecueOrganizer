@@ -32,7 +32,7 @@ export default function Info(props) {
       >
         <Text style={styles.textTitulo}>Informações</Text>
         <Text style={styles.text}>Evento</Text>
-        <View>
+        <View style={styles.box}>
           <Text style={styles.organizador}>Nome do Organizador:</Text>
           <TextInput
             style={styles.inputs}
@@ -51,7 +51,7 @@ export default function Info(props) {
         {/* <MapView 
                     style={styles.map}
                 /> */}
-        <View>
+        <View style={styles.box}>
           <Text style={styles.organizador}>Endereço:</Text>
           <TextInput
             style={styles.inputs}
@@ -107,9 +107,19 @@ const styles = StyleSheet.create({
   },
   inputs: {
     borderColor: "#black",
-    borderWidth: 2,
+    borderWidth: 3,
     borderRadius: 5,
     height: 25,
+    padding: 5,
+    backgroundColor: "#ede6c7",
+    marginTop: 2,
+    marginBottom: 2,
+    width: 300,
+    height: 50,
+    textAlign: "center",
+    opacity: 0.8,
+    color: "#fc0000",
+    letterSpacing: 2,
   },
   map: {
     height: 250,
@@ -123,9 +133,6 @@ const styles = StyleSheet.create({
     color: "#b43434",
     borderRadius: 5,
     padding: 5,
-    
-
-
   },
   text: {
     fontSize: 20,
@@ -133,8 +140,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     letterSpacing: 2,
     backgroundColor: "#FFCE51",
-    padding: 5,
+    padding: 10,
     borderRadius: 5,
     textAlign: "center",
+  },
+  box: {
+    width: 300,
   },
 });
