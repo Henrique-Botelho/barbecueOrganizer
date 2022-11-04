@@ -39,16 +39,18 @@ export default function Participantes(props) {
 
 const styles = StyleSheet.create({
   btnMinus: {
+    marginTop: 5,
     width: 25,
     height: 25
   },
   btnPlus: {
+    marginTop: 3,
     width: 30,
     height: 30
   },
   numero: {
     fontSize: 22,
-    marginRight: 15,
+    marginRight: 10,
     marginLeft: 10,
   },
   quantidade: {
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     width: 120,
     marginLeft: "auto",
     marginRight: "auto",
-    paddingLeft: 25,
+    // paddingLeft: 25,
     borderWidth: 0.1,
     borderColor: "black",
     borderRadius: 5,
