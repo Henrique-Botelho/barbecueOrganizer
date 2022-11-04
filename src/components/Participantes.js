@@ -39,7 +39,7 @@ export default function Participantes(props) {
 
 const styles = StyleSheet.create({
   botoes: {
-    fontSize: 25,
+    fontSize: 35,
     marginRight: 10,
   },
   numero: {
