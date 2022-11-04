@@ -10,7 +10,7 @@ let data = {
         totalItensAssados: 0,
         "Carne Bovina": [
             {
-                nome: "Fraldinha  ",
+                nome: "Fraldinha",
                 status: false,
                 preco: 40.00,
                 unidade: "kg",
@@ -26,7 +26,7 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Maminha    ",
+                nome: "Maminha",
                 status: false,
                 preco: 46.00,
                 unidade: "kg",
@@ -36,7 +36,7 @@ let data = {
         ],
         "Carne Suina" : [
             {
-                nome: "Picanha    ",
+                nome: "Picanha",
                 status: false,
                 preco: 46.00,
                 unidade: "kg",
@@ -44,7 +44,7 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Linguiça   ",
+                nome: "Linguiça",
                 status: false,
                 preco: 28.00,
                 unidade: "kg",
@@ -52,7 +52,7 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Paleta     ",
+                nome: "Paleta",
                 status: false,
                 preco: 30.00,
                 unidade: "kg",
@@ -62,7 +62,7 @@ let data = {
         ],
         "Frango": [
             {
-                nome: "Coxa       ",
+                nome: "Coxa",
                 status: false,
                 preco: 15.00,
                 unidade: "kg",
@@ -70,7 +70,7 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Coração    ",
+                nome: "Coração",
                 status: false,
                 preco: 25.00,
                 unidade: "kg",
@@ -78,7 +78,7 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Asa        ",
+                nome: "Asa",
                 status: false,
                 preco: 20.00,
                 unidade: "kg",
