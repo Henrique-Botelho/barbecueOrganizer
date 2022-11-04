@@ -16,7 +16,7 @@ export default function AuthProvider({children}){
             totalItensAssados: 0,
             "Carne Bovina": [
                 {
-                    nome: "Fraldinha",
+                    nome: "Fraldinha  ",
                     status: false,
                     preco: 40.00,
                     unidade: "kg",
@@ -32,7 +32,7 @@ export default function AuthProvider({children}){
                     precoTotal: 0
                 },
                 {
-                    nome: "Maminha",
+                    nome: "Maminha    ",
                     status: false,
                     preco: 46.00,
                     unidade: "kg",
@@ -42,7 +42,7 @@ export default function AuthProvider({children}){
             ],
             "Carne Suina" : [
                 {
-                    nome: "Picanha",
+                    nome: "Picanha    ",
                     status: false,
                     preco: 46.00,
                     unidade: "kg",
@@ -50,7 +50,7 @@ export default function AuthProvider({children}){
                     precoTotal: 0
                 },
                 {
-                    nome: "Linguiça",
+                    nome: "Linguiça   ",
                     status: false,
                     preco: 28.00,
                     unidade: "kg",
@@ -58,7 +58,7 @@ export default function AuthProvider({children}){
                     precoTotal: 0
                 },
                 {
-                    nome: "Paleta",
+                    nome: "Paleta     ",
                     status: false,
                     preco: 30.00,
                     unidade: "kg",
@@ -84,7 +84,7 @@ export default function AuthProvider({children}){
                     precoTotal: 0
                 },
                 {
-                    nome: "Asa",
+                    nome: "Asa        ",
                     status: false,
                     preco: 20.00,
                     unidade: "kg",
