@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
     color: "#b43434",
     borderRadius: 5,
     padding: 5,
+    
 
 
   },

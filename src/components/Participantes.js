@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   textgenero: {
     letterSpacing: 2,
     fontSize: 17,
+    textAlign: "center",
   },
   genero: {
     justifyContent: "center",
