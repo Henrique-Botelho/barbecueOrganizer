@@ -68,7 +68,7 @@ export default function AuthProvider({children}){
             ],
             "Frango": [
                 {
-                    nome: "Coxa",
+                    nome: "Coxa       ",
                     status: false,
                     preco: 15.00,
                     unidade: "kg",
@@ -76,7 +76,7 @@ export default function AuthProvider({children}){
                     precoTotal: 0
                 },
                 {
-                    nome: "Coração",
+                    nome: "Coração    ",
                     status: false,
                     preco: 25.00,
                     unidade: "kg",
