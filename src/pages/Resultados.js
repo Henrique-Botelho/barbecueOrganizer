@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
+import Lista from "../components/Lista";
 
 
 export default function Resultados(props) {
@@ -14,9 +15,9 @@ export default function Resultados(props) {
                 <Text style={styles.resultados}>Total de Assados: {data.comidas.totalItensAssados}</Text>
                 <Text style={styles.resultados}>Total de quilos de carne: {data.comidas.totalCarne} kg</Text>
                 
-                {data.comidas["Carne Bovina"].forEach(element => {
-                    element.status ? <Text>Nome do item: {element.nome}</Text> : null
-                })}
+                <Lista tipo="Carne Bovina" />
+                <Lista tipo="Carne Suina" />
+                <Lista tipo="Frango" />
 
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
