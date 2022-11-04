@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import { MainContext } from "../context/mainContext";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 

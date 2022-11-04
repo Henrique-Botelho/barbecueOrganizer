@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function Participantes(props) {
@@ -22,7 +22,7 @@ export default function Participantes(props) {
             }
           }}
         >
-          <Text style={styles.botoes}>-</Text>
+          <Image style={styles.btnMinus} source={require('../../assets/minus.png')} />
         </TouchableOpacity>
           <Text style={styles.numero}>{quantidade}</Text>
         <TouchableOpacity
@@ -30,7 +30,7 @@ export default function Participantes(props) {
             setQuantidade(quantidade + 1);
           }}
         >
-          <Text style={styles.botoes}>+</Text>
+          <Image style={styles.btnPlus} source={require('../../assets/plus.png')} />
         </TouchableOpacity>
       </View>
     </View>
@@ -38,9 +38,13 @@ export default function Participantes(props) {
 }
 
 const styles = StyleSheet.create({
-  botoes: {
-    fontSize: 35,
-    marginRight: 10,
+  btnMinus: {
+    width: 25,
+    height: 25
+  },
+  btnPlus: {
+    width: 30,
+    height: 30
   },
   numero: {
     fontSize: 22,
