@@ -13,7 +13,6 @@ let data = {
                 nome: "Fraldinha",
                 status: false,
                 preco: 40.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -21,7 +20,6 @@ let data = {
                 nome: "Contra Filé", 
                 status: false,
                 preco: 45.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -29,7 +27,6 @@ let data = {
                 nome: "Maminha",
                 status: false,
                 preco: 46.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             }
@@ -39,7 +36,6 @@ let data = {
                 nome: "Picanha",
                 status: false,
                 preco: 46.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -47,7 +43,6 @@ let data = {
                 nome: "Linguiça",
                 status: false,
                 preco: 28.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -55,7 +50,6 @@ let data = {
                 nome: "Paleta",
                 status: false,
                 preco: 30.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             }
@@ -65,7 +59,6 @@ let data = {
                 nome: "Coxa",
                 status: false,
                 preco: 15.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -73,7 +66,6 @@ let data = {
                 nome: "Coração",
                 status: false,
                 preco: 25.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -81,7 +73,6 @@ let data = {
                 nome: "Asa",
                 status: false,
                 preco: 20.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             }
@@ -91,32 +82,28 @@ let data = {
                 nome: "Refrigerante",
                 status: false,
                 preco: 10.00,
-                unidade: "Garrafa de 2L",
-                litros: 0,
+                quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Suco",
                 status: false,
                 preco: 7.00,
-                unidade: "Garrafa de 1L",
-                litros: 0,
+                quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Chá Gelado",
                 status: false,
                 preco: 6.00,
-                unidade: "Garrafa de 1,5L",
-                litros: 0,
+                quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Água",
                 status: false,
                 preco: 3.00,
-                unidade: "Garrafa de 1,5L",
-                litros: 0,
+                quantidade: 0,
                 precoTotal: 0
             },
             {
@@ -124,7 +111,7 @@ let data = {
                 status: false,
                 preco: 4.00,
                 unidade: "Lata",
-                litros: 1,
+                quantidade: 0,
                 precoTotal: 0
             },
         ],
@@ -133,7 +120,6 @@ let data = {
                 nome: "Pão de Alho",
                 status: false,
                 preco: 10.00,
-                unidade: "Pacote 300g",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -141,7 +127,6 @@ let data = {
                 nome: "Queijo",
                 status: false,
                 preco: 30.00,
-                unidade: "Pacote 280g",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -149,7 +134,6 @@ let data = {
                 nome: "Farofa",
                 status: false,
                 preco: 8.00,
-                unidade: "Pacote 500g",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -157,7 +141,6 @@ let data = {
                 nome: "Pão",
                 status: false,
                 preco: 5.00,
-                unidade: "Pacote 120g",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -165,7 +148,6 @@ let data = {
                 nome: "Maionese",
                 status: false,
                 preco: 10.00,
-                unidade: "Pote ou Porção",
                 quantidade: 0,
                 precoTotal: 0
             },
@@ -173,7 +155,6 @@ let data = {
                 nome: "Arroz",
                 status: false,
                 preco: 4.00,
-                unidade: "Panela - 3 xícaras",
                 quantidade: 0,
                 precoTotal: 0
             },

@@ -11,13 +11,15 @@ export default function Resultados(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Resultados</Text>
-
+                
                 <Text style={styles.resultados}>Total de Assados: {data.comidas.totalItensAssados}</Text>
                 <Text style={styles.resultados}>Total de quilos de carne: {data.comidas.totalCarne} kg</Text>
-                
-                <Lista tipo="Carne Bovina" />
-                <Lista tipo="Carne Suina" />
-                <Lista tipo="Frango" />
+                <View style={styles.lista}>                    
+                    <Lista />
+                </View>
+                <View>
+                    <Text style={styles.totais}>Totais</Text>
+                </View>
 
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
@@ -56,5 +58,11 @@ const styles = StyleSheet.create({
     resultados: {
         backgroundColor: "#FFF",
         fontSize: 20
+    },
+    lista: {
+        backgroundColor: "#b43434"
+    },
+    totais: {
+        textAlign: 'center',
     }
 })
