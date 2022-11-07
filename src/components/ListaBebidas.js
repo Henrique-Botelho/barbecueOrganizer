@@ -7,6 +7,12 @@ export default function ListaBebidas() {
 
     return(
         <View>
+            <View style={styles.views}>
+                <Text style={styles.itensHead}>Bebida</Text>
+                <Text style={styles.itensHead}>Quantidade (L)</Text>
+                <Text style={styles.itensHead}>Preço do Litro</Text>
+                <Text style={styles.itensHead}>Total</Text>
+            </View>
             <FlatList
                 data={data.comidas["Bebidas"]}
                 renderItem={({item}) => {

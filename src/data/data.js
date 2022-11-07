@@ -164,7 +164,7 @@ let data = {
         ],
         "Sem Falta": [
             {
-                nome: "Carvão",
+                nome: "Carvão (kg)",
                 preco: 25.00,
                 quantidade: 0,
                 precoTotal: 0
@@ -176,13 +176,13 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Sal de Grosso",
+                nome: "Sal de Grosso (kg)",
                 preco: 5.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Descartáveis",
+                nome: "Descartáveis (kit com 10)",
                 preco: 20.00,
                 quantidade: 0,
                 precoTotal: 0

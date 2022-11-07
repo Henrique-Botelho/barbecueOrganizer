@@ -7,6 +7,12 @@ export default function Lista() {
 
     return(
         <View>
+            <View style={styles.views}>
+                <Text style={styles.itensHead}>Assado</Text>
+                <Text style={styles.itensHead}>Quantidade (kg)</Text>
+                <Text style={styles.itensHead}>Preço do Quilo</Text>
+                <Text style={styles.itensHead}>Total</Text>
+            </View>
             <FlatList
                 data={data.comidas["Carne Bovina"]}
                 renderItem={({item}) => {

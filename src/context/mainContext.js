@@ -124,7 +124,21 @@ export default function AuthProvider({children}){
 
         // SEM FALTA
 
-        
+        data.comidas["Sem Falta"].forEach(element => {
+            if (element.nome == "Carvão (kg)") {
+                element.quantidade = data.comidas.totalCarne * 1.5;
+                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+            } else if (element.nome == "Acendedor/Fósforo") {
+                element.quantidade = 1;
+                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+            } else if (element.nome == "Sal de Grosso (kg)") {
+                element.quantidade = data.comidas.totalCarne * 0.18;
+                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+            } else if (element.nome == "Descartáveis (kit com 10)") {
+                element.quantidade = Math.ceil(data.pessoas.total / 5);
+                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+            }
+        })
     }
 
     const response = {
