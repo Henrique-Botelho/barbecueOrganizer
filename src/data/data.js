@@ -8,7 +8,10 @@ let data = {
     comidas: {
         totalCarne: 0,
         totalItensAssados: 0,
-        totalBebidas: 0,
+        totalLitrosAdultos: 0,
+        totalLitrosCriancas: 0,
+        totalItensBebidas: 0,
+        totalItensBebidasCriancas: 0,
         "Carne Bovina": [
             {
                 nome: "Fraldinha",
@@ -110,50 +113,49 @@ let data = {
             {
                 nome: "Cerveja",
                 status: false,
-                preco: 4.00,
-                unidade: "Lata",
+                preco: 16.00,
                 quantidade: 0,
                 precoTotal: 0
             },
         ],
         "Acompanhamentos": [
             {
-                nome: "Pão de Alho",
+                nome: "Pão de Alho (pacote)",
                 status: false,
                 preco: 10.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Queijo",
+                nome: "Queijo (pacote)",
                 status: false,
                 preco: 30.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Farofa",
+                nome: "Farofa (saco 500g)",
                 status: false,
                 preco: 8.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Pão",
+                nome: "Pão Francês (saco)",
                 status: false,
                 preco: 5.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Maionese",
+                nome: "Maionese (porção)",
                 status: false,
                 preco: 10.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Arroz",
+                nome: "Arroz (panela)",
                 status: false,
                 preco: 4.00,
                 quantidade: 0,

@@ -8,13 +8,10 @@ export default function Assados(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Escolha seus Assados</Text>
-                
-
-                
+              
                     <Section tipo="Carne Bovina" />
                     <Section tipo="Carne Suina" />
-                    <Section tipo="Frango" />
-                
+                    <Section tipo="Frango" /> 
 
                 <TouchableOpacity
                     onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
 import Lista from "../components/Lista";
+import ListaBebidas from "../components/ListaBebidas";
 
 
 export default function Resultados(props) {
@@ -13,9 +14,18 @@ export default function Resultados(props) {
                 <Text style={styles.textTitulo}>Resultados</Text>
                 
                 <Text style={styles.resultados}>Total de Assados: {data.comidas.totalItensAssados}</Text>
+                <Text style={styles.resultados}>Total de bebidas: {data.comidas.totalItensBebidas}</Text>
+                <Text style={styles.resultados}>Total de bebidas para crianças: {data.comidas.totalItensBebidasCriancas}</Text>
                 <Text style={styles.resultados}>Total de quilos de carne: {data.comidas.totalCarne} kg</Text>
-                <View style={styles.lista}>                    
+                <Text style={styles.resultados}>Total de litros de bebidas: {data.comidas.totalLitrosAdultos} L</Text>
+                <Text style={styles.resultados}>Total de litros de bebidas crianças: {data.comidas.totalLitrosCriancas} L</Text>
+
+
+                <View style={styles.lista}>
+                    <Text>Assados</Text>
                     <Lista />
+                    <Text>Bebidas</Text>
+                    <ListaBebidas />
                 </View>
                 <View>
                     <Text style={styles.totais}>Totais</Text>

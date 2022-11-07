@@ -16,9 +16,9 @@ export default function Item(props) {
         style={styles.tudo}
         onPress={() => {
             if (checkBoxState == false) {
-                adicionaItem(props.class);
+                adicionaItem(props.class, props.name);
             } else if (checkBoxState == true) {
-                retiraItem(props.class);
+                retiraItem(props.class, props.name);
             };
             setCheckBoxState(!checkBoxState);
         }}
@@ -30,9 +30,9 @@ export default function Item(props) {
           isChecked={checkBoxState}
           onPress={() => {
             if (checkBoxState == false) {
-                adicionaItem(props.class)
+                adicionaItem(props.class, props.name)
             } else if (checkBoxState == true) {
-                retiraItem(props.class)
+                retiraItem(props.class, props.name)
             };
             setCheckBoxState(!checkBoxState);
           }}
