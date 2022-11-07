@@ -166,28 +166,24 @@ let data = {
             {
                 nome: "Carvão",
                 preco: 25.00,
-                unidade: "Pacote 2kg",
                 quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Acendedor/Fósforo",
                 preco: 10.00,
-                unidade: "Pacote",
                 quantidade: 0,
                 precoTotal: 0
             },
             {
-                nome: "Sal",
+                nome: "Sal de Grosso",
                 preco: 5.00,
-                unidade: "kg",
                 quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Descartáveis",
                 preco: 20.00,
-                unidade: "Kit com 10 unidades",
                 quantidade: 0,
                 precoTotal: 0
             }

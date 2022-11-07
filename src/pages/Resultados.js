@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react
 import { MainContext } from "../context/mainContext";
 import Lista from "../components/Lista";
 import ListaBebidas from "../components/ListaBebidas";
-
+import ListaAcompanhamentos from "../components/ListaAcompanhamentos";
 
 export default function Resultados(props) {
     const {data} = useContext(MainContext);
@@ -26,6 +26,8 @@ export default function Resultados(props) {
                     <Lista />
                     <Text>Bebidas</Text>
                     <ListaBebidas />
+                    <Text>Acompanhamentos</Text>
+                    <ListaAcompanhamentos />
                 </View>
 
                 <TouchableOpacity

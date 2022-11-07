@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import { MainContext } from "../context/mainContext";
 import Item from "./Item";
 
@@ -10,7 +10,14 @@ export default function Section(props) {
     return (
         <View style={styles.view}>
             <Text style={styles.titulo}>{props.tipo}</Text>
-            {typeFood.map((element, index) => {return <Item class={props.tipo} name={element.nome} position={index} />})}
+            <FlatList
+              data={data.comidas[props.tipo]}
+              renderItem={({item, index}) => {
+                return(
+                  <Item class={props.tipo} name={item.nome} position={index} />
+                );
+              }}
+            />
         </View>
     );
 }

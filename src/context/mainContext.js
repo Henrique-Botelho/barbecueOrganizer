@@ -54,7 +54,9 @@ export default function AuthProvider({children}){
     }
 
     const calculaChurrasco = () => {
-        // Primeiro calculo a quantidade de carne total necessária de acordo com a qauuntidade de pessoas
+        
+        // ASSADOS
+
         data.comidas.totalCarne = ((data.pessoas["Homens"] * 60) + (data.pessoas["Mulheres"] * 40) + (data.pessoas["Crianças"] * 25)) / 100;
 
         /* Depois, pego o total de quilos de carne necessária e divido pela 
@@ -84,22 +86,13 @@ export default function AuthProvider({children}){
             }
         })
         
-        // Repito o processo com as bebidas
+        // BEBIDAS
 
         data.comidas.totalLitrosAdultos = ((data.pessoas["Homens"] * 20) + (data.pessoas["Mulheres"] * 15)) / 10;
         data.comidas.totalLitrosCriancas = data.pessoas["Crianças"]; // Não multiplico por nada porque considero que cada criança toma 1 litro em média de liqúido.
 
-        console.log(typeof data.comidas.totalLitrosCriancas)
-        console.log(data.comidas.totalLitrosCriancas)
-        /* Defino a quantidade de litros para cada item */
-
-        console.log(typeof data.comidas.totalItensBebidasCriancas)
-        console.log( data.comidas.totalItensBebidasCriancas)
-
         let litrosPorItemCriancas = data.comidas.totalLitrosCriancas / data.comidas.totalItensBebidasCriancas;
         let litrosPorItemAdultos = data.comidas.totalLitrosAdultos / data.comidas.totalItensBebidas;
-
-        console.log(typeof litrosPorItemCriancas)
 
         data.comidas["Bebidas"].forEach(element => {
             if (element.status == true) {
@@ -111,6 +104,27 @@ export default function AuthProvider({children}){
                 }
             }
         });
+
+        // ACOMPANHAMENTOS
+
+        data.comidas["Acompanhamentos"].forEach(element => {
+            if (element.status == true) {
+                if (element.nome == "Pão de Alho (pacote)" || element.nome == "Queijo (pacote)" || element.nome == "Maionese (porção)") {
+                    element.quantidade = Math.ceil(data.pessoas.total / 5);
+                    element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                } else if (element.nome == "Farofa (saco 500g)" || element.nome == "Pão Francês (saco)") {
+                    element.quantidade = Math.ceil(data.pessoas.total / 10);
+                    element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                } else if (element.nome == "Arroz (panela)") {
+                    element.quantidade = Math.ceil(data.pessoas.total / 20);
+                    element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                }
+            }
+        });
+
+        // SEM FALTA
+
+        
     }
 
     const response = {
