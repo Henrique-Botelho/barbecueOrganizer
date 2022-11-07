@@ -27,9 +27,6 @@ export default function Resultados(props) {
                     <Text>Bebidas</Text>
                     <ListaBebidas />
                 </View>
-                <View>
-                    <Text style={styles.totais}>Totais</Text>
-                </View>
 
                 <TouchableOpacity
                     onPress={() => {}} style={styles.next}>
