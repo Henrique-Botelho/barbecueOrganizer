@@ -48,9 +48,12 @@ export default function AuthProvider({children}){
         data.comidas.totalCarne = ((data.pessoas["Homens"] * 60) + (data.pessoas["Mulheres"] * 40) + (data.pessoas["Crianças"] * 25)) / 100;
 
         /* Depois, pego o total de quilos de carne necessária e divido pela 
-        quantidade de intens de assados para saber quantos de cada carne */
+        quantidade de intens de assados para saber quantos de cada carne. */
 
         let quilosPorItem = (data.comidas.totalCarne / data.comidas.totalItensAssados).toFixed(2);
+
+        /* Para cada tipo de carne, eu varro o vetor a procura dos itens que estão true
+        e defino a quantidade por item mais o preço total de cada um. */
 
         data.comidas["Carne Bovina"].forEach(element => {
             if (element.status == true){
@@ -70,6 +73,11 @@ export default function AuthProvider({children}){
                 element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
             }
         })
+        
+        // Repito o processo com as bebidas
+
+        data.comidas.totalBebidas = ((data.pessoas["Homens"] * 20) + (data.pessoas["Mulheres"] * 15) + (data.pessoas["Crianças"] * 10)) / 10;
+
     }
 
     const response = {

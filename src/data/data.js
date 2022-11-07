@@ -8,6 +8,7 @@ let data = {
     comidas: {
         totalCarne: 0,
         totalItensAssados: 0,
+        totalBebidas: 0,
         "Carne Bovina": [
             {
                 nome: "Fraldinha",
