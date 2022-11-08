@@ -7,16 +7,86 @@ import {
   ImageBackground,
   TouchableOpacity,
   Dimensions,
+  Alert,
 } from "react-native";
 import { MainContext } from "../context/mainContext";
+import api from "../services/api";
 // import MapView from "react-native-maps";
+// import api from "./src/services/api";
+// import { Marker } from "react-native-maps";
 
 export default function Info(props) {
+  // const [dados, setDados] = useState({
+  //   lat: -23.647874097687232,
+  //   long: -46.721607053968
+  // });
+
+  // const [region, setRegion] = useState({
+  //   latitude: -23.647874097687232,
+  //   longitude: -46.721607053968,
+  //   latitudeDelta: 0.0922,
+  //   longitudeDelta: 0.0421,
+  // });
+
+  // const [street, setStreet] = useState('');
+  // const [number, setNumber] = useState('');
+  // const [cep, setCep] = useState(0);
+
+  //   function changeRegion(latitude, longitude) {
+  //     setRegion({
+  //       latitude: latitude,
+  //       longitude: longitude,
+  //       latitudeDelta: 0.0922,
+  //       longitudeDelta: 0.0421,
+  //     });
+  //   }
+
+  //   function changeMarker() {
+  //     const buscaData = async () => {
+  //       try {
+  //         if(number && street){
+  //           const response = await api.get(`search?street=${number}, ${street}&format=json`);
+  //           console.log(response.data[0]);
+  //           const latitude = JSON.parse(response.data[0].lat);
+  //           const longitude = JSON.parse(response.data[0].lon);
+      
+  //           setDados({
+  //             lat: latitude,
+  //             long: longitude,
+  //           });
+  
+  //           changeRegion(latitude, longitude);
+            
+  //         } else if(cep){
+  //           (async () => {
+  //             const response = await api.get(`search?postalcode=${cep}&format=json`);
+  //             const latitude = JSON.parse(response.data[0].lat);
+  //             const longitude = JSON.parse(response.data[0].lon);
+
+  //             setDados({
+  //               lat: latitude,
+  //               long: longitude,
+  //             });
+    
+  //             changeRegion(latitude, longitude);
+  //           })();
+  //         } else {
+  //           Alert.alert("Nenhum valor enviado.");
+  //         }
+
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+
+  //     buscaData();
+  //   }
+
   const { data, setInfo, calculaChurrasco, precoTotal } = useContext(MainContext);
 
   const [name, setName] = useState(data.info.evento.nomeOrganizador);
   const [tel, setTel] = useState(data.info.evento.telefone);
-  const [ender, setEnder] = useState(data.info.local.endereco);
+  //const [ender, setEnder] = useState(data.info.local.endereco);
   const [price, setPrice] = useState(data.info.local.custo);
 
   setInfo(name, tel, ender, price);
@@ -48,16 +118,42 @@ export default function Info(props) {
           />
         </View>
         <Text style={styles.text}>Local</Text>
-        {/* <MapView 
-                    style={styles.map}
-                /> */}
+        {/* <MapView
+            style={styles.map}
+            region={ region }
+            onRegionChangeComplete={(region) => setRegion(region)}>
+              <Marker coordinate={
+                { 
+                  latitude: dados.lat,
+                  longitude: dados.long,
+                }
+              }/>
+          </MapView> */}
         <View style={styles.box}>
-          <Text style={styles.organizador}>Endereço:</Text>
+          {/* <Text style={styles.organizador}>Endereço:</Text>
           <TextInput
             style={styles.inputs}
-            onChangeText={setEnder}
-            value={ender}
+            onChangeText={setStret}
+            value={street}
           />
+          <Text style={styles.organizador}>Complemento:</Text>
+          <TextInput
+            style={styles.inputs}
+            onChangeText={setNumber}
+            value={number}
+            keyboardType="numeric"
+          />
+          <Text> ou </Text>
+          <Text style={styles.organizador}>CEP:</Text>
+          <TextInput
+            style={styles.inputs}
+            onChangeText={setCep}
+            value={cep}
+            keyboardType="numeric"
+          /> */}
+          {/* <TouchableOpacity onPress={changeMarker}>
+             <Text>Enviar</Text>
+          </TouchableOpacity> */}
           <Text style={styles.organizador}>Custo:</Text>
           <TextInput
             style={styles.inputs}
