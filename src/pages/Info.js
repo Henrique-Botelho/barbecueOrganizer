@@ -1,14 +1,5 @@
 import React, { useContext, useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
-  Dimensions,
-  Alert,
-} from "react-native";
+import { View, Text, TextInput, StyleSheet, ImageBackground, TouchableOpacity, Dimensions, Alert } from "react-native";
 import { MainContext } from "../context/mainContext";
 import api from "../services/api";
 // import MapView from "react-native-maps";
@@ -84,9 +75,9 @@ export default function Info(props) {
 
   const { data, setInfo, calculaChurrasco, precoTotal } = useContext(MainContext);
 
+  const [ender, setEnder] = useState(data.info.local.endereco);
   const [name, setName] = useState(data.info.evento.nomeOrganizador);
   const [tel, setTel] = useState(data.info.evento.telefone);
-  //const [ender, setEnder] = useState(data.info.local.endereco);
   const [price, setPrice] = useState(data.info.local.custo);
 
   setInfo(name, tel, ender, price);
@@ -130,8 +121,8 @@ export default function Info(props) {
               }/>
           </MapView> */}
         <View style={styles.box}>
-          {/* <Text style={styles.organizador}>Endereço:</Text>
-          <TextInput
+          <Text style={styles.organizador}>Endereço:</Text>
+          {/* <TextInput
             style={styles.inputs}
             onChangeText={setStret}
             value={street}
@@ -150,8 +141,8 @@ export default function Info(props) {
             onChangeText={setCep}
             value={cep}
             keyboardType="numeric"
-          /> */}
-          {/* <TouchableOpacity onPress={changeMarker}>
+          />
+          <TouchableOpacity onPress={changeMarker}>
              <Text>Enviar</Text>
           </TouchableOpacity> */}
           <Text style={styles.organizador}>Custo:</Text>

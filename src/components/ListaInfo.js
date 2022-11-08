@@ -17,7 +17,7 @@ export default function ListaInfo(props) {
                 <Text style={styles.itens}>{data.info.evento.organizador}</Text>
                 <Text style={styles.itens}>{data.info.evento.telefone}</Text>
                 <Text style={styles.itens}>{data.info.local.endereco}</Text>
-                <Text style={styles.itens}>R${(data.info.local.custo).toFixed(2)}</Text>
+                <Text style={styles.itens}>R${data.info.local.custo}</Text>
             </View>
         </View>
     );
