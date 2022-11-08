@@ -20,6 +20,7 @@ export default function Resultados(props) {
                 <Text style={styles.resultados}>Total de quilos de carne: {data.comidas.totalCarne} kg</Text>
                 <Text style={styles.resultados}>Total de litros de bebidas: {data.comidas.totalLitrosAdultos} L</Text>
                 <Text style={styles.resultados}>Total de litros de bebidas crianças: {data.comidas.totalLitrosCriancas} L</Text>
+                <Text style={styles.resultados}>Custo total: R$ {data.custoTotal}</Text>
 
 
                 <View style={styles.lista}>

@@ -71,18 +71,21 @@ export default function AuthProvider({children}){
             if (element.status == true){
                 element.quantidade = (quilosPorItem).toFixed(2);
                 element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
+                data.custoTotal += quilosPorItem * element.preco;
             }
         });
         data.comidas["Carne Suina"].forEach(element =>{
             if (element.status == true) {
                 element.quantidade = (quilosPorItem).toFixed(2);
                 element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
+                data.custoTotal += quilosPorItem * element.preco;
             }
         })
         data.comidas["Frango"].forEach(element => {
             if (element.status == true) {
                 element.quantidade = (quilosPorItem).toFixed(2);
                 element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
+                data.custoTotal += quilosPorItem * element.preco;
             }
         })
         
@@ -98,6 +101,7 @@ export default function AuthProvider({children}){
             if (element.status == true) {
                 element.quantidade = (litrosPorItemAdultos + litrosPorItemCriancas).toFixed(2);
                 element.precoTotal = ((litrosPorItemAdultos + litrosPorItemCriancas) * element.preco).toFixed(2);
+                data.custoTotal += (litrosPorItemAdultos + litrosPorItemCriancas) * element.preco;
                 if (element.nome == "Cerveja") {
                     element.quantidade = (litrosPorItemAdultos).toFixed(2);
                     element.precoTotal = (litrosPorItemAdultos * element.preco).toFixed(2);
@@ -112,12 +116,15 @@ export default function AuthProvider({children}){
                 if (element.nome == "Pão de Alho (pacote)" || element.nome == "Queijo (pacote)" || element.nome == "Maionese (porção)") {
                     element.quantidade = Math.ceil(data.pessoas.total / 5);
                     element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                    data.custoTotal += element.quantidade * element.preco;
                 } else if (element.nome == "Farofa (saco 500g)" || element.nome == "Pão Francês (saco)") {
                     element.quantidade = Math.ceil(data.pessoas.total / 10);
                     element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                    data.custoTotal += element.quantidade * element.preco;
                 } else if (element.nome == "Arroz (panela)") {
                     element.quantidade = Math.ceil(data.pessoas.total / 20);
                     element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                    data.custoTotal += element.quantidade * element.preco;
                 }
             }
         });
@@ -128,17 +135,23 @@ export default function AuthProvider({children}){
             if (element.nome == "Carvão (kg)") {
                 element.quantidade = data.comidas.totalCarne * 1.5;
                 element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                data.custoTotal += element.quantidade * element.preco;
             } else if (element.nome == "Acendedor/Fósforo") {
                 element.quantidade = 1;
                 element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                data.custoTotal += element.quantidade * element.preco;
             } else if (element.nome == "Sal de Grosso (kg)") {
                 element.quantidade = data.comidas.totalCarne * 0.18;
                 element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                data.custoTotal += element.quantidade * element.preco;
             } else if (element.nome == "Descartáveis (kit com 10)") {
                 element.quantidade = Math.ceil(data.pessoas.total / 5);
                 element.precoTotal = (element.quantidade * element.preco).toFixed(2);
+                data.custoTotal += element.quantidade * element.preco;
             }
         })
+
+        // INFO
     }
 
     const response = {

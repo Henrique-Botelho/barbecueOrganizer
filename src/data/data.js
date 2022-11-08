@@ -1,4 +1,5 @@
 let data = {
+    custoTotal: 0,
     pessoas: {
         total: 0,
         "Homens": 0,
