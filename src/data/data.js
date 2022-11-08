@@ -166,24 +166,28 @@ let data = {
         "Sem Falta": [
             {
                 nome: "Carvão (kg)",
+                status: true,
                 preco: 25.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Acendedor/Fósforo",
+                status: true,
                 preco: 10.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Sal de Grosso (kg)",
+                status: true,
                 preco: 5.00,
                 quantidade: 0,
                 precoTotal: 0
             },
             {
                 nome: "Descartáveis (kit com 10)",
+                status: true,
                 preco: 20.00,
                 quantidade: 0,
                 precoTotal: 0
@@ -192,7 +196,7 @@ let data = {
     },
     info: {
         evento: {
-            nomeOrganizador: "",
+            organizador: "",
             telefone: ""
         },
         local: {

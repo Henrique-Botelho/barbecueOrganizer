@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     flex: 1,
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
   },
   textTitulo: {
     backgroundColor: "#FFCE51",
@@ -47,5 +47,4 @@ const styles = StyleSheet.create({
   textNext: {
     fontSize: 20,
   },
-
 });

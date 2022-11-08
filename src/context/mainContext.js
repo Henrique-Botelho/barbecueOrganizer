@@ -25,10 +25,15 @@ export default function AuthProvider({children}){
 
 
     const setInfo = (nome, tel, endereco, custo) => {
-        data.info.evento.nomeOrganizador = nome;
+        data.info.evento.organizador = nome;
         data.info.evento.telefone = tel;
         data.info.local.endereco = endereco;
-        data.info.local.custo = custo
+        if (typeof custo == 'string') {
+            custo = parseFloat(custo)
+            data.info.local.custo = custo
+        } else {
+            data.info.local.custo = custo
+        }
     }
 
     const adicionaItem = (tipo, item) => {
@@ -70,22 +75,19 @@ export default function AuthProvider({children}){
         data.comidas["Carne Bovina"].forEach(element => {
             if (element.status == true){
                 element.quantidade = (quilosPorItem).toFixed(2);
-                element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
-                data.custoTotal += quilosPorItem * element.preco;
+                element.precoTotal = parseFloat((quilosPorItem * element.preco).toFixed(2));
             }
         });
         data.comidas["Carne Suina"].forEach(element =>{
             if (element.status == true) {
                 element.quantidade = (quilosPorItem).toFixed(2);
-                element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
-                data.custoTotal += quilosPorItem * element.preco;
+                element.precoTotal = parseFloat((quilosPorItem * element.preco).toFixed(2));
             }
         })
         data.comidas["Frango"].forEach(element => {
             if (element.status == true) {
                 element.quantidade = (quilosPorItem).toFixed(2);
-                element.precoTotal = (quilosPorItem * element.preco).toFixed(2);
-                data.custoTotal += quilosPorItem * element.preco;
+                element.precoTotal = parseFloat((quilosPorItem * element.preco).toFixed(2));
             }
         })
         
@@ -100,11 +102,10 @@ export default function AuthProvider({children}){
         data.comidas["Bebidas"].forEach(element => {
             if (element.status == true) {
                 element.quantidade = (litrosPorItemAdultos + litrosPorItemCriancas).toFixed(2);
-                element.precoTotal = ((litrosPorItemAdultos + litrosPorItemCriancas) * element.preco).toFixed(2);
-                data.custoTotal += (litrosPorItemAdultos + litrosPorItemCriancas) * element.preco;
+                element.precoTotal = parseFloat(((litrosPorItemAdultos + litrosPorItemCriancas) * element.preco).toFixed(2));
                 if (element.nome == "Cerveja") {
                     element.quantidade = (litrosPorItemAdultos).toFixed(2);
-                    element.precoTotal = (litrosPorItemAdultos * element.preco).toFixed(2);
+                    element.precoTotal = parseFloat((litrosPorItemAdultos * element.preco).toFixed(2));
                 }
             }
         });
@@ -115,16 +116,13 @@ export default function AuthProvider({children}){
             if (element.status == true) {
                 if (element.nome == "Pão de Alho (pacote)" || element.nome == "Queijo (pacote)" || element.nome == "Maionese (porção)") {
                     element.quantidade = Math.ceil(data.pessoas.total / 5);
-                    element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                    data.custoTotal += element.quantidade * element.preco;
+                    element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
                 } else if (element.nome == "Farofa (saco 500g)" || element.nome == "Pão Francês (saco)") {
                     element.quantidade = Math.ceil(data.pessoas.total / 10);
-                    element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                    data.custoTotal += element.quantidade * element.preco;
+                    element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
                 } else if (element.nome == "Arroz (panela)") {
                     element.quantidade = Math.ceil(data.pessoas.total / 20);
-                    element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                    data.custoTotal += element.quantidade * element.preco;
+                    element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
                 }
             }
         });
@@ -134,24 +132,57 @@ export default function AuthProvider({children}){
         data.comidas["Sem Falta"].forEach(element => {
             if (element.nome == "Carvão (kg)") {
                 element.quantidade = data.comidas.totalCarne * 1.5;
-                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                data.custoTotal += element.quantidade * element.preco;
+                element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             } else if (element.nome == "Acendedor/Fósforo") {
                 element.quantidade = 1;
-                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                data.custoTotal += element.quantidade * element.preco;
+                element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             } else if (element.nome == "Sal de Grosso (kg)") {
                 element.quantidade = data.comidas.totalCarne * 0.18;
-                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                data.custoTotal += element.quantidade * element.preco;
+                element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             } else if (element.nome == "Descartáveis (kit com 10)") {
                 element.quantidade = Math.ceil(data.pessoas.total / 5);
-                element.precoTotal = (element.quantidade * element.preco).toFixed(2);
-                data.custoTotal += element.quantidade * element.preco;
+                element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             }
         })
 
         // INFO
+    }
+
+    const precoTotal = () => {
+
+        data.custoTotal = 0;
+
+        data.comidas["Carne Bovina"].forEach(element => {
+            if (element.status == true) {
+                data.custoTotal += element.precoTotal;
+            }
+        });
+        data.comidas["Carne Suina"].forEach(element => {
+            if (element.status == true) {
+                data.custoTotal += element.precoTotal;
+            }
+        });
+        data.comidas["Frango"].forEach(element => {
+            if (element.status == true) {
+                data.custoTotal += element.precoTotal;
+            }
+        });
+        data.comidas["Bebidas"].forEach(element => {
+            if (element.status == true) {
+                data.custoTotal += element.precoTotal;
+            }
+        });
+        data.comidas["Acompanhamentos"].forEach(element => {
+            if (element.status == true) {
+                data.custoTotal += element.precoTotal;
+            }
+        });
+        data.comidas["Sem Falta"].forEach(element => {
+            if (element.status == true) {
+                data.custoTotal += element.precoTotal;
+            }
+        });
+        data.custoTotal += data.info.local.custo;
     }
 
     const response = {
@@ -162,7 +193,8 @@ export default function AuthProvider({children}){
         setInfo,
         adicionaItem,
         retiraItem,
-        calculaChurrasco
+        calculaChurrasco,
+        precoTotal
     };
     
     return(

@@ -5,7 +5,6 @@ import Item from "./Item";
 
 export default function Section(props) {
     const {data} = useContext(MainContext);
-    let typeFood = data.comidas[props.tipo]
 
     return (
         <View style={styles.view}>
@@ -31,7 +30,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCE51",
     padding: 5,
     borderRadius: 5,
-    textAlign: "center",
-    
+    textAlign: "center", 
   },
 });

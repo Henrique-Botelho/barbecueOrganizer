@@ -9,8 +9,6 @@ export default function Item(props) {
     
     setItem(props.class, props.position, checkBoxState);
 
-    // console.log(`${props.name}:`,data.comidas[props.class][props.position].status);
-
     return (
       <TouchableOpacity
         style={styles.tudo}
