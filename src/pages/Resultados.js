@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
 import Lista from "../components/Lista";
+import ListaInfo from "../components/ListaInfo";
 
 export default function Resultados(props) {
     const {data} = useContext(MainContext);
@@ -19,7 +20,6 @@ export default function Resultados(props) {
                 <Text style={styles.resultados}>Total de litros de bebidas crianças: {data.comidas.totalLitrosCriancas} L</Text>
                 <Text style={styles.resultados}>Custo total: R$ {data.custoTotal}</Text>
 
-
                 <View style={styles.lista}>
                     <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
                     <Lista tipo="Carne Suina" headers={false} />
@@ -27,6 +27,7 @@ export default function Resultados(props) {
                     <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
                     <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
                     <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                    <ListaInfo />
                 </View>
 
                 <TouchableOpacity

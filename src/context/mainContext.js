@@ -29,7 +29,7 @@ export default function AuthProvider({children}){
         data.info.evento.telefone = tel;
         data.info.local.endereco = endereco;
         if (typeof custo == 'string') {
-            custo = parseFloat(custo)
+            custo = parseFloat(custo);
             data.info.local.custo = custo
         } else {
             data.info.local.custo = custo
