@@ -10,79 +10,91 @@ export default function Participantes(props) {
   somaPessoas();
 
   return (
-    <View style={styles.genero}>
-      <Text style={styles.textgenero}>{props.pessoa}</Text>
-      <View style={styles.quantidade}>
-        <TouchableOpacity
-          onPress={() => {
-            if (quantidade == 0) {
-              setQuantidade(quantidade);
-            } else {
-              setQuantidade(quantidade - 1);
-            }
-          }}
-        >
-          <Image style={styles.btnMinus} source={require('../../assets/minus.png')} />
-        </TouchableOpacity>
-          <Text style={styles.numero}>{quantidade}</Text>
-        <TouchableOpacity
-          onPress={() => {
-            setQuantidade(quantidade + 1);
-          }}
-        >
-          <Image style={styles.btnPlus} source={require('../../assets/plus.png')} />
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.genero}>
+        <Text style={styles.textgenero}>{props.pessoa}</Text>
+        <View style={styles.quantidade}>
+          <TouchableOpacity
+            onPress={() => {
+              if (quantidade == 0) {
+                setQuantidade(quantidade);
+              } else {
+                setQuantidade(quantidade - 1);
+              }
+            }}
+          >
+            <Image style={styles.btnMinus} source={require('../../assets/dash.svg')} />
+          </TouchableOpacity>
+          <View style={styles.quntnum}>
+            <Text style={styles.numero}>{quantidade}</Text>
+          </View>
+          <TouchableOpacity
+            onPress={() => {
+              setQuantidade(quantidade + 1);
+            }}
+          >
+            <Image style={styles.btnPlus} source={require('../../assets/plus.svg')} />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  btnMinus: {
-    marginTop: 5,
-    width: 35,
-    height: 30,
-    borderRadius: 5,
-    
-  },
-  btnPlus: {
-    marginTop: 3,
-    width: 40,
-    height: 35,
-    borderRadius: 5,
-  },
-  numero: {
-    fontSize: 22,
-    marginRight: 10,
-    marginLeft: 10,
-  },
+  //caixa de seleção
   quantidade: {
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "#FFCE51",
-    marginTop: 5,
-    padding: 5,
+    alignItems:"center",
     width: 150,
-    marginLeft: "auto",
-    marginRight: "auto",
-    // paddingLeft: 25,
-    borderWidth: 0.1,
-    borderColor: "black",
-    borderRadius: 5,
     letterSpacing: 1,
   },
+    //Botão
+    btnMinus: {
+      width: 40,
+      height: 35,
+      borderRadius: 5,
+    },
+      //caixa
+      quntnum:{
+        borderWidth: 0.1,
+        borderColor: "black",
+        borderRadius: 5,
+      },
+      //numero
+      numero: {
+        fontSize: 22,
+        margin: 10,
+      },
+    btnPlus: {
+      width: 40,
+      height: 35,
+      borderRadius: 5,
+    },
+
+  
+
   textgenero: {
     letterSpacing: 2,
-    fontSize: 17,
+    fontSize: 20,
+    fontWeight:600,
     textAlign: "center",
+    width:120,
   },
   genero: {
+    flex:1,
+    flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "#FFCE51",
-    borderRadius: 5,
+    alignItems:"center",
     padding: 5,
-    margim: 80,
     textAlign: "center",
-    width: 220,
+    width:260,
   },
+  container:{
+    borderRadius: 5,
+    backgroundColor: "#FFCE51",
+    height:70,
+    width: "fit-content",
+  }
 });

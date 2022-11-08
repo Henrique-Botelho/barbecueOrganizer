@@ -10,10 +10,17 @@ export default function Pessoas(props) {
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
+            <View style={styles.view}>
                 <Text style={styles.textTitulo}>Quantas pessoas?</Text>
-                <Participantes pessoa="Homens" />
-                <Participantes pessoa="Mulheres" />
-                <Participantes pessoa="Crianças" />
+                <View style={styles.parts}>
+                    <Participantes pessoa="Homens" />
+                </View>
+                <View style={styles.parts}>
+                    <Participantes pessoa="Mulheres" />
+                </View>
+                <View style={styles.parts}>
+                    <Participantes pessoa="Crianças" />
+                </View>
                 {ninguem ? <Text style={styles.alert}>Adicione uma pessoa</Text> : null}
                 <TouchableOpacity
                     onPress={() => { 
@@ -28,6 +35,7 @@ export default function Pessoas(props) {
                 >
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
+            </View>
             </ImageBackground>
         </View>
     );
@@ -52,19 +60,29 @@ const styles = StyleSheet.create({
       justifyContent: "space-evenly"
     },
     textTitulo: {
+        alignSelf:"center",
         backgroundColor: '#FFCE51',
         color: '#b43434',
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
+        fontWeight:600,
+        margin:15,
+    },
+    parts:{
+        margin:15,
     },
     next: {
         backgroundColor: "#FFCE51",
         padding: 10,
-        borderRadius: 20
+        borderRadius: 15,
+        margin:15,
     },
     textNext: {
-        fontSize: 20        
+        alignSelf:"center",
+        fontWeight:600,
+        color: '#b43434',
+        fontSize: 25,
     }
 })
 

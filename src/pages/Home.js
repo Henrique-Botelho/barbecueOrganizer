@@ -11,7 +11,7 @@ export default function Home(props) {
                     activeOpacity={0.7}>
 
                     <Text style={styles.text}>
-                        Criar churrasco
+                        Criar Churrasco
                     </Text>
                 </TouchableOpacity>
             </ImageBackground>
@@ -41,8 +41,10 @@ const styles = StyleSheet.create({
         padding: 20
     },
     text:{
+        fontWeight:600,
         fontSize: 25,
         alignSelf: "center",
-        height: 35
+        height: 35,
+        letterSpacing: 2,
     }
   })
