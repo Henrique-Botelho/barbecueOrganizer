@@ -11,21 +11,17 @@ export default function ListaTotais(props) {
                 <Text style={styles.itensHead}>Total de Carne (kg)</Text>
                 <Text style={styles.itensHead}>Total de Bebidas (L)</Text>
                 <Text style={styles.itensHead}>Custo por Pessoa</Text>
-                <Text style={styles.itensHead}>Custo do Local</Text>
+                <Text style={styles.itensHead}>Custo Total</Text>
             </View>
             <View style={styles.views}>
-                <Text style={styles.resultados}>{data.comidas.totalCarne}</Text>
-                <Text style={styles.resultados}>{data.comidas.totalLitros} L</Text>
-                <Text style={styles.resultados}>Custo total: R$ {data.custoTotal}</Text>
-                <Text style={styles.resultados}>Custo total: R$ {data.custoTotal}</Text>
+                <Text style={styles.itens}>{data.comidas.totalCarne}</Text>
+                <Text style={styles.itens}>{data.comidas.totalLitros}</Text>
+                <Text style={styles.itens}>R${data.custoPorPessoa}</Text>
+                <Text style={styles.itens}>R${data.custoTotal}</Text>
             </View>
         </View>
     );
 }
-
-
-
-
 
 const styles = StyleSheet.create({
     views: {

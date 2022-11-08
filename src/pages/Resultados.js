@@ -3,9 +3,10 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react
 import { MainContext } from "../context/mainContext";
 import Lista from "../components/Lista";
 import ListaInfo from "../components/ListaInfo";
+import ListaTotais from "../components/ListaTotais";
 
 export default function Resultados(props) {
-    const {data} = useContext(MainContext);
+    const {data, armazenaChurrasco} = useContext(MainContext);
 
     return(
         <View style={styles.view}>
@@ -20,11 +21,15 @@ export default function Resultados(props) {
                     <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
                     <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
                     <ListaInfo />
+                    <ListaTotais />
                 </View>
 
                 <TouchableOpacity
-                    onPress={() => {}} style={styles.next}>
-                    <Text style={styles.textNext}>Prosseguir</Text>
+                    onPress={() => {
+                        armazenaChurrasco();
+                    }}
+                    style={styles.next}>
+                    <Text style={styles.textNext}>Salvar Churrasco</Text>
                 </TouchableOpacity>
             </ImageBackground>
         </View>

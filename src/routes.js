@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AuthProvider from "./context/mainContext";
 
 import Home from "./pages/Home";
+import ConfigPrecos from "./pages/ConfigPrecos";
 import Pessoas from "./pages/Pessoas";
 import Assados from "./pages/Assados";
 import Bebidas from "./pages/Bebidas";
@@ -20,6 +21,7 @@ export default function Routes() {
         <Stack.Navigator initialRouteName="home">
 
           <Stack.Screen name="home" component={Home} options={configHeader} />
+          <Stack.Screen name="configPrecos" component={ConfigPrecos} options={configHeader} />
           <Stack.Screen name="pessoas" component={Pessoas} options={configHeader} />
           <Stack.Screen name="assados" component={Assados} options={configHeader} />
           <Stack.Screen name="bebidas" component={Bebidas} options={configHeader} />

@@ -1,5 +1,6 @@
 import React, { createContext } from "react";
 import data from "../data/data";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const MainContext = createContext();
 
@@ -57,6 +58,10 @@ export default function AuthProvider({children}){
                 data.comidas.totalItensBebidasCriancas -= 1
             }
         }
+    }
+
+    const mudaPrecoItem = (classe, item, preco) => {
+        data.comidas[classe][item].preco = preco;
     }
 
     const calculaChurrasco = () => {
@@ -154,6 +159,7 @@ export default function AuthProvider({children}){
     const precoTotal = () => {
 
         data.custoTotal = 0;
+        data.custoPorPessoa = 0;
 
         data.comidas["Carne Bovina"].forEach(element => {
             if (element.status == true) {
@@ -186,6 +192,15 @@ export default function AuthProvider({children}){
             }
         });
         data.custoTotal += data.info.local.custo;
+
+        data.custoPorPessoa = parseFloat((data.custoTotal / data.pessoas.totalAdultos).toFixed(2));
+    }
+
+    const armazenaChurrasco = () => {
+
+        const memory = JSON.stringify(data);
+
+        AsyncStorage.setItem("Churras2", memory);
     }
 
     const response = {
@@ -197,7 +212,9 @@ export default function AuthProvider({children}){
         adicionaItem,
         retiraItem,
         calculaChurrasco,
-        precoTotal
+        precoTotal,
+        mudaPrecoItem,
+        armazenaChurrasco
     };
     
     return(

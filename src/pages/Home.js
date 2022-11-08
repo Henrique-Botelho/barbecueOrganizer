@@ -14,6 +14,15 @@ export default function Home(props) {
                         Criar Churrasco
                     </Text>
                 </TouchableOpacity>
+                <TouchableOpacity 
+                    style={styles.btn}
+                    onPress={() => {props.navigation.navigate("configPrecos")}}
+                    activeOpacity={0.7}>
+
+                    <Text style={styles.text}>
+                        Configurar preços
+                    </Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );

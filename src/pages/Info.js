@@ -79,6 +79,7 @@ export default function Info(props) {
   const [name, setName] = useState(data.info.evento.nomeOrganizador);
   const [tel, setTel] = useState(data.info.evento.telefone);
   const [price, setPrice] = useState(data.info.local.custo);
+  const [nomeChurras, setNomeChurras] = useState(data.info.nomeChurras);
 
   setInfo(name, tel, ender, price);
 
@@ -92,6 +93,12 @@ export default function Info(props) {
         style={styles.image}
       >
         <Text style={styles.textTitulo}>Informações</Text>
+        <Text style={styles.organizador}>Nome do Churrasco:</Text>
+          <TextInput
+            style={styles.inputs}
+            onChangeText={setNomeChurras}
+            value={nomeChurras}
+          />
         <Text style={styles.text}>Evento</Text>
         <View style={styles.box}>
           <Text style={styles.organizador}>Nome do Organizador:</Text>

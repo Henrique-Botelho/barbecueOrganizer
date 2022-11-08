@@ -198,6 +198,7 @@ let data = {
         ]
     },
     info: {
+        nomeChurras: "",
         evento: {
             organizador: "",
             telefone: ""
