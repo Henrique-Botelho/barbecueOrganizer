@@ -5,8 +5,9 @@ import { MainContext } from "../context/mainContext";
 
 export default function Pessoas(props) {
     const {data} = useContext(MainContext);
+    const [adultos, setAdultos] = useState(false);
     const [ninguem, setNinguem] = useState(false);
-
+    
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
@@ -22,11 +23,16 @@ export default function Pessoas(props) {
                     <Participantes pessoa="Crianças" />
                 </View>
                 {ninguem ? <Text style={styles.alert}>Adicione uma pessoa</Text> : null}
+                {adultos ? <Text style={styles.alert}>Deve haver pelo menos um adulto</Text> : null}
                 <TouchableOpacity
                     onPress={() => { 
                         if(data.pessoas.total == 0) {
                             setNinguem(true)
+                        } else if (data.pessoas.totalAdultos == 0) {
+                            setNinguem(false);
+                            setAdultos(true);
                         } else {
+                            setAdultos(false);
                             setNinguem(false); 
                             props.navigation.navigate("assados");
                         }

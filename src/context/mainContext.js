@@ -17,6 +17,7 @@ export default function AuthProvider({children}){
 
     const somaPessoas = () => {
         data.pessoas.total = data.pessoas["Homens"] + data.pessoas["Mulheres"] + data.pessoas["Crianças"];
+        data.pessoas.totalAdultos = data.pessoas["Homens"] + data.pessoas["Mulheres"];
     }
 
     const setItem = (classe, item, estado) => {
@@ -95,6 +96,8 @@ export default function AuthProvider({children}){
 
         data.comidas.totalLitrosAdultos = ((data.pessoas["Homens"] * 20) + (data.pessoas["Mulheres"] * 15)) / 10;
         data.comidas.totalLitrosCriancas = data.pessoas["Crianças"]; // Não multiplico por nada porque considero que cada criança toma 1 litro em média de liqúido.
+        
+        data.comidas.totalLitros = data.comidas.totalLitrosAdultos + data.comidas.totalLitrosCriancas;
 
         let litrosPorItemCriancas = data.comidas.totalLitrosCriancas / data.comidas.totalItensBebidasCriancas;
         let litrosPorItemAdultos = data.comidas.totalLitrosAdultos / data.comidas.totalItensBebidas;

@@ -1,13 +1,16 @@
 let data = {
     custoTotal: 0,
+    custoPorPessoa: 0,
     pessoas: {
         total: 0,
+        totalAdultos: 0,
         "Homens": 0,
         "Mulheres": 0,
         "Crianças": 0
     },
     comidas: {
         totalCarne: 0,
+        totalLitros: 0,
         totalItensAssados: 0,
         totalLitrosAdultos: 0,
         totalLitrosCriancas: 0,

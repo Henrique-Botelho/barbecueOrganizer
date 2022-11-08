@@ -11,14 +11,6 @@ export default function Resultados(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Resultados</Text>
-                
-                <Text style={styles.resultados}>Total de Assados: {data.comidas.totalItensAssados}</Text>
-                <Text style={styles.resultados}>Total de bebidas: {data.comidas.totalItensBebidas}</Text>
-                <Text style={styles.resultados}>Total de bebidas para crianças: {data.comidas.totalItensBebidasCriancas}</Text>
-                <Text style={styles.resultados}>Total de quilos de carne: {data.comidas.totalCarne} kg</Text>
-                <Text style={styles.resultados}>Total de litros de bebidas: {data.comidas.totalLitrosAdultos} L</Text>
-                <Text style={styles.resultados}>Total de litros de bebidas crianças: {data.comidas.totalLitrosCriancas} L</Text>
-                <Text style={styles.resultados}>Custo total: R$ {data.custoTotal}</Text>
 
                 <View style={styles.lista}>
                     <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
