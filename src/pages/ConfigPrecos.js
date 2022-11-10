@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, FlatList, TextInput } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, FlatList, TextInput, ScrollView} from "react-native";
 import { MainContext } from "../context/mainContext";
 import CarregaPrecos from "../components/CarregaPrecos";
-import { ScrollView } from "react-native-web";
 
 export default function ConfigPrecos(props) {
 
@@ -53,7 +52,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 20,
-        // fontWeight:700,
         margin:15,
     },
     image:{
@@ -76,7 +74,6 @@ const styles = StyleSheet.create({
     },
     textNext: {
         alignSelf:"center",
-        // fontWeight:600,
         color: '#b43434',
         fontSize: 25,
     }

@@ -95,6 +95,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#FFCE51",
     height:70,
-    width: "fit-content",
+    // width: "fit-content",
   }
 });
