@@ -189,7 +189,7 @@ let data = {
                 precoTotal: 0
             },
             {
-                nome: "Descartáveis (kit com 10)",
+                nome: "Descartáveis (10)",
                 status: true,
                 preco: 20.00,
                 quantidade: 0,

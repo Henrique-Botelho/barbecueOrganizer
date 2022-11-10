@@ -91,32 +91,3 @@ const styles = StyleSheet.create({
         fontSize: 25,
     }
 })
-
-//     itens: {
-//         flex: 0.8,
-//         justifyContent: "space-evenly"
-//     },
-//     item: {
-//         backgroundColor: "#FFCE51",
-//         flexDirection: "row",
-//         padding: 10,
-//         borderRadius: 20,
-//         width: 300
-//     },
-//     name: {
-//         flex: 1,
-//         alignSelf: "center",
-//         fontSize: 20
-//     },
-//     controles: {
-//         flex: 1,
-//         alignSelf: "center",
-//         flexDirection: "row",
-//         justifyContent: "space-around"
-//     },
-//     valor: {
-//         fontSize: 30
-//     },
-//     btns: {
-//         fontSize: 30
-//     }
