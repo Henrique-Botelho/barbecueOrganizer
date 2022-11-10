@@ -26,10 +26,11 @@ export default function AuthProvider({children}){
     }
 
 
-    const setInfo = (nome, tel, endereco, custo) => {
+    const setInfo = (nome, tel, endereco, custo, nomeChurras) => {
         data.info.evento.organizador = nome;
         data.info.evento.telefone = tel;
         data.info.local.endereco = endereco;
+        data.info.nomeChurras = nomeChurras;
         if (typeof custo == 'string') {
             custo = parseFloat(custo);
             data.info.local.custo = custo
@@ -200,7 +201,6 @@ export default function AuthProvider({children}){
 
         const memory = JSON.stringify(data);
 
-        AsyncStorage.setItem("Churras2", memory);
     }
 
     const response = {

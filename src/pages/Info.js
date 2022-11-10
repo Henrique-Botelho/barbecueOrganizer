@@ -81,7 +81,9 @@ export default function Info(props) {
   const [price, setPrice] = useState(data.info.local.custo);
   const [nomeChurras, setNomeChurras] = useState(data.info.nomeChurras);
 
-  setInfo(name, tel, ender, price);
+  const [semNome, setSemNome] = useState(false);
+
+  setInfo(name, tel, ender, price, nomeChurras);
 
   return (
     <View style={styles.view}>
@@ -97,7 +99,7 @@ export default function Info(props) {
           <TextInput
             style={styles.inputs}
             onChangeText={setNomeChurras}
-            value={nomeChurras}
+            value={nomeChurras.trim()}
           />
         <Text style={styles.text}>Evento</Text>
         <View style={styles.box}>
@@ -160,11 +162,17 @@ export default function Info(props) {
             keyboardType="numeric"
           />
         </View>
+        {semNome ? <View><Text>O seu churrasco deve ter um nome</Text></View> : null}
         <TouchableOpacity
           onPress={() => {
-            calculaChurrasco();
-            precoTotal();
-            props.navigation.navigate("resultados");
+            if (data.info.nomeChurras == "") {
+              setSemNome(true);
+            } else {
+              setSemNome(false);
+              calculaChurrasco();
+              precoTotal();
+              props.navigation.navigate("resultados");
+            }
           }}
           style={styles.next}
         >

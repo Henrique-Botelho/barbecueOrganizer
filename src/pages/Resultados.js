@@ -24,6 +24,8 @@ export default function Resultados(props) {
                     <ListaTotais />
                 </View>
 
+                <Text>{data.info.nomeChurras}</Text>
+
                 <TouchableOpacity
                     onPress={() => {
                         armazenaChurrasco();
