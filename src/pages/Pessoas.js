@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
-        fontWeight:600,
+        fontWeight:700,
         margin:15,
     },
     parts:{

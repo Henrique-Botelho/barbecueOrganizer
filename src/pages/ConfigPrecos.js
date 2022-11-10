@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
         color: '#b43434',
         borderRadius: 10,
         padding: 10,
-        fontSize: 25,
-        fontWeight:600,
+        fontSize: 20,
+        fontWeight:700,
         margin:15,
     },
     image:{
@@ -62,10 +62,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-evenly"
     },
-    // fundo: {
-    //     backgroundColor: '#000',
-    //     borderRadius:5,
-    // },
     container:{
         flex: 1,
         flexDirection:"row",
