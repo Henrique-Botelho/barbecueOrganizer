@@ -23,7 +23,7 @@ export default function Participantes(props) {
               }
             }}
           >
-            <Image style={styles.btnMinus} source={require('../../assets/dash.svg')} />
+            <Image style={styles.btnMinus} source={require('../../assets/dash.png')} />
           </TouchableOpacity>
           <View style={styles.quntnum}>
             <Text style={styles.numero}>{quantidade}</Text>
@@ -33,7 +33,7 @@ export default function Participantes(props) {
               setQuantidade(quantidade + 1);
             }}
           >
-            <Image style={styles.btnPlus} source={require('../../assets/plus.svg')} />
+            <Image style={styles.btnPlus} source={require('../../assets/plus.png')} />
           </TouchableOpacity>
         </View>
       </View>
