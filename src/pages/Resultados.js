@@ -13,6 +13,7 @@ export default function Resultados(props) {
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Resultados</Text>
 
+                <Text>{data.info.nomeChurras}</Text>
                 <View style={styles.lista}>
                     <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
                     <Lista tipo="Carne Suina" headers={false} />
@@ -24,7 +25,6 @@ export default function Resultados(props) {
                     <ListaTotais />
                 </View>
 
-                <Text>{data.info.nomeChurras}</Text>
 
                 <TouchableOpacity
                     onPress={() => {
