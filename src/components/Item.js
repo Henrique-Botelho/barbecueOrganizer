@@ -4,7 +4,7 @@ import { MainContext } from "../context/mainContext";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function Item(props) {
-    const {setItem, data, adicionaItem, retiraItem} = useContext(MainContext);
+    const {setItem, data, mudaItem} = useContext(MainContext);
     const [checkBoxState, setCheckBoxState] = useState(data.comidas[props.class][props.position].status);
     
     setItem(props.class, props.position, checkBoxState);
@@ -13,25 +13,17 @@ export default function Item(props) {
       <TouchableOpacity
         style={styles.tudo}
         onPress={() => {
-            if (checkBoxState == false) {
-                adicionaItem(props.class, props.name);
-            } else if (checkBoxState == true) {
-                retiraItem(props.class, props.name);
-            };
+            mudaItem(props.class, props.name, checkBoxState);
             setCheckBoxState(!checkBoxState);
-        }}
-      >
+          }}
+          >
         <BouncyCheckbox
           style={styles.check}
           fillColor="#B43434"
           disableBuiltInState={true}
           isChecked={checkBoxState}
           onPress={() => {
-            if (checkBoxState == false) {
-                adicionaItem(props.class, props.name)
-            } else if (checkBoxState == true) {
-                retiraItem(props.class, props.name)
-            };
+            mudaItem(props.class, props.name, checkBoxState);
             setCheckBoxState(!checkBoxState);
           }}
         />
