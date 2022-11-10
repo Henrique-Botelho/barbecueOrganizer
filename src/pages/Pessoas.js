@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
-        fontWeight:700,
+        // fontWeight:700,
         margin:15,
     },
     parts:{
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     },
     textNext: {
         alignSelf:"center",
-        fontWeight:600,
+        // fontWeight:600,
         color: '#b43434',
         fontSize: 25,
     }

@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
     textcarnes: {
         letterSpacing: 1,
         fontSize: 18,
-        fontWeight:600,
+        // fontWeight:600,
         width:200,
         paddingLeft:5,
     },
     rs:{
-        fontWeight:600,
+        // fontWeight:600,
     },
     inputs: {
         borderColor: '#b43434',
