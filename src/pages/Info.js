@@ -83,7 +83,9 @@ export default function Info(props) {
 
   const [semNome, setSemNome] = useState(false);
 
-  setInfo(name, tel, ender, price, nomeChurras);
+  const nomeSemEspacos = nomeChurras.trim();
+
+  setInfo(name, tel, ender, price, nomeSemEspacos);
 
   return (
     <View style={styles.view}>
@@ -99,7 +101,7 @@ export default function Info(props) {
           <TextInput
             style={styles.inputs}
             onChangeText={setNomeChurras}
-            value={nomeChurras.trim()}
+            value={nomeChurras}
           />
         <Text style={styles.text}>Evento</Text>
         <View style={styles.box}>

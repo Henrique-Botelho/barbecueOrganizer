@@ -140,13 +140,13 @@ export default function AuthProvider({children}){
 
         data.comidas["Sem Falta"].forEach(element => {
             if (element.nome == "Carvão (kg)") {
-                element.quantidade = data.comidas.totalCarne * 1.5;
+                element.quantidade = parseFloat((data.comidas.totalCarne * 1.5).toFixed(2));
                 element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             } else if (element.nome == "Acendedor/Fósforo") {
                 element.quantidade = 1;
                 element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             } else if (element.nome == "Sal de Grosso (kg)") {
-                element.quantidade = data.comidas.totalCarne * 0.18;
+                element.quantidade = parseFloat((data.comidas.totalCarne * 0.18).toFixed(2));
                 element.precoTotal = parseFloat((element.quantidade * element.preco).toFixed(2));
             } else if (element.nome == "Descartáveis (kit com 10)") {
                 element.quantidade = Math.ceil(data.pessoas.total / 5);
@@ -198,8 +198,6 @@ export default function AuthProvider({children}){
     }
 
     const armazenaChurrasco = () => {
-
-        const memory = JSON.stringify(data);
 
     }
 
