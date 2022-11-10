@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   textgenero: {
     letterSpacing: 2,
     fontSize: 20,
-    fontWeight:600,
+    // fontWeight:600,
     textAlign: "center",
     width:120,
   },
