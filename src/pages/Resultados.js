@@ -29,6 +29,7 @@ export default function Resultados(props) {
                 <TouchableOpacity
                     onPress={() => {
                         armazenaChurrasco();
+                        props.navigation.navigate("home");
                     }}
                     style={styles.next}>
                     <Text style={styles.textNext}>Salvar Churrasco</Text>

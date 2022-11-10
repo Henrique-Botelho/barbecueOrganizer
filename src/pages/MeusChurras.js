@@ -4,20 +4,22 @@ import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, T
 import { MainContext } from "../context/mainContext";
 
 export default function MeusChurras(props) {
-    const {data, excluirChurrascos} = useContext(MainContext);
+    const {excluirChurrascos} = useContext(MainContext);
+    
     const [load, setLoad] = useState(false);
     const [dados, setDados] = useState();
 
     useEffect(() => {
         const getData = async () => {
             const response = await AsyncStorage.getAllKeys();
+            console.log(response);
             setDados(response);
             setLoad(true);
         }
         getData();
     },[]);
 
-    if (load == true) {
+    if (load == true && dados.length != 0) {
         return(
             <View style={styles.view}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
@@ -35,11 +37,19 @@ export default function MeusChurras(props) {
                         style={styles.btn}
                         onPress={() => {
                             excluirChurrascos();
-                            setLoad(false);
+                            props.navigation.navigate("home");
                         }}
                         activeOpacity={0.7}>
                             <Text>Excluir Churrascos</Text>
                     </TouchableOpacity>
+                </ImageBackground>
+            </View>
+        );
+    } else if (load == true && dados.length == 0) {
+        return(
+            <View style={styles.view}>
+                <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
+                    <Text>Nenhum churrasco encontrado</Text>
                 </ImageBackground>
             </View>
         );
