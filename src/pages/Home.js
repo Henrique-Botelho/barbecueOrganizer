@@ -24,6 +24,15 @@ export default function Home(props) {
                             Configurar preços
                         </Text>
                     </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.btn}
+                        onPress={() => {props.navigation.navigate("meusChurras")}}
+                        activeOpacity={0.7}>
+
+                        <Text style={styles.text}>
+                            Meus Churrascos
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </ImageBackground>
         </View>

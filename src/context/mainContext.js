@@ -198,7 +198,12 @@ export default function AuthProvider({children}){
     }
 
     const armazenaChurrasco = () => {
+        const memory = JSON.stringify(data);
+        AsyncStorage.setItem(data.info.nomeChurras, memory);
+    }
 
+    const excluirChurrascos = () => {
+        AsyncStorage.clear();
     }
 
     const response = {
@@ -212,7 +217,8 @@ export default function AuthProvider({children}){
         calculaChurrasco,
         precoTotal,
         mudaPrecoItem,
-        armazenaChurrasco
+        armazenaChurrasco,
+        excluirChurrascos
     };
     
     return(
