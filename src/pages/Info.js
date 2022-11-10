@@ -19,8 +19,6 @@ export default function Info(props) {
   //   longitudeDelta: 0.0421,
   // });
 
-  // const [street, setStreet] = useState('');
-  // const [number, setNumber] = useState('');
   // const [cep, setCep] = useState(0);
 
   //   function changeRegion(latitude, longitude) {
@@ -35,8 +33,8 @@ export default function Info(props) {
   //   function changeMarker() {
   //     const buscaData = async () => {
   //       try {
-  //         if(number && street){
-  //           const response = await api.get(`search?street=${number}, ${street}&format=json`);
+  //         if(ender){
+  //           const response = await api.get(`search?street=${ender}&format=json`);
   //           console.log(response.data[0]);
   //           const latitude = JSON.parse(response.data[0].lat);
   //           const longitude = JSON.parse(response.data[0].lon);
@@ -133,15 +131,8 @@ export default function Info(props) {
           <Text style={styles.organizador}>Endereço:</Text>
           {/* <TextInput
             style={styles.inputs}
-            onChangeText={setStret}
-            value={street}
-          />
-          <Text style={styles.organizador}>Complemento:</Text>
-          <TextInput
-            style={styles.inputs}
-            onChangeText={setNumber}
-            value={number}
-            keyboardType="numeric"
+            onChangeText={setEnder}
+            value={ender}
           />
           <Text> ou </Text>
           <Text style={styles.organizador}>CEP:</Text>
