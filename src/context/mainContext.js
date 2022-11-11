@@ -1,5 +1,6 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import data from "../data/data";
+import dataLock from "../data/dataLock";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const MainContext = createContext();
@@ -194,12 +195,27 @@ export default function AuthProvider({children}){
         });
         data.custoTotal += data.info.local.custo;
 
+        data.custoTotal = (data.custoTotal).toFixed(2);
+
         data.custoPorPessoa = parseFloat((data.custoTotal / data.pessoas.totalAdultos).toFixed(2));
     }
 
-    const armazenaChurrasco = () => {
+    const verificaNome = async (nomeChurras) => {
+        const existeNome = await AsyncStorage.getItem(nomeChurras);
+        return existeNome;
+    }
+
+    const armazenaChurrasco = async () => {
         const memory = JSON.stringify(data);
-        AsyncStorage.setItem(data.info.nomeChurras, memory);
+        await AsyncStorage.setItem(data.info.nomeChurras, memory);
+    }
+
+    const resetValores = () => {
+        data.custoTotal = dataLock.custoTotal;
+        data.custoPorPessoa = dataLock.custoPorPessoa;
+        data.pessoas = dataLock.pessoas;
+        data.comidas = dataLock.comidas;
+        data.info = dataLock.info;
     }
 
     const excluirChurrascos = () => {
@@ -217,7 +233,9 @@ export default function AuthProvider({children}){
         precoTotal,
         mudaPrecoItem,
         armazenaChurrasco,
-        excluirChurrascos
+        excluirChurrascos,
+        verificaNome,
+        resetValores
     };
     
     return(

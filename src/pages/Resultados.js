@@ -6,7 +6,7 @@ import ListaInfo from "../components/ListaInfo";
 import ListaTotais from "../components/ListaTotais";
 
 export default function Resultados(props) {
-    const {data, armazenaChurrasco} = useContext(MainContext);
+    const {data, armazenaChurrasco, resetValores} = useContext(MainContext);
 
     return(
         <View style={styles.view}>
@@ -29,6 +29,7 @@ export default function Resultados(props) {
                 <TouchableOpacity
                     onPress={() => {
                         armazenaChurrasco();
+                        resetValores();
                         props.navigation.navigate("home");
                     }}
                     style={styles.next}>

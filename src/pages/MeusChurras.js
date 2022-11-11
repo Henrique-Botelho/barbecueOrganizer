@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal } from "react-native";
 import { MainContext } from "../context/mainContext";
-import { set } from "react-native-reanimated";
+import ModalPerso from "../components/ModalPerso";
 
 export default function MeusChurras(props) {
     const {excluirChurrascos} = useContext(MainContext);
     
     const [load, setLoad] = useState(false);
     const [dados, setDados] = useState();
+    const [estadoModal, setEstadoModal] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
@@ -32,11 +33,26 @@ export default function MeusChurras(props) {
                                     <TouchableOpacity
                                         style={styles.btn}
                                         onPress={() => {
-                                            
+                                            setEstadoModal(true);
                                         }}
                                         activeOpacity={0.7}>
                                             <Text>{item}</Text>
                                     </TouchableOpacity>
+                                    <Modal
+                                        animationType="slide"
+                                        transparent={false}
+                                        visible={estadoModal}
+                                        onRequestClose={() => {
+                                            setEstadoModal(!estadoModal);
+                                        }}>
+                                            {estadoModal ? <ModalPerso churras={item}/> : null}
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            setEstadoModal(!estadoModal);
+                                        }}>
+                                            <Text>Fechar</Text>
+                                    </TouchableOpacity>
+                                    </Modal>
                                 </View>
                             );
                         }}

@@ -71,13 +71,14 @@ export default function Info(props) {
   //     buscaData();
   //   }
 
-  const { data, setInfo, calculaChurrasco, precoTotal } = useContext(MainContext);
+  const { data, setInfo, calculaChurrasco, precoTotal, verificaNome } = useContext(MainContext);
 
   const [ender, setEnder] = useState(data.info.local.endereco);
   const [name, setName] = useState(data.info.evento.nomeOrganizador);
   const [tel, setTel] = useState(data.info.evento.telefone);
   const [price, setPrice] = useState(data.info.local.custo);
   const [nomeChurras, setNomeChurras] = useState(data.info.nomeChurras);
+  const [existeNome, setExisteNome] = useState(false);
 
   const [semNome, setSemNome] = useState(false);
 
@@ -153,19 +154,29 @@ export default function Info(props) {
             onChangeText={setPrice}
             value={price}
             keyboardType="numeric"
-          />
+            />
         </View>
         {semNome ? <View><Text>O seu churrasco deve ter um nome</Text></View> : null}
+        {existeNome ? <View><Text>Já existe um churrasco com esse nome</Text></View> : null}
         <TouchableOpacity
           onPress={() => {
-            if (data.info.nomeChurras == "") {
-              setSemNome(true);
-            } else {
-              setSemNome(false);
-              calculaChurrasco();
-              precoTotal();
-              props.navigation.navigate("resultados");
-            }
+            verificaNome(nomeChurras)
+              .then(value => {
+                if (value == null) {
+                  setExisteNome(false);
+                  if (data.info.nomeChurras == "") {
+                    setSemNome(true);
+                  } else {
+                    setSemNome(false);
+                    calculaChurrasco();
+                    precoTotal();
+                    props.navigation.navigate("resultados");
+                  }
+                } else if (value != null) {
+                  setExisteNome(true);
+                }
+              })
+              .catch(error => console.log(error));
           }}
           style={styles.next}
         >

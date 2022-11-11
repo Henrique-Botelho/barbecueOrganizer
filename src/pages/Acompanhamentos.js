@@ -4,7 +4,6 @@ import { MainContext } from "../context/mainContext";
 import Section from "../components/Section";
 
 export default function Acompanhamentos(props) {
-
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
@@ -13,7 +12,10 @@ export default function Acompanhamentos(props) {
                 <Section tipo="Acompanhamentos" />
                 
                 <TouchableOpacity
-                    onPress={() => {props.navigation.navigate("info")}} style={styles.next}>
+                    onPress={() => {
+                        props.navigation.navigate("info");
+                    }}
+                    style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
             </ImageBackground>
