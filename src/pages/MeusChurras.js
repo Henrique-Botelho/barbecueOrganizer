@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
 import { MainContext } from "../context/mainContext";
+import { set } from "react-native-reanimated";
 
 export default function MeusChurras(props) {
     const {excluirChurrascos} = useContext(MainContext);
@@ -28,7 +29,14 @@ export default function MeusChurras(props) {
                         renderItem={({item}) => {
                             return(
                                 <View>
-                                    <Text>{item}</Text>
+                                    <TouchableOpacity
+                                        style={styles.btn}
+                                        onPress={() => {
+                                            
+                                        }}
+                                        activeOpacity={0.7}>
+                                            <Text>{item}</Text>
+                                    </TouchableOpacity>
                                 </View>
                             );
                         }}
