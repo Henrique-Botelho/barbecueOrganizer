@@ -34,7 +34,7 @@ export default function Item(props) {
 
 const styles = StyleSheet.create({
   name: {
-    fontSize: 15,
+    fontSize: 18,
     letterSpacing: 2,
     padding: 5,
     paddingRight: 20,
@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#ede6c7",
     margin: 2,
     borderRadius: 5,
-    width: 220 ,
+    width: 350,
   },
 });

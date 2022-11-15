@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, TextInput, StyleSheet, ImageBackground, TouchableOpacity, Dimensions, Alert } from "react-native";
+import { View, Text, TextInput, StyleSheet, ImageBackground, TouchableOpacity, Dimensions, Alert, ScrollView } from "react-native";
 import { MainContext } from "../context/mainContext";
 import api from "../services/api";
 // import MapView from "react-native-maps";
@@ -96,28 +96,83 @@ export default function Info(props) {
         style={styles.image}
       >
         <Text style={styles.textTitulo}>Informações</Text>
-        <Text style={styles.organizador}>Nome do Churrasco:</Text>
+        <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+          <Text style={styles.organizador}>Nome do Churrasco:</Text>
           <TextInput
             style={styles.inputs}
             onChangeText={setNomeChurras}
             value={nomeChurras}
           />
-        <Text style={styles.text}>Evento</Text>
-        <View style={styles.box}>
-          <Text style={styles.organizador}>Nome do Organizador:</Text>
-          <TextInput
-            style={styles.inputs}
-            onChangeText={setName}
-            value={name}
-          />
-          <Text style={styles.organizador}>Telefone de Contato:</Text>
-          <TextInput
-            style={styles.inputs}
-            onChangeText={setTel}
-            value={tel}
-            keyboardType="numeric"
-          />
         </View>
+        <View style={styles.container1}>
+          <Text style={styles.text}>E{'\n'}v{'\n'}e{'\n'}n{'\n'}t{'\n'}o</Text>
+          <View style={styles.evento}>
+            <View style={styles.item}>
+              <Text style={styles.organizador}>Nome do Organizador:</Text>
+              <TextInput
+                style={styles.inputs}
+                onChangeText={setName}
+                value={name}
+                />
+            </View>
+            <View style={styles.item}>
+              <Text style={styles.organizador}>Telefone de Contato:</Text>
+              <TextInput
+                style={styles.inputs}
+                onChangeText={setTel}
+                value={tel}
+                keyboardType="numeric"
+                />
+            </View>
+          </View>
+        </View>
+        <View style={styles.container2}>
+          {/* <MapView
+              style={styles.map}
+              region={ region }
+              onRegionChangeComplete={(region) => setRegion(region)}>
+                <Marker coordinate={
+                  { 
+                    latitude: dados.lat,
+                    longitude: dados.long,
+                  }
+                }/>
+              </MapView> */}
+          <View style={styles.local}>
+            <View>
+              <Text style={styles.organizador}>Endereço:</Text>
+              {/* <TextInput
+                style={styles.inputs}
+                onChangeText={setEnder}
+                value={ender}
+                />
+                <Text> ou </Text>
+                <Text style={styles.organizador}>CEP:</Text>
+                <TextInput
+                style={styles.inputs}
+                onChangeText={setCep}
+                value={cep}
+                keyboardType="numeric"
+                />
+                <TouchableOpacity onPress={changeMarker}>
+                <Text>Enviar</Text>
+              </TouchableOpacity> */}
+            </View>
+            <View>
+              <Text style={styles.organizador}>Custo:</Text>
+              <TextInput
+                style={styles.inputs}
+                onChangeText={setPrice}
+                value={price}
+                keyboardType="numeric"
+              />
+            </View>
+          </View>
+          <Text style={styles.text}>L{'\n'}o{'\n'}c{'\n'}a{'\n'}l</Text>
+        </View>
+        </ScrollView>
+        {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
         <Text style={styles.text}>Local</Text>
         {/* <MapView
             style={styles.map}
@@ -197,6 +252,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-evenly",
   },
+
+  scrollView:{
+    flex:1,
+  },
+
   textTitulo: {
     backgroundColor: "#FFCE51",
     color: "#b43434",
@@ -204,13 +264,36 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 25,
   },
-  next: {
-    backgroundColor: "#FFCE51",
-    padding: 10,
-    borderRadius: 20,
+
+  container:{
+    flex: 1,
+    flexDirection:"column",
+    justifyContent: "center",
+    marginTop:10,
   },
-  textNext: {
+  container1:{
+    flex: 1,
+    flexDirection:"row",
+    justifyContent: "center",
+    marginTop:10,
+  },
+  container2:{
+    flex: 1,
+    flexDirection:"row",
+    justifyContent: "center",
+    marginTop:10,
+  },
+  text: {
     fontSize: 20,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "#FFCE51",
+    paddingRight: 10,
+    paddingLeft: 10,
+    paddingTop: 5,
+    borderRadius: 5,
+    textAlign: "center",
+    maxHeight:200,
   },
   inputs: {
     borderColor: "#black",
@@ -228,6 +311,33 @@ const styles = StyleSheet.create({
     color: "#fc0000",
     letterSpacing: 2,
   },
+  evento: {
+    width: 300,
+    height:200,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  local: {
+    width: 300,
+    height:200,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+
+
+  next: {
+    backgroundColor: "#FFCE51",
+    padding: 10,
+    borderRadius: 20,
+  },
+  textNext: {
+    fontSize: 20,
+  },
+
+
+  
   map: {
     height: 250,
     width: Dimensions.get("window").width,
@@ -241,17 +351,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 5,
   },
-  text: {
-    fontSize: 20,
-    borderColor: "black",
-    borderWidth: 1,
-    letterSpacing: 2,
-    backgroundColor: "#FFCE51",
-    padding: 10,
+
+  alert: {
+    backgroundColor: "#B43434",
+    color: "#fff",
     borderRadius: 5,
-    textAlign: "center",
-  },
-  box: {
-    width: 300,
+    fontSize: 15,
+    padding: 5,
   },
 });

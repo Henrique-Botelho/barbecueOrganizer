@@ -8,9 +8,9 @@ export default function Bebidas(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Escolha suas Bebidas</Text>
-                
-                <Section tipo="Bebidas" />
-
+                <View style={styles.container}>
+                    <Section tipo="Bebidas" />
+                </View>
                 <TouchableOpacity
                     onPress={() => {props.navigation.navigate("acompanhamentos")}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
@@ -36,6 +36,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
+        marginTop:20,
+    },
+    container:{
+        flex: 1,
+        flexDirection:"row",
+        justifyContent: "center",
+        marginTop:10,
     },
     next: {
         backgroundColor: "#FFCE51",

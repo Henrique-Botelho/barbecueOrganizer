@@ -8,11 +8,15 @@ export default function Assados(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Escolha seus Assados</Text>
-              
-                    <Section tipo="Carne Bovina" />
-                    <Section tipo="Carne Suina" />
-                    <Section tipo="Frango" /> 
-
+                <View style={styles.container}>
+                  <Section tipo="Carne Bovina" />
+                </View>
+                <View style={styles.container}>
+                  <Section tipo="Carne Suina" />
+                </View>
+                <View style={styles.container}>
+                  <Section tipo="Frango" /> 
+                </View>
                 <TouchableOpacity
                     onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
@@ -38,13 +42,22 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     fontSize: 25,
+    marginTop: 20,
+  },
+  container:{
+    flex: 1,
+    flexDirection:"row",
+    justifyContent: "center",
+    marginTop:10,
   },
   next: {
     backgroundColor: "#FFCE51",
     padding: 10,
     borderRadius: 20,
+    margin:20,
   },
   textNext: {
+    color: "#b43434",
     fontSize: 20,
   },
 });

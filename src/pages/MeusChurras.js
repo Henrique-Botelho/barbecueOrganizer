@@ -73,7 +73,7 @@ export default function MeusChurras(props) {
         return(
             <View style={styles.view}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                    <Text>Nenhum churrasco encontrado</Text>
+                    <Text styles={styles.nenhum}>Nenhum churrasco encontrado</Text>
                 </ImageBackground>
             </View>
         );
@@ -102,6 +102,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         justifyContent: "space-evenly"
+    },
+    nenhum:{
+        alignSelf:"center",
+        textAlign:"center",
+        backgroundColor: '#FFCE51',
+        color: '#b43434',
+        borderRadius: 10,
+        padding: 10,
+        fontSize: 20,
+        margin:15,
     },
     btn:{
         backgroundColor: "#FFCE51",

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, SafeAreaView} from "react-native";
 import { MainContext } from "../context/mainContext";
 import Item from "./Item";
 
@@ -9,19 +9,24 @@ export default function Section(props) {
     return (
         <View style={styles.view}>
             <Text style={styles.titulo}>{props.tipo}</Text>
-            <FlatList
-              data={data.comidas[props.tipo]}
-              renderItem={({item, index}) => {
-                return(
-                  <Item class={props.tipo} name={item.nome} position={index} />
-                );
-              }}
-            />
+            <SafeAreaView style={styles.safeview}>
+              <FlatList
+                data={data.comidas[props.tipo]}
+                renderItem={({item, index}) => {
+                  return(
+                    <Item class={props.tipo} name={item.nome} position={index} />
+                  );
+                }}
+              style={styles.flat}/>
+            </SafeAreaView>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+  view:{
+    flex:1,
+  },
   titulo: {
     fontSize: 20,
     borderColor: "black",
@@ -31,5 +36,10 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 5,
     textAlign: "center", 
+  },
+  safeview:{
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems:"center",
   },
 });

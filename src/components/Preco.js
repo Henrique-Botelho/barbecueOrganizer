@@ -10,14 +10,18 @@ export default function Preco(props) {
 
     return(
         <View style={styles.corpo}>
-            <Text style={styles.textcarnes} >{props.nome} </Text>
-            <Text style={styles.rs}>R$ </Text>
-            <TextInput
-                style={styles.inputs}
-                onChangeText={setItem}
-                value={item}
-                keyboardType="numeric"
-            />
+            <View style={styles.col1}>
+                <Text style={styles.textcarnes} >{props.nome} </Text>
+            </View>
+            <View style={styles.col2}>
+                <Text style={styles.rs}>R$ </Text>
+                <TextInput
+                    style={styles.inputs}
+                    onChangeText={setItem}
+                    value={item}
+                    keyboardType="numeric"
+                />
+            </View>
         </View>
     );
 }
@@ -27,21 +31,18 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems:"center",
         flex:1,
-        borderWidth: 0.1,
-        borderColor: "black",
         borderRadius: 5,
         margin: 2,
-        backgroundColor: '#FFCE51'
+        backgroundColor: '#FFCE51',
+        width:360,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     textcarnes: {
         letterSpacing: 1,
         fontSize: 18,
-        // fontWeight:600,
-        width:200,
         paddingLeft:5,
-    },
-    rs:{
-        // fontWeight:600,
     },
     inputs: {
         borderColor: '#b43434',
@@ -50,5 +51,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         width:100,
         paddingLeft:5,
+        backgroundColor:'#fff',
     }
 })

@@ -13,15 +13,25 @@ export default function ConfigPrecos(props) {
             
             <Text style={styles.textTitulo}>Configure o preço de cada item:</Text>
             <ScrollView style={styles.scrollView}>
-                <View style={styles.fundo}>
+                <View>
                     <View style={styles.container}>
                         <CarregaPrecos type="Carne Bovina" />
                     </View>
-                    <CarregaPrecos type="Carne Suina" />
-                    <CarregaPrecos type="Frango" />
-                    <CarregaPrecos type="Bebidas" />
-                    <CarregaPrecos type="Acompanhamentos" />
-                    <CarregaPrecos type="Sem Falta" />
+                    <View style={styles.container}>
+                        <CarregaPrecos type="Carne Suina" />
+                    </View>
+                    <View style={styles.container}>
+                        <CarregaPrecos type="Frango" />
+                    </View>
+                    <View style={styles.container}>
+                        <CarregaPrecos type="Bebidas" />
+                    </View>
+                    <View style={styles.container}>
+                        <CarregaPrecos type="Acompanhamentos" />
+                    </View>
+                    <View style={styles.container}>
+                        <CarregaPrecos type="Sem Falta" />
+                    </View>
                 </View>
             </ScrollView>
                 <TouchableOpacity
@@ -39,7 +49,7 @@ export default function ConfigPrecos(props) {
 
 const styles = StyleSheet.create({
     scrollView:{
-        height: 0,
+        flex:1,
     },
     view: {
         flex: 1
@@ -64,7 +74,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection:"row",
         justifyContent: "center",
-        alignItems: "flex-end",
     },
     next: {
         backgroundColor: "#FFCE51",

@@ -8,9 +8,9 @@ export default function Acompanhamentos(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Acompanhamentos</Text>
-                
-                <Section tipo="Acompanhamentos" />
-                
+                <View style={styles.container}>
+                    <Section tipo="Acompanhamentos" />
+                </View>
                 <TouchableOpacity
                     onPress={() => {
                         props.navigation.navigate("info");
@@ -39,6 +39,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
+    },
+    container:{
+        flex: 1,
+        flexDirection:"row",
+        justifyContent: "center",
+        marginTop:10,
     },
     next: {
         backgroundColor: "#FFCE51",

@@ -12,7 +12,9 @@ export default function Participantes(props) {
   return (
     <View style={styles.container}>
       <View style={styles.genero}>
-        <Text style={styles.textgenero}>{props.pessoa}</Text>
+        <View>
+          <Text style={styles.textgenero}>{props.pessoa}</Text>
+        </View>
         <View style={styles.quantidade}>
           <TouchableOpacity
             onPress={() => {
@@ -80,7 +82,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     // fontWeight:600,
     textAlign: "center",
-    width:120,
   },
   genero: {
     flex:1,
@@ -89,7 +90,9 @@ const styles = StyleSheet.create({
     alignItems:"center",
     padding: 5,
     textAlign: "center",
-    width:260,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   container:{
     borderRadius: 5,
