@@ -2,24 +2,23 @@ import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal } from "react-native";
 import { MainContext } from "../context/mainContext";
-import ModalPerso from "../components/ModalPerso";
 
 export default function MeusChurras(props) {
-    const {excluirChurrascos} = useContext(MainContext);
+    const {data, excluirChurrascos, getNewData, setNewData} = useContext(MainContext);
     
     const [load, setLoad] = useState(false);
     const [dados, setDados] = useState();
-    const [estadoModal, setEstadoModal] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
             const response = await AsyncStorage.getAllKeys();
-            console.log(response);
             setDados(response);
             setLoad(true);
         }
         getData();
     },[]);
+
+    console.log(data);
 
     if (load == true && dados.length != 0) {
         return(
@@ -33,26 +32,14 @@ export default function MeusChurras(props) {
                                     <TouchableOpacity
                                         style={styles.btn}
                                         onPress={() => {
-                                            setEstadoModal(true);
+                                            getNewData(item)
+                                                .then(value => setNewData(value))
+                                                .then(() => props.navigation.navigate("churras"))
+                                                .catch(error => console.log(error));
                                         }}
                                         activeOpacity={0.7}>
                                             <Text>{item}</Text>
                                     </TouchableOpacity>
-                                    <Modal
-                                        animationType="slide"
-                                        transparent={false}
-                                        visible={estadoModal}
-                                        onRequestClose={() => {
-                                            setEstadoModal(!estadoModal);
-                                        }}>
-                                            {estadoModal ? <ModalPerso churras={item}/> : null}
-                                    <TouchableOpacity
-                                        onPress={() => {
-                                            setEstadoModal(!estadoModal);
-                                        }}>
-                                            <Text>Fechar</Text>
-                                    </TouchableOpacity>
-                                    </Modal>
                                 </View>
                             );
                         }}

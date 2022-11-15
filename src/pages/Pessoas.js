@@ -8,6 +8,8 @@ export default function Pessoas(props) {
     const [adultos, setAdultos] = useState(false);
     const [ninguem, setNinguem] = useState(false);
     
+    console.log(data);
+
     return(
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
