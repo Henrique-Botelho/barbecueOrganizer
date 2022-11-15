@@ -210,6 +210,20 @@ export default function AuthProvider({children}){
         await AsyncStorage.setItem(data.info.nomeChurras, memory);
     }
 
+    const getNewData = async (dados) => {
+        const response = await AsyncStorage.getItem(dados);
+        const newData = JSON.parse(response);
+        return newData;
+    }
+
+    const setNewData = (dados) => {
+        data.custoTotal = dados.custoTotal;
+        data.custoPorPessoa = dados.custoPorPessoa;
+        data.pessoas = dados.pessoas;
+        data.comidas = dados.comidas;
+        data.info = dados.info;
+    }
+
     const resetValores = () => {
         data.custoTotal = dataLock.custoTotal;
         data.custoPorPessoa = dataLock.custoPorPessoa;
@@ -235,7 +249,9 @@ export default function AuthProvider({children}){
         armazenaChurrasco,
         excluirChurrascos,
         verificaNome,
-        resetValores
+        resetValores,
+        getNewData,
+        setNewData
     };
     
     return(

@@ -6,6 +6,7 @@ import AuthProvider from "./context/mainContext";
 import Home from "./pages/Home";
 import ConfigPrecos from "./pages/ConfigPrecos";
 import MeusChurras from "./pages/MeusChurras";
+import Churras from "./pages/Churras";
 import Pessoas from "./pages/Pessoas";
 import Assados from "./pages/Assados";
 import Bebidas from "./pages/Bebidas";
@@ -24,6 +25,7 @@ export default function Routes() {
           <Stack.Screen name="home" component={Home} options={configHeader} />
           <Stack.Screen name="configPrecos" component={ConfigPrecos} options={configHeader} />
           <Stack.Screen name="meusChurras" component={MeusChurras} options={configHeader} />
+          <Stack.Screen name="churras" component={Churras} options={configHeaderChurras} />
           <Stack.Screen name="pessoas" component={Pessoas} options={configHeader} />
           <Stack.Screen name="assados" component={Assados} options={configHeader} />
           <Stack.Screen name="bebidas" component={Bebidas} options={configHeader} />
@@ -47,4 +49,17 @@ const configHeader = {
     headerTitleStyle: {
       fontSize: 25
     }
+}
+
+const configHeaderChurras = {
+  title: 'Barbecue Organizer',
+  headerStyle: {
+    backgroundColor: '#b43434',
+  },
+  headerTitleAlign: "center",
+  headerTintColor: "#fff",
+  headerTitleStyle: {
+    fontSize: 25
+  },
+  headerLeft: false
 }
