@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "space-evenly"
     },
+
+    
     textTitulo: {
         backgroundColor: '#FFCE51',
         color: '#b43434',
@@ -44,12 +46,15 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop:10,
     },
+
     next: {
         backgroundColor: "#FFCE51",
         padding: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        margin:20,
     },
     textNext: {
-        fontSize: 20        
-    }
+        color: "#b43434",
+        fontSize: 20,
+    },
 })

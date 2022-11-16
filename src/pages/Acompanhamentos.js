@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
+        marginTop:20,
     },
     container:{
         flex: 1,
@@ -49,9 +50,11 @@ const styles = StyleSheet.create({
     next: {
         backgroundColor: "#FFCE51",
         padding: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        margin:20,
     },
     textNext: {
-        fontSize: 20        
-    }
+        color: "#b43434",
+        fontSize: 20,
+    },
 })

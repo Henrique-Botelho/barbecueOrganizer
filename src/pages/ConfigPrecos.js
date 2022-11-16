@@ -11,7 +11,7 @@ export default function ConfigPrecos(props) {
         <View style={styles.view}>
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
             
-            <Text style={styles.textTitulo}>Configure o preço de cada item:</Text>
+            <Text style={styles.textTitulo}>Defina os preço:</Text>
             <ScrollView style={styles.scrollView}>
                 <View>
                     <View style={styles.container}>

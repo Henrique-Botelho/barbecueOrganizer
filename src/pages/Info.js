@@ -96,7 +96,9 @@ export default function Info(props) {
         style={styles.image}
       >
         <Text style={styles.textTitulo}>Informações</Text>
+
         <ScrollView style={styles.scrollView}>
+
         <View style={styles.container}>
           <Text style={styles.organizador}>Nome do Churrasco:</Text>
           <TextInput
@@ -105,6 +107,9 @@ export default function Info(props) {
             value={nomeChurras}
           />
         </View>
+
+        <View style={styles.linha}></View>
+
         <View style={styles.container1}>
           <Text style={styles.text}>E{'\n'}v{'\n'}e{'\n'}n{'\n'}t{'\n'}o</Text>
           <View style={styles.evento}>
@@ -127,6 +132,9 @@ export default function Info(props) {
             </View>
           </View>
         </View>
+
+        <View style={styles.linha}></View>
+
         <View style={styles.container2}>
           {/* <MapView
               style={styles.map}
@@ -173,7 +181,7 @@ export default function Info(props) {
         </View>
         </ScrollView>
         {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
-        <Text style={styles.text}>Local</Text>
+        {/* <Text style={styles.text}>Local</Text> */}
         {/* <MapView
             style={styles.map}
             region={ region }
@@ -185,8 +193,8 @@ export default function Info(props) {
                 }
               }/>
           </MapView> */}
-        <View style={styles.box}>
-          <Text style={styles.organizador}>Endereço:</Text>
+        {/* <View style={styles.box}>
+          <Text style={styles.organizador}>Endereço:</Text> */}
           {/* <TextInput
             style={styles.inputs}
             onChangeText={setEnder}
@@ -203,15 +211,15 @@ export default function Info(props) {
           <TouchableOpacity onPress={changeMarker}>
              <Text>Enviar</Text>
           </TouchableOpacity> */}
-          <Text style={styles.organizador}>Custo:</Text>
+          {/* <Text style={styles.organizador}>Custo:</Text>
           <TextInput
             style={styles.inputs}
             onChangeText={setPrice}
             value={price}
             keyboardType="numeric"
             />
-        </View>
-        {semNome ? <View><Text>O seu churrasco deve ter um nome</Text></View> : null}
+        </View> */}
+        {/* {semNome ? <View><Text>O seu churrasco deve ter um nome</Text></View> : null} */}
         {existeNome ? <View><Text>Já existe um churrasco com esse nome</Text></View> : null}
         <TouchableOpacity
           onPress={() => {
@@ -263,31 +271,37 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     fontSize: 25,
+    marginTop:20,
+    marginBottom:10,
   },
+
 
   container:{
     flex: 1,
     flexDirection:"column",
     justifyContent: "center",
-    marginTop:10,
+    marginTop:15,
   },
   container1:{
     flex: 1,
     flexDirection:"row",
     justifyContent: "center",
-    marginTop:10,
+    marginTop:15,
   },
   container2:{
     flex: 1,
     flexDirection:"row",
     justifyContent: "center",
-    marginTop:10,
+    marginTop:15,
   },
+
+
   text: {
     fontSize: 20,
     borderColor: "black",
     borderWidth: 1,
-    backgroundColor: "#FFCE51",
+    backgroundColor: "#b43434",
+    color:"#fff",
     paddingRight: 10,
     paddingLeft: 10,
     paddingTop: 5,
@@ -304,7 +318,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#ede6c7",
     marginTop: 2,
     marginBottom: 2,
-    width: 300,
     height: 50,
     textAlign: "center",
     opacity: 0.8,
@@ -331,11 +344,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCE51",
     padding: 10,
     borderRadius: 20,
+    margin:20,
   },
   textNext: {
-    fontSize: 20,
+      color: "#b43434",
+      fontSize: 20,
   },
 
+
+  linha:{
+    backgroundColor: "#FFCE51",
+    height:3,
+    marginTop:15,
+  },
 
   
   map: {
@@ -358,5 +379,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 15,
     padding: 5,
+    marginTop: 5,
   },
 });

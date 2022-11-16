@@ -14,15 +14,29 @@ export default function Resultados(props) {
                 <Text style={styles.textTitulo}>Resultados</Text>
 
                 <Text>{data.info.nomeChurras}</Text>
-                <View style={styles.lista}>
-                    <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
-                    <Lista tipo="Carne Suina" headers={false} />
-                    <Lista tipo="Frango" headers={false} />
-                    <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
-                    <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
-                    <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
-                    <ListaInfo />
-                    <ListaTotais />
+                <View style={styles.container}>
+                    <View style={styles.lista}>
+                        <View style={styles.containerF}>
+                            <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
+                        </View>
+                        <View style={styles.containerF}>
+                            <Lista tipo="Carne Suina" headers={false} />
+                        </View>
+                        <View style={styles.containerF}>
+                            <Lista tipo="Frango" headers={false} />
+                        </View>
+                        <View style={styles.containerF}>
+                            <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
+                        </View>
+                        <View style={styles.containerF}>
+                            <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                        </View>
+                        <View style={styles.containerF}>
+                            <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                        </View>
+                        <ListaInfo />
+                        <ListaTotais />
+                    </View>
                 </View>
 
 
@@ -50,18 +64,35 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-evenly"
     },
-    textTitulo: {
-        backgroundColor: '#FFCE51',
-        color: '#b43434',
-        borderRadius: 10,
-        padding: 10,
-        fontSize: 25,
+    
+    container:{
+        flex: 1,
+        flexDirection:"row",
+        justifyContent: "center",
+        marginTop:10,
+        color:"#fff",
+        // height: 40,
+        backgroundColor: "#b43434"
     },
+    containerF:{
+        flex: 1,
+        flexDirection:"row",
+        justifyContent: "center",
+        marginTop:5,
+        marginBottom:5,
+    },
+
     next: {
         backgroundColor: "#FFCE51",
         padding: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        margin:20,
     },
+    textNext: {
+        color: "#b43434",
+        fontSize: 20,
+    },
+
     textNext: {
         fontSize: 20        
     },
@@ -70,7 +101,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     lista: {
-        backgroundColor: "#b43434"
+        
     },
     totais: {
         textAlign: 'center',

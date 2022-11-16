@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import {View, Text, StyleSheet, ImageBackground, TouchableOpacity} from "react-native"; 
-import {View, Text, StyleSheet, ImageBackground, TouchableOpacity} from "react-native";
 
 
 export default function Home(props) {

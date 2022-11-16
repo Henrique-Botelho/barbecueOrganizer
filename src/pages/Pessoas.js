@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
+
 import Participantes from "../components/Participantes";
 import { MainContext } from "../context/mainContext";
 

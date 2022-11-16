@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
+import Icon from 'react-native-vector-icons/AntDesign';
 import { MainContext } from "../context/mainContext";
 
 export default function Participantes(props) {
@@ -25,7 +26,7 @@ export default function Participantes(props) {
               }
             }}
           >
-            <Image style={styles.btnMinus} source={require('../../assets/dash.png')} />
+            <Icon name="minus" size={35} color="#000"/>
           </TouchableOpacity>
           <View style={styles.quntnum}>
             <Text style={styles.numero}>{quantidade}</Text>
@@ -35,7 +36,7 @@ export default function Participantes(props) {
               setQuantidade(quantidade + 1);
             }}
           >
-            <Image style={styles.btnPlus} source={require('../../assets/plus.png')} />
+            <Icon name="plus" size={35} color="#000"/>
           </TouchableOpacity>
         </View>
       </View>
@@ -52,28 +53,19 @@ const styles = StyleSheet.create({
     width: 150,
     letterSpacing: 1,
   },
-    //Botão
-    btnMinus: {
-      width: 40,
-      height: 35,
+
+    //caixa
+    quntnum:{
+      borderWidth: 0.1,
+      borderColor: "black",
       borderRadius: 5,
     },
-      //caixa
-      quntnum:{
-        borderWidth: 0.1,
-        borderColor: "black",
-        borderRadius: 5,
-      },
-      //numero
-      numero: {
-        fontSize: 22,
-        margin: 10,
-      },
-    btnPlus: {
-      width: 40,
-      height: 35,
-      borderRadius: 5,
+    //numero
+    numero: {
+      fontSize: 22,
+      margin: 10,
     },
+    
 
   
 
