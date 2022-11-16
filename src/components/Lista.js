@@ -35,14 +35,17 @@ export default function Lista(props) {
 const styles = StyleSheet.create({
     views: {
         flexDirection: "row",
+        borderBottomWidth: 2,
     },
     itens: {
-        width: 100,
+        width: 95,
         textAlign: 'center',
-        color: "#fff"
+        textAlignVertical: 'center',
+        color: "#fff",
+        paddingLeft: 10,
     },
     itensHead: {
-        width: 100,
+        width: 95,
         textAlign: 'center',
         fontWeight: 'bold',
         color: "#fff"

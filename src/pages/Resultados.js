@@ -13,34 +13,33 @@ export default function Resultados(props) {
             <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                 <Text style={styles.textTitulo}>Resultados</Text>
 
-                
-                <Text style={styles.textInfo}>{data.info.nomeChurras}</Text>
-                <SafeAreaView style={styles.container}>
-                    <ScrollView>
-                        <View style={styles.lista}>
-                            <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
-                            <Lista tipo="Carne Suina" headers={false} />
-                            <Lista tipo="Frango" headers={false} />
-                        </View>
-                        <View style={styles.lista}>
-                            <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
-                        </View>
-                        <View style={styles.lista}>
-                            <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
-                        </View>
-                        <View style={styles.lista}>
-                            <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
-                        </View>
-                        <View style={styles.lista}>
-                            <ListaInfo />
-                        </View>
-                        <View style={styles.lista}>
-                            <ListaTotais />
-                        </View>
-                    </ScrollView>
-                </SafeAreaView>
-                
-
+                <View style={styles.view}>
+                    <Text style={styles.textInfo}>⩤ {data.info.nomeChurras} ⩥</Text>
+                    <SafeAreaView style={styles.container}>
+                        <ScrollView>
+                            <View style={styles.lista}>
+                                <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
+                                <Lista tipo="Carne Suina" headers={false} />
+                                <Lista tipo="Frango" headers={false} />
+                            </View>
+                            <View style={styles.lista}>
+                                <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
+                            </View>
+                            <View style={styles.lista}>
+                                <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                            </View>
+                            <View style={styles.lista}>
+                                <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                            </View>
+                            <View style={styles.lista}>
+                                <ListaInfo />
+                            </View>
+                            <View style={styles.lista}>
+                                <ListaTotais />
+                            </View>
+                        </ScrollView>
+                    </SafeAreaView>
+                </View>
 
                 <TouchableOpacity
                     onPress={() => {
@@ -75,16 +74,17 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 25,
         marginTop:20,
+        fontWeight: 'bold',
     },
     textInfo: {
         backgroundColor: '#FFCE51',
         color: '#b43434',
-        borderRadius: 20,
+        fontWeight: 'bold',
         padding: 10,
-        fontSize: 20,
+        fontSize: 23,
         marginTop:20,
-        width: 350,
-        textAlign: 'center',
+        letterSpacing: 2,
+        textAlign: 'center', 
     },
 
     container:{

@@ -8,13 +8,17 @@ export default function ListaInfo(props) {
     return(
         <View>
             <View style={styles.views}>
-                <Text style={styles.itensHead}>Organizador</Text>
+                <Text style={styles.itensHeadO}>Organizador</Text>
+            </View>
+            <View style={styles.views}>
+                <Text style={styles.itensO}>-⨳- {data.info.evento.organizador} -⨳-</Text>
+            </View>
+            <View style={styles.views}>
                 <Text style={styles.itensHead}>Telefone</Text>
                 <Text style={styles.itensHead}>Local</Text>
                 <Text style={styles.itensHead}>Custo do Local</Text>
             </View>
             <View style={styles.views}>
-                <Text style={styles.itens}>{data.info.evento.organizador}</Text>
                 <Text style={styles.itens}>{data.info.evento.telefone}</Text>
                 <Text style={styles.itens}>{data.info.local.endereco}</Text>
                 <Text style={styles.itens}>R${data.info.local.custo}</Text>
@@ -28,14 +32,29 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     itens: {
-        width: 100,
+        width: 116,
         textAlign: 'center',
-        color: "#fff"
+        color: "#fff",
+        marginBottom: 5,
     },
     itensHead: {
-        width: 100,
+        width:116,
         textAlign: 'center',
         fontWeight: 'bold',
-        color: "#fff"
-    }
+        color: "#fff",
+    },
+    itensHeadO: {
+        width: 350,
+        fontSize:20,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: "#fff",
+    },
+    itensO: {
+        width: 350,
+        fontSize:15,
+        textAlign: 'center',
+        color: "#fff",
+        marginBottom: 10,
+    },
 });
