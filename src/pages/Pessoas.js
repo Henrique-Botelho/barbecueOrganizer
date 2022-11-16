@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         padding: 5,
     },
+
     view: {
         flex: 1
     },
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "space-evenly"
     },
+
+
     textTitulo: {
         alignSelf:"center",
         backgroundColor: '#FFCE51',
@@ -75,12 +78,14 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 25,
-        // fontWeight:700,
+        fontWeight: 'bold',
         margin:15,
     },
     parts:{
         margin:15,
     },
+
+    
     next: {
         backgroundColor: "#FFCE51",
         padding: 10,

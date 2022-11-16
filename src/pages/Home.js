@@ -22,7 +22,7 @@ export default function Home(props) {
                         activeOpacity={0.7}>
 
                         <Text style={styles.text}>
-                            Configurar preços
+                            Configurar Preços
                         </Text>
                     </TouchableOpacity>
                     <TouchableOpacity 
@@ -60,14 +60,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: "row",
         alignSelf: "center",
-        padding: 20,
+        padding: 15,
         marginBottom: 20,
     },
     text:{
-        // fontWeight:600,
+        fontWeight: 'bold',
         fontSize: 25,
         alignSelf: "center",
-        height: 35,
         letterSpacing: 2,
     }
   })

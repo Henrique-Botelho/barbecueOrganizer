@@ -58,9 +58,9 @@ export default function MeusChurras(props) {
         );
     } else if (load == true && dados.length == 0) {
         return(
-            <View style={styles.view}>
+            <View style={styles.view2}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                    <Text styles={styles.nenhum}>Nenhum churrasco encontrado</Text>
+                    <Text styles={styles.alert}>Nenhum churrasco encontrado</Text>
                 </ImageBackground>
             </View>
         );

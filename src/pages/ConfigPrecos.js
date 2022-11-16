@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 20,
         margin:15,
+        fontWeight: 'bold',
     },
     image:{
         backgroundColor: "#000",

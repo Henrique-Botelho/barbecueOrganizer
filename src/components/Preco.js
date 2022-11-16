@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     },
     inputs: {
         borderColor: '#b43434',
-        borderRadius: 5,
+        borderRadius: 20,
         borderWidth: 3,
         fontSize: 18,
         width:100,
-        paddingLeft:5,
+        paddingLeft:15,
         backgroundColor:'#fff',
     }
 })

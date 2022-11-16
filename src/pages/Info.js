@@ -220,7 +220,7 @@ export default function Info(props) {
             />
         </View> */}
         {/* {semNome ? <View><Text>O seu churrasco deve ter um nome</Text></View> : null} */}
-        {existeNome ? <View><Text>Já existe um churrasco com esse nome</Text></View> : null}
+        {existeNome ? <View><Text style={styles.alert}>Já existe um churrasco com esse nome</Text></View> : null}
         <TouchableOpacity
           onPress={() => {
             verificaNome(nomeChurras)
@@ -273,6 +273,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginTop:20,
     marginBottom:10,
+    fontWeight: 'bold',
   },
 
 
