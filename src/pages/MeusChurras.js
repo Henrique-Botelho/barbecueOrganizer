@@ -1,9 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Alert } from "react-native";
 import { MainContext } from "../context/mainContext";
 
+
 export default function MeusChurras(props) {
+    const createButtonAlert = () => {
+        Alert.alert(
+            "Confirmação",
+            "Deseja mesmo excluir todos os churrascos?",
+            [
+                {
+                    text: "Não",
+                    onPress: () => {console.log("Cancelado")}
+                },
+                {
+                    text: "Sim",
+                    onPress: () => {
+                        excluirChurrascos();
+                        props.navigation.navigate("home");
+                    }
+                }
+            ]
+        )
+    }
     const {data, excluirChurrascos, getNewData, setNewData} = useContext(MainContext);
     
     const [load, setLoad] = useState(false);
@@ -48,12 +68,18 @@ export default function MeusChurras(props) {
                     </View>
                     <TouchableOpacity
                         style={styles.btn}
+                        onPress={createButtonAlert}
+                        activeOpacity={0.7}>
+                            <Text>Excluir Churrascos</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.btn}
                         onPress={() => {
                             excluirChurrascos();
                             props.navigation.navigate("home");
                         }}
                         activeOpacity={0.7}>
-                            <Text>Excluir Churrascos</Text>
+                            <Text>Excluir Churrascos - PROVISORIO</Text>
                     </TouchableOpacity>
                 </ImageBackground>
             </View>

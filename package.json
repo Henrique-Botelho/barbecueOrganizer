@@ -33,7 +33,8 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "sharp-cli": "^3.0.0"
   },
   "private": true
 }
