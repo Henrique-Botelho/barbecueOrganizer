@@ -38,8 +38,6 @@ export default function MeusChurras(props) {
         getData();
     },[]);
 
-    console.log(data);
-
     if (load == true && dados.length != 0) {
         return(
             <View style={styles.view}>
