@@ -34,7 +34,7 @@ export default function Info(props) {
   //     const buscaData = async () => {
   //       try {
   //         if(ender){
-  //           const response = await api.get(`search?street=${ender}&format=json`);
+  //           const response = await api.get(`search?street=${ender}&country=brazil&format=json`);
   //           console.log(response.data[0]);
   //           const latitude = JSON.parse(response.data[0].lat);
   //           const longitude = JSON.parse(response.data[0].lon);
@@ -48,7 +48,7 @@ export default function Info(props) {
             
   //         } else if(cep){
   //           (async () => {
-  //             const response = await api.get(`search?postalcode=${cep}&format=json`);
+  //             const response = await api.get(`search?postalcode=${cep}&country=brazil&format=json`);
   //             const latitude = JSON.parse(response.data[0].lat);
   //             const longitude = JSON.parse(response.data[0].lon);
 

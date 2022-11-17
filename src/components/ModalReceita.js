@@ -11,10 +11,10 @@ export default function ModalReceita(props){
     switch (id){
         case "1":
             return (
-                <View>
-                    <Modal visible={visible}>
-                        <Text> Contra-filé </Text>
-                        <Text>
+                <View style={styles.container}>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Contra-filé </Text>
+                        <Text style={styles.receita}>
                             1° Salgue a carne apenas no momento em que for levar a brasa {"\n"}2°
                             Coloque em uma grelha bem quente e asse por aproximadamente 5 minutos
                             de cada lado ou até que a fraldinha esteja dourada {"\n"}3° Retire da brasa
@@ -23,7 +23,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -31,9 +31,9 @@ export default function ModalReceita(props){
         case "2":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Fraldinha </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Fraldinha </Text>
+                        <Text style={styles.receita}>
                         1 °Tempere com o limão e o sal grosso {"\n"}2° Deixe marinar por
                         algunsminutos, espete a carne com um espeto duplo para churrasco e
                         leve à churrasqueira em fogo brando{"\n"} 3° Quando a carne estiver dourada,
@@ -44,7 +44,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -52,9 +52,9 @@ export default function ModalReceita(props){
         case "3":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Maminha </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Maminha </Text>
+                        <Text style={styles.receita}>
                         1 °Polvilhe um pouco de sal grosso em todos os lados da carne {"\n"}2°
                         Coloque para churrasquear na grelha bem quente e em braseiro forte {"\n"}3°
                         Quando a carne se soltar da grelha, vire. Assim que atingir o ponto
@@ -64,7 +64,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -72,9 +72,9 @@ export default function ModalReceita(props){
         case "4":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Picanha Suína </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Picanha Suína </Text>
+                        <Text style={styles.receita}>
                         1 °Deixe a picanha suína inteira, passe a paprica picante, o ají
                         Chileno e o sal grosso por toda a carne de maneira uniforme {"\n"}2° Coloque
                         a carneem um saco plastico junte todos os outros ingredientes {"\n"}3° Deixe
@@ -86,7 +86,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -94,9 +94,9 @@ export default function ModalReceita(props){
         case "5":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Linguiça </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Linguiça </Text>
+                        <Text style={styles.receita}>
                         1° Espete a linguiça em espetos de churrasco e leve à churrasqueira
                         por 40 minutos, virando algumas vezes ou até assar e dourar {"\n"}2° Retire,
                         corte em rodelas e sirva com farofa e limão.
@@ -104,7 +104,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -112,9 +112,9 @@ export default function ModalReceita(props){
         case "6":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Paleta </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Paleta </Text>
+                        <Text style={styles.receita}>
                         1° Num recipiente tempere a paleta com o azeite, o sal, o limão, o
                         alecrim e a pimenta vermelha {"\n"} 2° Deixe marinar por aproximadamente 1
                         hora {"\n"}3° Acomode a paleta numa grelha sardinheira e leve à
@@ -127,7 +127,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -135,9 +135,9 @@ export default function ModalReceita(props){
         case "7":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Coxa de frango </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Coxa de frango </Text>
+                        <Text style={styles.receita}>
                         1° Tempere as coxas de frango com sal e limão e pimenta como desejar,
                         deixe penetrar os ingredientes por 2 horas {"\n"}2° Coloque na churrasqueira
                         sempre olhando e quando estiver dourando um pouco adicione gergelim e
@@ -146,7 +146,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -154,9 +154,9 @@ export default function ModalReceita(props){
         case "8":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Asa de frango </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Asa de frango </Text>
+                        <Text style={styles.receita}>
                         1° Coloque as asinhas em um recipiente
                         2° Tempere-as com o sal e o limão.
                         3° Deixe marinar por 20 minutos. Utilizando um espeto duplo para
@@ -169,7 +169,7 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -177,9 +177,9 @@ export default function ModalReceita(props){
         case "9":
             return (
                 <View>
-                    <Modal visible={visible}>
-                        <Text> Coração de frango </Text>
-                        <Text>
+                    <Modal visible={visible} style={styles.modal}>
+                        <Text style={styles.titulo}> Coração de frango </Text>
+                        <Text style={styles.receita}>
                         1° Em uma bacia, coloque os corações de frango, adicione o óleo e o
                         alho. 2° Salgue a gosto com o sal grosso e mexa bem. Espete os
                         corações em espeto de bambu ou no de sua preferência. 3° Asse-os em
@@ -188,10 +188,40 @@ export default function ModalReceita(props){
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
                         }}>
-                            <Text>Fechar</Text>
+                            <Text style={styles.btnFechar}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
             );
     }
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    image: {},
+    modal: {},
+    titulo: {
+        fontSize: 24,
+        letterSpacing: 2,
+        fontWeight: '450',
+        backgroundColor: '#FFCE51',
+        color: '#b43434',
+        fontWeight: 'bold',
+    },
+    receita: {
+        backgroundColor: '#ede6c7',
+        fontSize: 18,
+        letterSpacing: 1,
+    }, btnFechar: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        backgroundColor: '#FFCE51',
+        color: '#b43434',
+        marginTop: 10,
+        width: 100,
+        borderRadius: 15,
+        justifyContent: 'center',
+    }
+});
