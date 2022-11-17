@@ -12,7 +12,7 @@ export default function ModalReceita(props){
         case "1":
             return (
                 <View style={styles.container}>
-                    <Modal visible={visible} style={styles.modal}>
+                    <Modal visible={visible} transparent={true} style={styles.modal}>
                         <Text style={styles.titulo}> Contra-filé </Text>
                         <Text style={styles.receita}>
                             1° Salgue a carne apenas no momento em que for levar a brasa {"\n"}2°
@@ -71,7 +71,7 @@ export default function ModalReceita(props){
             );
         case "4":
             return (
-                <View>
+                <View style={styles.modal2}>
                     <Modal visible={visible} style={styles.modal}>
                         <Text style={styles.titulo}> Picanha Suína </Text>
                         <Text style={styles.receita}>
@@ -85,8 +85,9 @@ export default function ModalReceita(props){
                         </Text>
                         <TouchableOpacity onPress={() => {
                             setVisible(false);
-                        }}>
-                            <Text style={styles.btnFechar}>Fechar</Text>
+                            
+                        }} style={styles.next}>
+                            <Text style={styles.textNext}>Fechar</Text>
                         </TouchableOpacity>
                     </Modal>
                 </View>
@@ -155,22 +156,24 @@ export default function ModalReceita(props){
             return (
                 <View>
                     <Modal visible={visible} style={styles.modal}>
-                        <Text style={styles.titulo}> Asa de frango </Text>
-                        <Text style={styles.receita}>
-                        1° Coloque as asinhas em um recipiente
-                        2° Tempere-as com o sal e o limão.
-                        3° Deixe marinar por 20 minutos. Utilizando um espeto duplo para
-                        churrasco, espete as asinhas (coloque elas sempre do mesmo lado) e
-                        leve à churrasqueira em fogo brando
-                        4° Altura de 40 centímetros por aproximadamente 30 minutos
-                        5° Quando as asinhas estiverem douradas, retire da churrasqueira
-                        6° Vale lembrar que o fogo muito forte vai dourar por fora e não vai assar por dentro.
-                        </Text>
-                        <TouchableOpacity onPress={() => {
-                            setVisible(false);
-                        }}>
-                            <Text style={styles.btnFechar}>Fechar</Text>
-                        </TouchableOpacity>
+                        <View style={styles.modal2}>
+                            <Text style={styles.titulo}> Asa de frango </Text>
+                            <Text style={styles.receita}>
+                            1° Coloque as asinhas em um recipiente
+                            2° Tempere-as com o sal e o limão.
+                            3° Deixe marinar por 20 minutos. Utilizando um espeto duplo para
+                            churrasco, espete as asinhas (coloque elas sempre do mesmo lado) e
+                            leve à churrasqueira em fogo brando
+                            4° Altura de 40 centímetros por aproximadamente 30 minutos
+                            5° Quando as asinhas estiverem douradas, retire da churrasqueira
+                            6° Vale lembrar que o fogo muito forte vai dourar por fora e não vai assar por dentro.
+                            </Text>
+                            <TouchableOpacity onPress={() => {
+                                setVisible(false);
+                            }}>
+                                <Text style={styles.btnFechar}>Fechar</Text>
+                            </TouchableOpacity>
+                        </View>
                     </Modal>
                 </View>
             );
@@ -202,6 +205,10 @@ const styles = StyleSheet.create({
     },
     image: {},
     modal: {},
+    modal2: {
+        flex:1,
+        backgroundColor:'#b43434',
+    },
     titulo: {
         fontSize: 24,
         letterSpacing: 2,
@@ -223,5 +230,16 @@ const styles = StyleSheet.create({
         width: 100,
         borderRadius: 15,
         justifyContent: 'center',
-    }
+    },
+    next: {
+        backgroundColor: "#FFCE51",
+        padding: 10,
+        borderRadius: 20,
+        margin:20,
+    },
+    textNext: {
+        textAlign:'center',
+        color: "#b43434",
+        fontSize: 20,
+      },
 });
