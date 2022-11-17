@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, SafeAreaView, ScrollView } from "react-native";
 import { MainContext } from "../context/mainContext";
 import Lista from "../components/Lista";
 import ListaInfo from "../components/ListaInfo";
@@ -12,26 +12,39 @@ export default function Churras(props) {
 
     return(
         <View style={styles.view}>
-            <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                <TouchableOpacity
-                    onPress={() => {
-                        resetValores();
-                        props.navigation.navigate("meusChurras");
-                    }}
-                    style={styles.next}>
-                    <Text style={styles.textNext}>Voltar</Text>
-                </TouchableOpacity>
-
-                <Text>{data.info.nomeChurras}</Text>
-                <View style={styles.lista}>
-                    <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
-                    <Lista tipo="Carne Suina" headers={false} />
-                    <Lista tipo="Frango" headers={false} />
-                    <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
-                    <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
-                    <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
-                    <ListaInfo />
-                    <ListaTotais />
+            <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>           
+                <View style={styles.view}>
+                    <Text style={styles.textInfo}>⩤ {data.info.nomeChurras} ⩥</Text>
+                    <SafeAreaView style={styles.container}>
+                        <ScrollView style={styles.scrollView}>
+                            <View style={styles.lista}>
+                                <Lista tipo="Carne Bovina" headers={["Assado", "Quantidade (kg)", "Preço (kg)", "Preço Total"]} />
+                                <Lista tipo="Carne Suina" headers={false} />
+                                <Lista tipo="Frango" headers={false} />
+                            </View>
+                            <View style={styles.lista}>
+                                <Lista tipo="Bebidas" headers={["Bebida", "Quantidade (L)", "Preço (L)", "Preço Total"]} />
+                            </View>
+                            <View style={styles.lista}>
+                                <Lista tipo="Acompanhamentos" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                                <Lista tipo="Sem Falta" headers={["Item", "Quantidade", "Preço", "Preço Total"]} />
+                            </View>
+                            <View style={styles.lista}>
+                                <ListaInfo />
+                            </View>
+                            <View style={styles.lista}>
+                                <ListaTotais />
+                            </View>
+                        </ScrollView>
+                    </SafeAreaView>
+                    <TouchableOpacity
+                        onPress={() => {
+                            resetValores();
+                            props.navigation.navigate("meusChurras");
+                        }}
+                        style={styles.next}>
+                        <Text style={styles.textNext}>Voltar</Text>
+                    </TouchableOpacity>
                 </View>
                 {console.log(data)}
             </ImageBackground>
@@ -56,20 +69,51 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 25,
     },
+    scrollView:{
+        flex:1,
+    },
+    
+
+
+    textInfo: {
+        backgroundColor: '#FFCE51',
+        color: '#b43434',
+        fontWeight: 'bold',
+        padding: 10,
+        fontSize: 23,
+        marginTop:20,
+        letterSpacing: 2,
+        textAlign: 'center', 
+    },
+
+    container:{
+        flex: 1,
+        flexDirection:"column",
+        justifyContent: "center",
+        marginTop:10,
+        
+    },
+
     next: {
         backgroundColor: "#FFCE51",
-        padding: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        margin:20,
     },
-    textNext: {
-        fontSize: 20        
-    },
+      textNext: {
+        textAlign:'center',
+        color: "#b43434",
+        fontSize: 20,
+      },
+
+
     resultados: {
         backgroundColor: "#FFF",
         fontSize: 20
     },
     lista: {
-        backgroundColor: "#b43434"
+        color:"#fff",
+        backgroundColor: "#b43434",
+        marginTop:10,
     },
     totais: {
         textAlign: 'center',

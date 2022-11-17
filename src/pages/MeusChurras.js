@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal, ScrollView } from "react-native";
 import { MainContext } from "../context/mainContext";
 
 export default function MeusChurras(props) {
@@ -29,31 +29,38 @@ export default function MeusChurras(props) {
                             data={dados}
                             renderItem={({item}) => {
                                 return(
-                                    <View style={styles.view2}>
-                                        <TouchableOpacity
-                                            style={styles.btn}
-                                            onPress={() => {
-                                                getNewData(item)
-                                                    .then(value => setNewData(value))
-                                                    .then(() => props.navigation.navigate("churras"))
-                                                    .catch(error => console.log(error));
-                                            }}
-                                            activeOpacity={0.7}>
-                                                <Text style={styles.textbtn}>{item}</Text>
-                                        </TouchableOpacity>
+                                    <View style={styles.view3}>
+                                        <Text style={styles.textTitulo}>Seus Churrascos</Text>
+                                        <View style={styles.container}>
+                                            <ScrollView style={styles.scrollView}>
+                                                <View style={styles.container}>
+                                                    <TouchableOpacity
+                                                        style={styles.btn}
+                                                        onPress={() => {
+                                                            getNewData(item)
+                                                                .then(value => setNewData(value))
+                                                                .then(() => props.navigation.navigate("churras"))
+                                                                .catch(error => console.log(error));
+                                                        }}
+                                                        activeOpacity={0.7}>
+                                                            <Text style={styles.textbtn}>{item}</Text>
+                                                    </TouchableOpacity>
+                                                </View>
+                                            </ScrollView>
+                                        </View>
                                     </View>
                                 );
                             }}
                         />
                     </View>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.next}
                         onPress={() => {
                             excluirChurrascos();
                             props.navigation.navigate("home");
                         }}
                         activeOpacity={0.7}>
-                            <Text>Excluir Churrascos</Text>
+                            <Text style={styles.textNext}>Excluir Churrascos</Text>
                     </TouchableOpacity>
                 </ImageBackground>
             </View>
@@ -63,7 +70,7 @@ export default function MeusChurras(props) {
             <View style={styles.view}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                     <View style={styles.view2}>
-                        <Text styles={styles.neum}>Nenhum churrasco encontrado</Text>
+                        <Text>Nenhum churrasco encontrado</Text>
                     </View>
                 </ImageBackground>
             </View>
@@ -84,10 +91,11 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     view2: {
-        // flex: 1,
         justifyContent: "center",
         alignItems:"center",
         backgroundColor: '#FFCE51',
+        borderRadius: 10,
+        padding: 10,
     },
     view3: {
         flex: 1,
@@ -98,30 +106,56 @@ const styles = StyleSheet.create({
         backgroundColor: "#000",
         alignItems: 'center',
         flex: 1,
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
     },
-    // neum:{
-    //     color: '#b43434',
-    //     fontSize: 20,
-    //     margin:15,
-    //     alignSelf:"center",
-    //     textAlign:"center",
-    // },
+    scrollView:{
+        flex:1,
+    },
+
+
     btn:{
         backgroundColor: "#FFCE51",
         borderRadius: 5,
         flexDirection: "row",
         marginBottom: 20,
         padding:5,
+        minWidth:"95%",
     },
     textbtn:{
+        flex:1,
+        textAlign:'center',
         letterSpacing:2,
         color:'#b43434',
+        fontWeight:'bold',
     },
-    text:{
+
+
+
+    textTitulo: {
+        backgroundColor: "#FFCE51",
+        color: "#b43434",
+        borderRadius: 10,
+        padding: 10,
         fontSize: 25,
-        alignSelf: "center",
-        height: 35,
-        letterSpacing: 2,
-    }
+        marginTop: 20,
+        fontWeight: 'bold',
+    },
+    container:{
+        flex: 1,
+        flexDirection:"column",
+        justifyContent: "center",
+        alignItems:"center",
+        marginTop:10,
+    },
+
+    next: {
+        backgroundColor: "#b43434",
+        padding: 10,
+        borderRadius: 20,
+        margin:20,
+    },
+    textNext: {
+        color: "#FFCE51",
+        fontSize: 20,
+    },
 });
