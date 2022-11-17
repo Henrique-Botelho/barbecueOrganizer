@@ -1,9 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, FlatList, TouchableOpacity, Modal, Alert, ScrollView } from "react-native";
 import { MainContext } from "../context/mainContext";
 
+
 export default function MeusChurras(props) {
+    const createButtonAlert = () => {
+        Alert.alert(
+            "Confirmação",
+            "Deseja mesmo excluir todos os churrascos?",
+            [
+                {
+                    text: "Não",
+                    onPress: () => {console.log("Cancelado")}
+                },
+                {
+                    text: "Sim",
+                    onPress: () => {
+                        excluirChurrascos();
+                        props.navigation.navigate("home");
+                    }
+                }
+            ]
+        )
+    }
     const {data, excluirChurrascos, getNewData, setNewData} = useContext(MainContext);
     
     const [load, setLoad] = useState(false);
@@ -17,8 +37,6 @@ export default function MeusChurras(props) {
         }
         getData();
     },[]);
-
-    console.log(data);
 
     if (load == true && dados.length != 0) {
         return(
@@ -55,12 +73,18 @@ export default function MeusChurras(props) {
                     </View>
                     <TouchableOpacity
                         style={styles.next}
+                        onPress={createButtonAlert}
+                        activeOpacity={0.7}>
+                            <Text style={styles.textNext}>Excluir Churrascos</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.next}
                         onPress={() => {
                             excluirChurrascos();
                             props.navigation.navigate("home");
                         }}
                         activeOpacity={0.7}>
-                            <Text style={styles.textNext}>Excluir Churrascos</Text>
+                            <Text style={styles.textNext}>Excluir Churrascos - PROVISORIO</Text>
                     </TouchableOpacity>
                 </ImageBackground>
             </View>
