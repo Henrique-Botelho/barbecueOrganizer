@@ -13,6 +13,7 @@ import Bebidas from "./pages/Bebidas";
 import Acompanhamentos from "./pages/Acompanhamentos";
 import Info from "./pages/Info";
 import Resultados from "./pages/Resultados";
+import Receitas from "./pages/Receitas";
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,7 @@ export default function Routes() {
           <Stack.Screen name="acompanhamentos"component={Acompanhamentos} options={configHeader} />
           <Stack.Screen name="info" component={Info} options={configHeader} />
           <Stack.Screen name="resultados" component={Resultados} options={configHeader} />
+          <Stack.Screen name="receitas" component={Receitas} options={configHeader} />
 
         </Stack.Navigator>
       </AuthProvider>

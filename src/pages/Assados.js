@@ -21,6 +21,10 @@ export default function Assados(props) {
                     onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>
                     <Text style={styles.textNext}>Prosseguir</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => {props.navigation.navigate("receitas")}} style={styles.next}>
+                    <Text style={styles.textNext}>Receitas</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );
