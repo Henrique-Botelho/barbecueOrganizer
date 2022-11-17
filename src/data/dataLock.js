@@ -1,4 +1,4 @@
-let dataLock = {
+const dataLock = {
     custoTotal: 0,
     custoPorPessoa: 0,
     pessoas: {
