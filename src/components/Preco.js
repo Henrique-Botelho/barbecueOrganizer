@@ -6,12 +6,15 @@ export default function Preco(props) {
     const {data, mudaPrecoItem} = useContext(MainContext);
     const [item, setItem] = useState(data.comidas[props.class][props.one].preco);
 
-    mudaPrecoItem(props.class, props.one, item);
+    const valorItem = parseFloat(item)
+    mudaPrecoItem(props.class, props.one, valorItem);
+
+    console.log(typeof valorItem);
 
     return(
         <View style={styles.corpo}>
             <View style={styles.col1}>
-                <Text style={styles.textcarnes} >{props.nome} </Text>
+                <Text style={styles.textcarnes} >{props.nome}</Text>
             </View>
             <View style={styles.col2}>
                 <Text style={styles.rs}>R$ </Text>
@@ -21,6 +24,7 @@ export default function Preco(props) {
                     value={item}
                     keyboardType="numeric"
                 />
+                <Text>Padrão: {item}</Text>
             </View>
         </View>
     );
@@ -52,5 +56,6 @@ const styles = StyleSheet.create({
         width:100,
         paddingLeft:15,
         backgroundColor:'#fff',
+        
     }
 })

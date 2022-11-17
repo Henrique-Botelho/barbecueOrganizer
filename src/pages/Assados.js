@@ -17,14 +17,16 @@ export default function Assados(props) {
                 <View style={styles.container}>
                   <Section tipo="Frango" /> 
                 </View>
-                <TouchableOpacity
-                    onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>
-                    <Text style={styles.textNext}>Prosseguir</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => {props.navigation.navigate("receitas")}} style={styles.next}>
-                    <Text style={styles.textNext}>Receitas</Text>
-                </TouchableOpacity>
+                <View style={styles.btns}>
+                  <TouchableOpacity
+                      onPress={() => {props.navigation.navigate("receitas")}} style={styles.next}>
+                      <Text style={styles.textNext}>Receitas</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                      onPress={() => {props.navigation.navigate("bebidas")}} style={styles.next}>
+                      <Text style={styles.textNext}>Prosseguir</Text>
+                  </TouchableOpacity>
+                </View>
             </ImageBackground>
         </View>
     );
@@ -54,6 +56,10 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent: "center",
     marginTop:10,
+  },
+  btns:{
+    flexDirection:"row",
+    justifyContent: "center",
   },
   next: {
     backgroundColor: "#FFCE51",

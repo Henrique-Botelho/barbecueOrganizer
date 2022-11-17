@@ -24,26 +24,28 @@ export default function MeusChurras(props) {
         return(
             <View style={styles.view}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                    <FlatList
-                        data={dados}
-                        renderItem={({item}) => {
-                            return(
-                                <View>
-                                    <TouchableOpacity
-                                        style={styles.btn}
-                                        onPress={() => {
-                                            getNewData(item)
-                                                .then(value => setNewData(value))
-                                                .then(() => props.navigation.navigate("churras"))
-                                                .catch(error => console.log(error));
-                                        }}
-                                        activeOpacity={0.7}>
-                                            <Text>{item}</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            );
-                        }}
-                    />
+                    <View style={styles.view3}>
+                        <FlatList
+                            data={dados}
+                            renderItem={({item}) => {
+                                return(
+                                    <View style={styles.view2}>
+                                        <TouchableOpacity
+                                            style={styles.btn}
+                                            onPress={() => {
+                                                getNewData(item)
+                                                    .then(value => setNewData(value))
+                                                    .then(() => props.navigation.navigate("churras"))
+                                                    .catch(error => console.log(error));
+                                            }}
+                                            activeOpacity={0.7}>
+                                                <Text style={styles.textbtn}>{item}</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                );
+                            }}
+                        />
+                    </View>
                     <TouchableOpacity
                         style={styles.btn}
                         onPress={() => {
@@ -58,9 +60,11 @@ export default function MeusChurras(props) {
         );
     } else if (load == true && dados.length == 0) {
         return(
-            <View style={styles.view2}>
+            <View style={styles.view}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
-                    <Text styles={styles.alert}>Nenhum churrasco encontrado</Text>
+                    <View style={styles.view2}>
+                        <Text styles={styles.neum}>Nenhum churrasco encontrado</Text>
+                    </View>
                 </ImageBackground>
             </View>
         );
@@ -77,9 +81,15 @@ export default function MeusChurras(props) {
 
 const styles = StyleSheet.create({
     view: {
-        flex: 1
+        flex: 1,
     },
     view2: {
+        // flex: 1,
+        justifyContent: "center",
+        alignItems:"center",
+        backgroundColor: '#FFCE51',
+    },
+    view3: {
         flex: 1,
         justifyContent: "center",
         alignItems:"center",
@@ -90,26 +100,25 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-evenly"
     },
-    nenhum:{
-        alignSelf:"center",
-        textAlign:"center",
-        backgroundColor: '#FFCE51',
-        color: '#b43434',
-        borderRadius: 10,
-        padding: 10,
-        fontSize: 20,
-        margin:15,
-    },
+    // neum:{
+    //     color: '#b43434',
+    //     fontSize: 20,
+    //     margin:15,
+    //     alignSelf:"center",
+    //     textAlign:"center",
+    // },
     btn:{
         backgroundColor: "#FFCE51",
-        borderRadius: 10,
+        borderRadius: 5,
         flexDirection: "row",
-        alignSelf: "center",
-        padding: 20,
         marginBottom: 20,
+        padding:5,
+    },
+    textbtn:{
+        letterSpacing:2,
+        color:'#b43434',
     },
     text:{
-        // fontWeight:600,
         fontSize: 25,
         alignSelf: "center",
         height: 35,
