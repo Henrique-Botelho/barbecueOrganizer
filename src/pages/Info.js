@@ -70,33 +70,33 @@ export default function Info(props) {
 
         <View style={styles.container2}>
           <View style={styles.local}>
-            <View style={styles.item}>
-              <Text style={styles.organizador}>CEP:</Text>
-              <TextInput
-                style={styles.inputs}
-                onChangeText={setCep}
-                value={cep}
-              />
-            </View>
-            <View style={styles.item}>
-              <Text style={styles.organizador}>Endereço:</Text>
-              <TextInput
-                style={styles.inputs}
-                onChangeText={setEnder}
-                value={ender}
-              />
-            </View>
-            <View style={styles.item}>
-              <Text style={styles.organizador}>Custo:</Text>
-              <TextInput
-                style={styles.inputs}
-                onChangeText={setPrice}
-                value={price}
-                keyboardType="numeric"
-              />
-            </View>
+              <View style={styles.item}>
+                <Text style={styles.organizador}>CEP:</Text>
+                <TextInput
+                  style={styles.inputs}
+                  onChangeText={setCep}
+                  value={cep}
+                />
+              </View>
+              <View style={styles.item}>
+                <Text style={styles.organizador}>Endereço:</Text>
+                <TextInput
+                  style={styles.inputs}
+                  onChangeText={setEnder}
+                  value={ender}
+                />
+              </View>
+              <View style={styles.item}>
+                <Text style={styles.organizador}>Custo:</Text>
+                <TextInput
+                  style={styles.inputs}
+                  onChangeText={setPrice}
+                  value={price}
+                  keyboardType="numeric"
+                />
+              </View>
           </View>
-          <Text style={styles.text}>L{'\n'}o{'\n'}c{'\n'}a{'\n'}l</Text>
+          <Text style={styles.text2}>L{'\n'}o{'\n'}c{'\n'}a{'\n'}l</Text>
         </View>
         </ScrollView>
         {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
 
 
   text: {
-    fontSize: 20,
+    fontSize: 25,
     borderColor: "black",
     borderWidth: 1,
     backgroundColor: "#b43434",
@@ -189,6 +189,19 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     textAlign: "center",
     maxHeight:200,
+  },
+  text2: {
+    fontSize: 25,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "#b43434",
+    color:"#fff",
+    paddingRight: 10,
+    paddingLeft: 10,
+    paddingTop: 5,
+    borderRadius: 5,
+    textAlign: "center",
+    maxHeight:260,
   },
   inputs: {
     borderColor: "#black",
@@ -213,8 +226,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   local: {
-    width: 300,
-    height:200,
+    flex:1,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
