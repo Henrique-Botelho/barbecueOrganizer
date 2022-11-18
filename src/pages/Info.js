@@ -16,6 +16,7 @@ export default function Info(props) {
   
   const [semNome, setSemNome] = useState(false);
   const [existeNome, setExisteNome] = useState(false);
+  const [semCep, setSemCep] = useState(false);
 
   setInfo(name, tel, ender, cep, price, nomeSemEspacos);
 
@@ -101,6 +102,7 @@ export default function Info(props) {
         </ScrollView>
         {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
         {existeNome ? <View><Text style={styles.alert}>Já existe um churrasco com esse nome</Text></View> : null}
+        {semCep ? <View><Text style={styles.alert}>Informe o CEP do local.</Text></View> : null}
         <TouchableOpacity
           onPress={() => {
             verificaNome(nomeChurras)
@@ -109,7 +111,10 @@ export default function Info(props) {
                   setExisteNome(false);
                   if (data.info.nomeChurras == "") {
                     setSemNome(true);
+                  } else if (data.info.local.cep == "") {
+                    setSemCep(true);
                   } else {
+                    setSemCep(false);
                     setSemNome(false);
                     calculaChurrasco();
                     precoTotal();
