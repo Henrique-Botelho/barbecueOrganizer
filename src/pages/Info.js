@@ -93,6 +93,13 @@ export default function Info(props) {
         </ScrollView>
         {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
         {existeNome ? <View><Text style={styles.alert}>Já existe um churrasco com esse nome</Text></View> : null}
+        <TouchableOpacity style={styles.next}
+        onPress={() => {
+          props.navigation.navigate("localizacao");
+        }}
+        >
+          <Text style={styles.textNext}> Localização </Text>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             verificaNome(nomeChurras)
