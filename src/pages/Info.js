@@ -5,19 +5,19 @@ import { MainContext } from "../context/mainContext";
 export default function Info(props) {
   const { data, setInfo, calculaChurrasco, precoTotal, verificaNome } = useContext(MainContext);
 
-  const [ender, setEnder] = useState(data.info.local.endereco);
-  const [cep, setCep] = useState(data.info.local.cep);
   const [name, setName] = useState(data.info.evento.nomeOrganizador);
   const [tel, setTel] = useState(data.info.evento.telefone);
+  const [ender, setEnder] = useState(data.info.local.endereco);
+  const [cep, setCep] = useState(data.info.local.cep);
   const [price, setPrice] = useState(data.info.local.custo);
   const [nomeChurras, setNomeChurras] = useState(data.info.nomeChurras);
+  
+  const nomeSemEspacos = nomeChurras.trim();
+  
+  const [semNome, setSemNome] = useState(false);
   const [existeNome, setExisteNome] = useState(false);
 
-  const [semNome, setSemNome] = useState(false);
-
-  const nomeSemEspacos = nomeChurras.trim();
-
-  setInfo(name, tel, ender, price, nomeSemEspacos);
+  setInfo(name, tel, ender, cep, price, nomeSemEspacos);
 
   return (
     <View style={styles.view}>

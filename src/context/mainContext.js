@@ -27,10 +27,11 @@ export default function AuthProvider({children}){
     }
 
 
-    const setInfo = (nome, tel, endereco, custo, nomeChurras) => {
+    const setInfo = (nome, tel, endereco, cep, custo, nomeChurras) => {
         data.info.evento.organizador = nome;
         data.info.evento.telefone = tel;
         data.info.local.endereco = endereco;
+        data.info.local.cep = cep;
         data.info.nomeChurras = nomeChurras;
         if (typeof custo == 'string') {
             custo = parseFloat(custo);
