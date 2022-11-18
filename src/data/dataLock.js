@@ -205,6 +205,7 @@ const dataLock = {
         },
         local: {
             endereco: "",
+            cep: "",
             custo: 0
         }
     }

@@ -77,7 +77,7 @@ export default function MeusChurras(props) {
                         activeOpacity={0.7}>
                             <Text style={styles.textNext}>Excluir Churrascos</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={styles.next}
                         onPress={() => {
                             excluirChurrascos();
@@ -85,7 +85,7 @@ export default function MeusChurras(props) {
                         }}
                         activeOpacity={0.7}>
                             <Text style={styles.textNext}>Excluir Churrascos - PROVISORIO</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </ImageBackground>
             </View>
         );

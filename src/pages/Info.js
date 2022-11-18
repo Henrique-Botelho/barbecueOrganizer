@@ -1,76 +1,8 @@
 import React, { useContext, useState } from "react";
 import { View, Text, TextInput, StyleSheet, ImageBackground, TouchableOpacity, Dimensions, Alert, ScrollView } from "react-native";
 import { MainContext } from "../context/mainContext";
-import api from "../services/api";
-// import MapView from "react-native-maps";
-// import api from "./src/services/api";
-// import { Marker } from "react-native-maps";
 
 export default function Info(props) {
-  // const [dados, setDados] = useState({
-  //   lat: -23.647874097687232,
-  //   long: -46.721607053968
-  // });
-
-  // const [region, setRegion] = useState({
-  //   latitude: -23.647874097687232,
-  //   longitude: -46.721607053968,
-  //   latitudeDelta: 0.0922,
-  //   longitudeDelta: 0.0421,
-  // });
-
-  // const [cep, setCep] = useState(0);
-
-  //   function changeRegion(latitude, longitude) {
-  //     setRegion({
-  //       latitude: latitude,
-  //       longitude: longitude,
-  //       latitudeDelta: 0.0922,
-  //       longitudeDelta: 0.0421,
-  //     });
-  //   }
-
-  //   function changeMarker() {
-  //     const buscaData = async () => {
-  //       try {
-  //         if(ender){
-  //           const response = await api.get(`search?street=${ender}&country=brazil&format=json`);
-  //           console.log(response.data[0]);
-  //           const latitude = JSON.parse(response.data[0].lat);
-  //           const longitude = JSON.parse(response.data[0].lon);
-      
-  //           setDados({
-  //             lat: latitude,
-  //             long: longitude,
-  //           });
-  
-  //           changeRegion(latitude, longitude);
-            
-  //         } else if(cep){
-  //           (async () => {
-  //             const response = await api.get(`search?postalcode=${cep}&country=brazil&format=json`);
-  //             const latitude = JSON.parse(response.data[0].lat);
-  //             const longitude = JSON.parse(response.data[0].lon);
-
-  //             setDados({
-  //               lat: latitude,
-  //               long: longitude,
-  //             });
-    
-  //             changeRegion(latitude, longitude);
-  //           })();
-  //         } else {
-  //           Alert.alert("Nenhum valor enviado.");
-  //         }
-
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     }
-
-  //     buscaData();
-  //   }
-
   const { data, setInfo, calculaChurrasco, precoTotal, verificaNome } = useContext(MainContext);
 
   const [ender, setEnder] = useState(data.info.local.endereco);
@@ -136,17 +68,6 @@ export default function Info(props) {
         <View style={styles.linha}></View>
 
         <View style={styles.container2}>
-          {/* <MapView
-              style={styles.map}
-              region={ region }
-              onRegionChangeComplete={(region) => setRegion(region)}>
-                <Marker coordinate={
-                  { 
-                    latitude: dados.lat,
-                    longitude: dados.long,
-                  }
-                }/>
-              </MapView> */}
           <View style={styles.local}>
             <View>
               <Text style={styles.organizador}>Endereço:</Text>

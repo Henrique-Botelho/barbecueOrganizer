@@ -205,6 +205,7 @@ let data = {
         },
         local: {
             endereco: "",
+            cep: "",
             custo: 0
         }
     }
