@@ -6,6 +6,7 @@ export default function Info(props) {
   const { data, setInfo, calculaChurrasco, precoTotal, verificaNome } = useContext(MainContext);
 
   const [ender, setEnder] = useState(data.info.local.endereco);
+  const [cep, setCep] = useState(data.info.local.cep);
   const [name, setName] = useState(data.info.evento.nomeOrganizador);
   const [tel, setTel] = useState(data.info.evento.telefone);
   const [price, setPrice] = useState(data.info.local.custo);
@@ -69,26 +70,23 @@ export default function Info(props) {
 
         <View style={styles.container2}>
           <View style={styles.local}>
-            <View>
-              <Text style={styles.organizador}>Endereço:</Text>
-              {/* <TextInput
-                style={styles.inputs}
-                onChangeText={setEnder}
-                value={ender}
-                />
-                <Text> ou </Text>
-                <Text style={styles.organizador}>CEP:</Text>
-                <TextInput
+            <View style={styles.item}>
+              <Text style={styles.organizador}>CEP:</Text>
+              <TextInput
                 style={styles.inputs}
                 onChangeText={setCep}
                 value={cep}
-                keyboardType="numeric"
-                />
-                <TouchableOpacity onPress={changeMarker}>
-                <Text>Enviar</Text>
-              </TouchableOpacity> */}
+              />
             </View>
-            <View>
+            <View style={styles.item}>
+              <Text style={styles.organizador}>Endereço:</Text>
+              <TextInput
+                style={styles.inputs}
+                onChangeText={setEnder}
+                value={ender}
+              />
+            </View>
+            <View style={styles.item}>
               <Text style={styles.organizador}>Custo:</Text>
               <TextInput
                 style={styles.inputs}
@@ -102,45 +100,6 @@ export default function Info(props) {
         </View>
         </ScrollView>
         {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
-        {/* <Text style={styles.text}>Local</Text> */}
-        {/* <MapView
-            style={styles.map}
-            region={ region }
-            onRegionChangeComplete={(region) => setRegion(region)}>
-              <Marker coordinate={
-                { 
-                  latitude: dados.lat,
-                  longitude: dados.long,
-                }
-              }/>
-          </MapView> */}
-        {/* <View style={styles.box}>
-          <Text style={styles.organizador}>Endereço:</Text> */}
-          {/* <TextInput
-            style={styles.inputs}
-            onChangeText={setEnder}
-            value={ender}
-          />
-          <Text> ou </Text>
-          <Text style={styles.organizador}>CEP:</Text>
-          <TextInput
-            style={styles.inputs}
-            onChangeText={setCep}
-            value={cep}
-            keyboardType="numeric"
-          />
-          <TouchableOpacity onPress={changeMarker}>
-             <Text>Enviar</Text>
-          </TouchableOpacity> */}
-          {/* <Text style={styles.organizador}>Custo:</Text>
-          <TextInput
-            style={styles.inputs}
-            onChangeText={setPrice}
-            value={price}
-            keyboardType="numeric"
-            />
-        </View> */}
-        {/* {semNome ? <View><Text>O seu churrasco deve ter um nome</Text></View> : null} */}
         {existeNome ? <View><Text style={styles.alert}>Já existe um churrasco com esse nome</Text></View> : null}
         <TouchableOpacity
           onPress={() => {
