@@ -232,6 +232,10 @@ export default function AuthProvider({children}){
         data.info = dataLock.info;
     }
 
+    const removerChurras = async (churras) => {
+        await AsyncStorage.removeItem(churras);
+    }
+
     const excluirChurrascos = () => {
         AsyncStorage.clear();
     }
@@ -251,7 +255,8 @@ export default function AuthProvider({children}){
         verificaNome,
         resetValores,
         getNewData,
-        setNewData
+        setNewData,
+        removerChurras
     };
     
     return(

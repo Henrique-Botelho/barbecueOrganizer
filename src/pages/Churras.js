@@ -6,9 +6,7 @@ import ListaInfo from "../components/ListaInfo";
 import ListaTotais from "../components/ListaTotais";
 
 export default function Churras(props) {
-    const {data, resetValores} = useContext(MainContext);
-
-    console.log(data);
+    const {data, resetValores, removerChurras} = useContext(MainContext);
 
     return(
         <View style={styles.view}>
@@ -37,6 +35,18 @@ export default function Churras(props) {
                             </View>
                         </ScrollView>
                     </SafeAreaView>
+                    <TouchableOpacity
+                        onPress={() => {
+                            removerChurras(data.info.nomeChurras)
+                            .then(() => {
+                                resetValores();
+                                props.navigation.navigate("home");
+                            })
+                            .catch(error => {console.log(error)})
+                        }}
+                        style={styles.next}>
+                        <Text style={styles.textNext}>Excluir Churrasco</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => {
                             resetValores();

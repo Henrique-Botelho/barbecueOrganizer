@@ -43,12 +43,12 @@ export default function MeusChurras(props) {
             <View style={styles.view}>
                 <ImageBackground blurRadius={3} resizeMode="cover" opacity={0.48} source={require('../../assets/fundo.png')}  style={styles.image}>
                     <View style={styles.view3}>
+                        <Text style={styles.textTitulo}>Seus Churrascos</Text>
                         <FlatList
                             data={dados}
                             renderItem={({item}) => {
                                 return(
                                     <View style={styles.view3}>
-                                        <Text style={styles.textTitulo}>Seus Churrascos</Text>
                                         <View style={styles.container}>
                                             <ScrollView style={styles.scrollView}>
                                                 <View style={styles.container}>
