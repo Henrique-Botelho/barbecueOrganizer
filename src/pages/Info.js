@@ -93,37 +93,39 @@ export default function Info(props) {
         </ScrollView>
         {semNome ? <View><Text style={styles.alert}>O seu churrasco deve ter um nome</Text></View> : null}
         {existeNome ? <View><Text style={styles.alert}>Já existe um churrasco com esse nome</Text></View> : null}
-        <TouchableOpacity style={styles.next}
-        onPress={() => {
-          props.navigation.navigate("localizacao");
-        }}
-        >
-          <Text style={styles.textNext}> Localização </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
+        <View style={styles.btns}>
+          <TouchableOpacity style={styles.next}
           onPress={() => {
-            verificaNome(nomeChurras)
-              .then(value => {
-                if (value == null) {
-                  setExisteNome(false);
-                  if (data.info.nomeChurras == "") {
-                    setSemNome(true);
-                  } else {
-                    setSemNome(false);
-                    calculaChurrasco();
-                    precoTotal();
-                    props.navigation.navigate("resultados");
-                  }
-                } else if (value != null) {
-                  setExisteNome(true);
-                }
-              })
-              .catch(error => console.log(error));
+            props.navigation.navigate("localizacao");
           }}
-          style={styles.next}
-        >
-          <Text style={styles.textNext}>Prosseguir</Text>
-        </TouchableOpacity>
+          >
+            <Text style={styles.textNext}> Localização </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              verificaNome(nomeChurras)
+                .then(value => {
+                  if (value == null) {
+                    setExisteNome(false);
+                    if (data.info.nomeChurras == "") {
+                      setSemNome(true);
+                    } else {
+                      setSemNome(false);
+                      calculaChurrasco();
+                      precoTotal();
+                      props.navigation.navigate("resultados");
+                    }
+                  } else if (value != null) {
+                    setExisteNome(true);
+                  }
+                })
+                .catch(error => console.log(error));
+            }}
+            style={styles.next}
+          >
+            <Text style={styles.textNext}>Prosseguir</Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
     </View>
   );
@@ -174,8 +176,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop:15,
   },
-
-
+  btns: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
   text: {
     fontSize: 25,
     borderColor: "black",

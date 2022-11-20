@@ -14,7 +14,7 @@ import Acompanhamentos from "./pages/Acompanhamentos";
 import Info from "./pages/Info";
 import Resultados from "./pages/Resultados";
 import Receitas from "./pages/Receitas";
-import Mapa from "./pages/Mapa";
+import Localizacao from "./pages/Localizacao";
 
 const Stack = createStackNavigator();
 
@@ -35,7 +35,7 @@ export default function Routes() {
           <Stack.Screen name="info" component={Info} options={configHeader} />
           <Stack.Screen name="resultados" component={Resultados} options={configHeader} />
           <Stack.Screen name="receitas" component={Receitas} options={configHeader} />
-          <Stack.Screen name="localizacao" component={Mapa} options={configHeader} />
+          <Stack.Screen name="localizacao" component={Localizacao} options={configHeader} />
 
         </Stack.Navigator>
       </AuthProvider>
